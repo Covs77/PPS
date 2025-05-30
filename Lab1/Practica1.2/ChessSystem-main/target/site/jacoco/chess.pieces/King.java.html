@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>King.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">proyecto</a> &gt; <a href="index.source.html" class="el_package">chess.pieces</a> &gt; <span class="el_source">King.java</span></div><h1>King.java</h1><pre class="source lang-java linenums">package chess.pieces;
+
+import boardgame.Board;
+import boardgame.Position;
+import chess.ChessMatch;
+import chess.ChessPiece;
+import chess.Color;
+
+public class King extends ChessPiece {
+
+	private ChessMatch chessMatch;
+	
+	public King(Board board, Color color, ChessMatch chessMatch) {
+<span class="nc" id="L14">		super(board, color);</span>
+<span class="nc" id="L15">		this.chessMatch = chessMatch;</span>
+<span class="nc" id="L16">	}</span>
+
+	@Override
+	public String toString() {
+<span class="nc" id="L20">		return &quot;K&quot;;</span>
+	}
+	
+	private boolean canMove(Position position) {
+<span class="nc" id="L24">		ChessPiece p = (ChessPiece)getBoard().piece(position);</span>
+<span class="nc bnc" id="L25" title="All 4 branches missed.">		return p == null || p.getColor() != getColor();</span>
+	}
+
+	private boolean testRookCastling(Position position) {
+<span class="nc" id="L29">		ChessPiece p = (ChessPiece)getBoard().piece(position);</span>
+<span class="nc bnc" id="L30" title="All 8 branches missed.">		return p != null &amp;&amp; p instanceof Rook &amp;&amp; p.getColor() == getColor() &amp;&amp; p.getMoveCount() == 0;</span>
+	}
+	
+	@Override
+	public boolean[][] possibleMoves() {
+<span class="nc" id="L35">		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];</span>
+		
+<span class="nc" id="L37">		Position p = new Position(0, 0);</span>
+		
+		// above
+<span class="nc" id="L40">		p.setValues(position.getRow() - 1, position.getColumn());</span>
+<span class="nc bnc" id="L41" title="All 4 branches missed.">		if (getBoard().positionExists(p) &amp;&amp; canMove(p)) {</span>
+<span class="nc" id="L42">			mat[p.getRow()][p.getColumn()] = true;</span>
+		}
+
+		// below
+<span class="nc" id="L46">		p.setValues(position.getRow() + 1, position.getColumn());</span>
+<span class="nc bnc" id="L47" title="All 4 branches missed.">		if (getBoard().positionExists(p) &amp;&amp; canMove(p)) {</span>
+<span class="nc" id="L48">			mat[p.getRow()][p.getColumn()] = true;</span>
+		}
+
+		// left
+<span class="nc" id="L52">		p.setValues(position.getRow(), position.getColumn() - 1);</span>
+<span class="nc bnc" id="L53" title="All 4 branches missed.">		if (getBoard().positionExists(p) &amp;&amp; canMove(p)) {</span>
+<span class="nc" id="L54">			mat[p.getRow()][p.getColumn()] = true;</span>
+		}
+
+		// right
+<span class="nc" id="L58">		p.setValues(position.getRow(), position.getColumn() + 1);</span>
+<span class="nc bnc" id="L59" title="All 4 branches missed.">		if (getBoard().positionExists(p) &amp;&amp; canMove(p)) {</span>
+<span class="nc" id="L60">			mat[p.getRow()][p.getColumn()] = true;</span>
+		}
+
+		// nw
+<span class="nc" id="L64">		p.setValues(position.getRow() - 1, position.getColumn() - 1);</span>
+<span class="nc bnc" id="L65" title="All 4 branches missed.">		if (getBoard().positionExists(p) &amp;&amp; canMove(p)) {</span>
+<span class="nc" id="L66">			mat[p.getRow()][p.getColumn()] = true;</span>
+		}
+
+		// ne
+<span class="nc" id="L70">		p.setValues(position.getRow() - 1, position.getColumn() + 1);</span>
+<span class="nc bnc" id="L71" title="All 4 branches missed.">		if (getBoard().positionExists(p) &amp;&amp; canMove(p)) {</span>
+<span class="nc" id="L72">			mat[p.getRow()][p.getColumn()] = true;</span>
+		}
+
+		// sw
+<span class="nc" id="L76">		p.setValues(position.getRow() + 1, position.getColumn() - 1);</span>
+<span class="nc bnc" id="L77" title="All 4 branches missed.">		if (getBoard().positionExists(p) &amp;&amp; canMove(p)) {</span>
+<span class="nc" id="L78">			mat[p.getRow()][p.getColumn()] = true;</span>
+		}
+
+		// se
+<span class="nc" id="L82">		p.setValues(position.getRow() + 1, position.getColumn() + 1);</span>
+<span class="nc bnc" id="L83" title="All 4 branches missed.">		if (getBoard().positionExists(p) &amp;&amp; canMove(p)) {</span>
+<span class="nc" id="L84">			mat[p.getRow()][p.getColumn()] = true;</span>
+		}
+		
+		//SPECIALMOVE castling
+<span class="nc bnc" id="L88" title="All 4 branches missed.">		if (getMoveCount() == 0 &amp;&amp; !chessMatch.getCheck()) {</span>
+			//SPECIALMOVE castling kingside rook
+<span class="nc" id="L90">			Position posT1 = new Position(position.getRow(), position.getColumn() + 3);</span>
+<span class="nc bnc" id="L91" title="All 2 branches missed.">			if(testRookCastling(posT1)) {</span>
+<span class="nc" id="L92">				Position p1 = new Position(position.getRow(), position.getColumn() + 1);</span>
+<span class="nc" id="L93">				Position p2 = new Position(position.getRow(), position.getColumn() + 2);</span>
+<span class="nc bnc" id="L94" title="All 4 branches missed.">				if(getBoard().piece(p1) == null &amp;&amp; getBoard().piece(p2) == null) {</span>
+<span class="nc" id="L95">					mat[position.getRow()][position.getColumn() + 2] = true;</span>
+				}
+			}
+			
+			//SPECIALMOVE castling queenside rook
+<span class="nc" id="L100">			Position posT2 = new Position(position.getRow(), position.getColumn() - 4);</span>
+<span class="nc bnc" id="L101" title="All 2 branches missed.">			if (testRookCastling(posT2)) {</span>
+<span class="nc" id="L102">				Position p1 = new Position(position.getRow(), position.getColumn() - 1);</span>
+<span class="nc" id="L103">				Position p2 = new Position(position.getRow(), position.getColumn() - 2);</span>
+<span class="nc" id="L104">				Position p3 = new Position(position.getRow(), position.getColumn() - 3);</span>
+<span class="nc bnc" id="L105" title="All 6 branches missed.">				if (getBoard().piece(p1) == null &amp;&amp; getBoard().piece(p2) == null &amp;&amp; getBoard().piece(p3) == null) {</span>
+<span class="nc" id="L106">					mat[position.getRow()][position.getColumn() - 2] = true;</span>
+				}
+			}
+		}
+		
+<span class="nc" id="L111">		return mat;</span>
+	}
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

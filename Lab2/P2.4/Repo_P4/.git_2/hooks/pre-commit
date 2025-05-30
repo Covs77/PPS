@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "Ejecutando pre-commit hook"
+# Aquí puedes agregar comandos para verificar el formato del código
+exit 0

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UI.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">proyecto</a> &gt; <a href="index.source.html" class="el_package">application</a> &gt; <span class="el_source">UI.java</span></div><h1>UI.java</h1><pre class="source lang-java linenums">package application;
+
+import java.util.Arrays;
+import java.util.InputMismatchException;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+import chess.ChessMatch;
+import chess.ChessPiece;
+import chess.ChessPosition;
+import chess.Color;
+
+<span class="nc" id="L14">public class UI {</span>
+	
+	public static final String ANSI_RESET = &quot;\u001B[0m&quot;;
+	public static final String ANSI_BLACK = &quot;\u001B[30m&quot;;
+	public static final String ANSI_RED = &quot;\u001B[31m&quot;;
+	public static final String ANSI_GREEN = &quot;\u001B[32m&quot;;
+	public static final String ANSI_YELLOW = &quot;\u001B[33m&quot;;
+	public static final String ANSI_BLUE = &quot;\u001B[34m&quot;;
+	public static final String ANSI_PURPLE = &quot;\u001B[35m&quot;;
+	public static final String ANSI_CYAN = &quot;\u001B[36m&quot;;
+	public static final String ANSI_WHITE = &quot;\u001B[37m&quot;;
+
+	public static final String ANSI_BLACK_BACKGROUND = &quot;\u001B[40m&quot;;
+	public static final String ANSI_RED_BACKGROUND = &quot;\u001B[41m&quot;;
+	public static final String ANSI_GREEN_BACKGROUND = &quot;\u001B[42m&quot;;
+	public static final String ANSI_YELLOW_BACKGROUND = &quot;\u001B[43m&quot;;
+	public static final String ANSI_BLUE_BACKGROUND = &quot;\u001B[44m&quot;;
+	public static final String ANSI_PURPLE_BACKGROUND = &quot;\u001B[45m&quot;;
+	public static final String ANSI_CYAN_BACKGROUND = &quot;\u001B[46m&quot;;
+	public static final String ANSI_WHITE_BACKGROUND = &quot;\u001B[47m&quot;;
+	
+	public static void clearScreen() {
+<span class="nc" id="L36">		System.out.print(&quot;\033[H\033[2J&quot;);</span>
+<span class="nc" id="L37">		System.out.flush();</span>
+<span class="nc" id="L38">	}</span>
+	
+	public static ChessPosition readChessPosition(Scanner sc) {
+		try {
+<span class="nc" id="L42">			String s = sc.nextLine();</span>
+<span class="nc" id="L43">			char column = s.charAt(0);</span>
+<span class="nc" id="L44">			int row = Integer.parseInt(s.substring(1));</span>
+<span class="nc" id="L45">			return new ChessPosition(column, row);</span>
+		}
+<span class="nc" id="L47">		catch (RuntimeException e) {</span>
+<span class="nc" id="L48">			throw new InputMismatchException(&quot;Error reading ChessPosition. Valid values are from a1 to h8.&quot;);</span>
+		}
+	}
+	
+	public static void printMatch(ChessMatch chessMatch, List&lt;ChessPiece&gt; captured) {
+<span class="nc" id="L53">		printBoard(chessMatch.getPieces());</span>
+<span class="nc" id="L54">		System.out.println();</span>
+<span class="nc" id="L55">		printCapturedPieces(captured);</span>
+<span class="nc" id="L56">		System.out.println();</span>
+<span class="nc" id="L57">		System.out.println(&quot;Turn : &quot; + chessMatch.getTurn());</span>
+<span class="nc bnc" id="L58" title="All 2 branches missed.">		if (!chessMatch.getCheckMate()) {</span>
+<span class="nc" id="L59">			System.out.println(&quot;Waiting player: &quot; + chessMatch.getCurrentPlayer());</span>
+<span class="nc bnc" id="L60" title="All 2 branches missed.">			if (chessMatch.getCheck()) {</span>
+<span class="nc" id="L61">				System.out.println(&quot;CHECK!&quot;);</span>
+			}
+		}
+		else {
+<span class="nc" id="L65">			System.out.println(&quot;CHECKMATE!&quot;);</span>
+<span class="nc" id="L66">			System.out.println(&quot;Winner: &quot; + chessMatch.getCurrentPlayer());</span>
+		}
+<span class="nc" id="L68">	}</span>
+
+	public static void printBoard(ChessPiece[][] pieces) {
+<span class="nc bnc" id="L71" title="All 2 branches missed.">		for (int i=0; i&lt;pieces.length; i++) {</span>
+<span class="nc" id="L72">			System.out.print((8 - i) + &quot; &quot;);</span>
+<span class="nc bnc" id="L73" title="All 2 branches missed.">			for (int j=0; j&lt;pieces.length; j++) {</span>
+<span class="nc" id="L74">				printPiece(pieces[i][j], false);</span>
+			}
+<span class="nc" id="L76">			System.out.println();</span>
+		}
+<span class="nc" id="L78">		System.out.println(&quot;  a b c d e f g h&quot;);</span>
+<span class="nc" id="L79">	}</span>
+	
+	public static void printBoard(ChessPiece[][] pieces, boolean[][] possibleMoves) {
+<span class="nc bnc" id="L82" title="All 2 branches missed.">		for (int i=0; i&lt;pieces.length; i++) {</span>
+<span class="nc" id="L83">			System.out.print((8 - i) + &quot; &quot;);</span>
+<span class="nc bnc" id="L84" title="All 2 branches missed.">			for (int j=0; j&lt;pieces.length; j++) {</span>
+<span class="nc" id="L85">				printPiece(pieces[i][j], possibleMoves[i][j]);</span>
+			}
+<span class="nc" id="L87">			System.out.println();</span>
+		}
+<span class="nc" id="L89">		System.out.println(&quot;  a b c d e f g h&quot;);</span>
+<span class="nc" id="L90">	}</span>
+	
+	private static void printPiece(ChessPiece piece, boolean background) {
+<span class="nc bnc" id="L93" title="All 2 branches missed.">		if(background) {</span>
+<span class="nc" id="L94">			System.out.print(ANSI_CYAN_BACKGROUND);</span>
+		}
+<span class="nc bnc" id="L96" title="All 2 branches missed.">    	if (piece == null) {</span>
+<span class="nc" id="L97">            System.out.print(&quot;-&quot; + ANSI_RESET);</span>
+        }
+        else {
+<span class="nc bnc" id="L100" title="All 2 branches missed.">            if (piece.getColor() == Color.WHITE) {</span>
+<span class="nc" id="L101">                System.out.print(ANSI_WHITE + piece + ANSI_RESET);</span>
+            }
+            else {
+<span class="nc" id="L104">                System.out.print(ANSI_YELLOW + piece + ANSI_RESET);</span>
+            }
+        }
+<span class="nc" id="L107">        System.out.print(&quot; &quot;);</span>
+<span class="nc" id="L108">	}</span>
+	
+	private static void printCapturedPieces(List&lt;ChessPiece&gt; captured) {
+<span class="nc bnc" id="L111" title="All 2 branches missed.">		List&lt;ChessPiece&gt; white = captured.stream().filter(x -&gt; x.getColor() == Color.WHITE).collect(Collectors.toList());</span>
+<span class="nc bnc" id="L112" title="All 2 branches missed.">		List&lt;ChessPiece&gt; black = captured.stream().filter(x -&gt; x.getColor() == Color.BLACK).collect(Collectors.toList());</span>
+<span class="nc" id="L113">		System.out.println(&quot;Captured pieces: &quot;);</span>
+<span class="nc" id="L114">		System.out.print(&quot;White: &quot;);</span>
+<span class="nc" id="L115">		System.out.print(ANSI_WHITE);</span>
+<span class="nc" id="L116">		System.out.println(Arrays.toString(white.toArray()));</span>
+<span class="nc" id="L117">		System.out.print(ANSI_RESET);</span>
+<span class="nc" id="L118">		System.out.print(&quot;Black: &quot;);</span>
+<span class="nc" id="L119">		System.out.print(ANSI_YELLOW);</span>
+<span class="nc" id="L120">		System.out.println(Arrays.toString(black.toArray()));</span>
+<span class="nc" id="L121">		System.out.print(ANSI_RESET);</span>
+		
+<span class="nc" id="L123">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

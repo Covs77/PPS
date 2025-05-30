@@ -1,0 +1,29 @@
+{
+  "name": "proyecto-node",
+  "version": "1.0.0",
+  "description": "Práctica iniciación a Node.js y npm",
+  "main": "App.js",
+  "scripts": {
+    "start": "node App.js",
+    "test": "mocha src/test/js/**/*.js",
+    "coverage": "nyc mocha",
+    "lint": "eslint .",
+    "audit": "npm audit",
+    "package": "npm pack"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "eslint": "^7.24.0",
+    "mocha": "^8.4.0",
+    "nyc": "^15.1.0"
+  },
+  "keywords": [
+    "Node.js"
+  ],
+  "author": "Covadonga Leguina",
+  "license": "ISC",
+  "type": "module"
+}

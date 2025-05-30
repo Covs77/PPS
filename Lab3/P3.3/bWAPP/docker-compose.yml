@@ -1,0 +1,24 @@
+version: '3'
+services:
+    mysqlbwapp:
+        container_name: mysqlbwapp
+        image: mysql:5.7
+        restart: always
+        hostname: mysqlbwapp
+        ports:
+           - 9004:3306
+        #command: --default-authentication-plugin=mysql_native_password
+        environment: 
+            MYSQL_ROOT_PASSWORD: bug
+            MYSQL_DATABASE: bwapp
+            MYSQL_USER: bwapp
+            MYSQL_PASSWORD: bwapp
+    webserver:
+        container_name: bwapp
+        build: .
+        image: bwapp
+        restart: always
+        ports:
+            - 9003:80
+        depends_on:
+            - mysqlbwapp

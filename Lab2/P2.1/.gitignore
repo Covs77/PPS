@@ -1,0 +1,13 @@
+# Ignorar archivos de configuración del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de compilación
+/build
+/dist
+
+# Ignorar archivos de entorno
+.env
+
+# Ignorar workspace de Visual Studio Code
+.code-workspace

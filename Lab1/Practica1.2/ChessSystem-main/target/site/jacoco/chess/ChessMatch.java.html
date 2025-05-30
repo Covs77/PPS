@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ChessMatch.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">proyecto</a> &gt; <a href="index.source.html" class="el_package">chess</a> &gt; <span class="el_source">ChessMatch.java</span></div><h1>ChessMatch.java</h1><pre class="source lang-java linenums">package chess;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import boardgame.Board;
+import boardgame.Piece;
+import boardgame.Position;
+import chess.pieces.Bishop;
+import chess.pieces.King;
+import chess.pieces.Knight;
+import chess.pieces.Pawn;
+import chess.pieces.Queen;
+import chess.pieces.Rook;
+
+public class ChessMatch {
+	
+	private int turn;
+	private Color currentPlayer;
+	private Board board;
+	private boolean check;
+	private boolean checkMate;
+	private ChessPiece enPassantVulnerable;
+	private ChessPiece promoted;
+	
+<span class="nc" id="L27">	private List&lt;Piece&gt; piecesOnTheBoard = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L28">	private List&lt;Piece&gt; capturedPieces = new ArrayList&lt;&gt;();</span>
+	
+<span class="nc" id="L30">	public ChessMatch() {</span>
+<span class="nc" id="L31">		board = new Board(8, 8);</span>
+<span class="nc" id="L32">		turn = 1;</span>
+<span class="nc" id="L33">		currentPlayer = Color.WHITE;</span>
+<span class="nc" id="L34">		initialSetup();</span>
+<span class="nc" id="L35">	}</span>
+	
+	public int getTurn() {
+<span class="nc" id="L38">		return turn;</span>
+	}
+	
+	public Color getCurrentPlayer() {
+<span class="nc" id="L42">		return currentPlayer;</span>
+	}
+	
+	public boolean getCheck() {
+<span class="nc" id="L46">		return check;</span>
+	}
+	
+	public boolean getCheckMate() {
+<span class="nc" id="L50">		return checkMate;</span>
+	}
+	
+	public ChessPiece getEnPassantVulnerable() {
+<span class="nc" id="L54">		return enPassantVulnerable;</span>
+	}
+	
+	public ChessPiece getPromoted() {
+<span class="nc" id="L58">		return promoted;</span>
+	}
+	
+	public ChessPiece[][] getPieces() {
+<span class="nc" id="L62">		ChessPiece[][] mat = new ChessPiece[board.getRows()][board.getColumns()];</span>
+<span class="nc bnc" id="L63" title="All 2 branches missed.">		for (int i=0; i&lt;board.getRows(); i++) {</span>
+<span class="nc bnc" id="L64" title="All 2 branches missed.">			for (int j=0; j&lt;board.getColumns(); j++) {</span>
+<span class="nc" id="L65">				mat[i][j] = (ChessPiece) board.piece(i, j);</span>
+			}
+		}
+<span class="nc" id="L68">		return mat;</span>
+	} 
+	
+	public boolean[][] possibleMoves(ChessPosition sourcePosition) {
+<span class="nc" id="L72">		Position position = sourcePosition.toPosition();</span>
+<span class="nc" id="L73">		validateSourcePosition(position);</span>
+<span class="nc" id="L74">		return board.piece(position).possibleMoves();</span>
+	}
+	
+	public ChessPiece performChessMove(ChessPosition sourcePosition, ChessPosition targetPosition) {
+<span class="nc" id="L78">		Position source = sourcePosition.toPosition();</span>
+<span class="nc" id="L79">		Position target = targetPosition.toPosition();</span>
+<span class="nc" id="L80">		validateSourcePosition(source);</span>
+<span class="nc" id="L81">		validateTargetPosition(source, target);</span>
+<span class="nc" id="L82">		Piece capturedPiece = makeMove(source, target);</span>
+		
+<span class="nc bnc" id="L84" title="All 2 branches missed.">		if (testCheck(currentPlayer)) {</span>
+<span class="nc" id="L85">			undoMove(source, target, capturedPiece);</span>
+<span class="nc" id="L86">			throw new ChessException(&quot;You can't put yourself in check&quot;);</span>
+		}
+		
+<span class="nc" id="L89">		ChessPiece movedPiece = (ChessPiece)board.piece(target);</span>
+
+		//SPECIALMOVE promotion
+<span class="nc" id="L92">		promoted = null;</span>
+<span class="nc bnc" id="L93" title="All 2 branches missed.">		if (movedPiece instanceof Pawn) {</span>
+<span class="nc bnc" id="L94" title="All 8 branches missed.">			if (movedPiece.getColor() == Color.WHITE &amp;&amp; target.getRow() == 0 || (movedPiece.getColor() == Color.BLACK &amp;&amp; target.getRow() == 7)) {</span>
+<span class="nc" id="L95">				promoted = (ChessPiece)board.piece(target);</span>
+<span class="nc" id="L96">				promoted = replacePromotedPiece(&quot;Q&quot;);</span>
+			}
+		}
+		
+<span class="nc bnc" id="L100" title="All 2 branches missed.">		check = (testCheck(opponent(currentPlayer))) ? true : false;</span>
+		
+<span class="nc bnc" id="L102" title="All 2 branches missed.">		if (testCheckMate(opponent(currentPlayer))) {</span>
+<span class="nc" id="L103">			checkMate = true;</span>
+		}
+		else {
+<span class="nc" id="L106">			nextTurn();</span>
+		}
+		
+		//SPECIALMOVE en passant
+<span class="nc bnc" id="L110" title="All 6 branches missed.">		if (movedPiece instanceof Pawn &amp;&amp; (target.getRow() == source.getRow() - 2 || target.getRow() == source.getRow() + 2)) {</span>
+<span class="nc" id="L111">			enPassantVulnerable = movedPiece;</span>
+		}
+		else {
+<span class="nc" id="L114">			enPassantVulnerable = null;</span>
+		}
+		
+<span class="nc" id="L117">		return (ChessPiece)capturedPiece;</span>
+	}
+	
+	public ChessPiece replacePromotedPiece(String type) {
+<span class="nc bnc" id="L121" title="All 2 branches missed.">		if (promoted == null) {</span>
+<span class="nc" id="L122">			throw new IllegalStateException(&quot;There is no piece to be promoted&quot;);</span>
+		}
+<span class="nc bnc" id="L124" title="All 10 branches missed.">		if (!type.equals(&quot;B&quot;) &amp;&amp; !type.equals(&quot;N&quot;) &amp;&amp; !type.equals(&quot;R&quot;) &amp; !type.equals(&quot;Q&quot;)) {</span>
+<span class="nc" id="L125">			return promoted;</span>
+		}
+
+<span class="nc" id="L128">		Position pos = promoted.getChessPosition().toPosition();</span>
+<span class="nc" id="L129">		Piece p = board.removePiece(pos);</span>
+<span class="nc" id="L130">		piecesOnTheBoard.remove(p);</span>
+
+<span class="nc" id="L132">		ChessPiece newPiece = newPiece(type, promoted.getColor());</span>
+<span class="nc" id="L133">		board.placePiece(newPiece, pos);</span>
+<span class="nc" id="L134">		piecesOnTheBoard.add(newPiece);</span>
+
+<span class="nc" id="L136">		return newPiece;</span>
+	}
+
+	private ChessPiece newPiece(String type, Color color) {
+<span class="nc bnc" id="L140" title="All 2 branches missed.">		if (type.equals(&quot;B&quot;)) return new Bishop(board, color);</span>
+<span class="nc bnc" id="L141" title="All 2 branches missed.">		if (type.equals(&quot;N&quot;)) return new Knight(board, color);</span>
+<span class="nc bnc" id="L142" title="All 2 branches missed.">		if (type.equals(&quot;Q&quot;)) return new Queen(board, color);</span>
+<span class="nc" id="L143">		return new Rook(board, color);</span>
+	}
+
+	private Piece makeMove(Position source, Position target) {
+<span class="nc" id="L147">		ChessPiece p = (ChessPiece)board.removePiece(source);</span>
+<span class="nc" id="L148">		p.increaseMoveCount();</span>
+<span class="nc" id="L149">		Piece capturedPiece = board.removePiece(target);</span>
+<span class="nc" id="L150">		board.placePiece(p, target);</span>
+		
+<span class="nc bnc" id="L152" title="All 2 branches missed.">		if (capturedPiece != null) {</span>
+<span class="nc" id="L153">			piecesOnTheBoard.remove(capturedPiece);</span>
+<span class="nc" id="L154">			capturedPieces.add(capturedPiece);</span>
+		}
+		
+		//SPECIALMOVE castling kingside rook
+<span class="nc bnc" id="L158" title="All 4 branches missed.">		if (p instanceof King &amp;&amp; target.getColumn() == source.getColumn() + 2) {</span>
+<span class="nc" id="L159">			Position sourceT = new Position(source.getRow(), source.getColumn() + 3);</span>
+<span class="nc" id="L160">			Position targetT = new Position(source.getRow(), source.getColumn() + 1);</span>
+<span class="nc" id="L161">			ChessPiece rook = (ChessPiece)board.removePiece(sourceT);</span>
+<span class="nc" id="L162">			board.placePiece(rook, targetT);</span>
+<span class="nc" id="L163">			rook.increaseMoveCount();</span>
+		}
+		
+		//SPECIALMOVE casteling queenside rook
+<span class="nc bnc" id="L167" title="All 4 branches missed.">		if (p instanceof King &amp;&amp; target.getColumn() == source.getColumn() - 2) {</span>
+<span class="nc" id="L168">			Position sourceT = new Position(source.getRow(), source.getColumn() - 4);</span>
+<span class="nc" id="L169">			Position targetT = new Position(source.getRow(), source.getColumn() - 1);</span>
+<span class="nc" id="L170">			ChessPiece rook = (ChessPiece)board.removePiece(sourceT);</span>
+<span class="nc" id="L171">			board.placePiece(rook, targetT);</span>
+<span class="nc" id="L172">			rook.increaseMoveCount();</span>
+		}
+		
+		//SPECIALMOVE en passant
+<span class="nc bnc" id="L176" title="All 2 branches missed.">		if (p instanceof Pawn) {</span>
+<span class="nc bnc" id="L177" title="All 4 branches missed.">			if (source.getColumn() != target.getColumn() &amp;&amp; capturedPiece == null) {</span>
+				Position pawnPosition;
+<span class="nc bnc" id="L179" title="All 2 branches missed.">				if (p.getColor() == Color.WHITE) {</span>
+<span class="nc" id="L180">					pawnPosition = new Position(target.getRow() + 1, target.getColumn());</span>
+				}
+				else {
+<span class="nc" id="L183">					pawnPosition = new Position(target.getRow() - 1, target.getColumn());</span>
+				}
+<span class="nc" id="L185">				capturedPiece = board.removePiece(pawnPosition);</span>
+<span class="nc" id="L186">				capturedPieces.add(capturedPiece);</span>
+<span class="nc" id="L187">				piecesOnTheBoard.remove(capturedPiece);</span>
+			}
+		}
+		
+<span class="nc" id="L191">		return capturedPiece;</span>
+	}
+	
+	private void undoMove(Position source, Position target, Piece capturedPiece) {
+<span class="nc" id="L195">		ChessPiece p = (ChessPiece)board.removePiece(target);</span>
+<span class="nc" id="L196">		p.decreaseMoveCount();</span>
+<span class="nc" id="L197">		board.placePiece(p, source);</span>
+
+<span class="nc bnc" id="L199" title="All 2 branches missed.">		if (capturedPiece != null) {</span>
+<span class="nc" id="L200">			board.placePiece(capturedPiece, target);</span>
+<span class="nc" id="L201">			capturedPieces.remove(capturedPiece);</span>
+<span class="nc" id="L202">			piecesOnTheBoard.add(capturedPiece);</span>
+		}
+		
+		//SPECIALMOVE castling kingside rook
+<span class="nc bnc" id="L206" title="All 4 branches missed.">		if (p instanceof King &amp;&amp; target.getColumn() == source.getColumn() + 2) {</span>
+<span class="nc" id="L207">			Position sourceT = new Position(source.getRow(), source.getColumn() + 3);</span>
+<span class="nc" id="L208">			Position targetT = new Position(source.getRow(), source.getColumn() + 1);</span>
+<span class="nc" id="L209">			ChessPiece rook = (ChessPiece)board.removePiece(targetT);</span>
+<span class="nc" id="L210">			board.placePiece(rook, sourceT);</span>
+<span class="nc" id="L211">			rook.decreaseMoveCount();</span>
+		}
+		
+		//SPECIALMOVE casteling queenside rook
+<span class="nc bnc" id="L215" title="All 4 branches missed.">		if (p instanceof King &amp;&amp; target.getColumn() == source.getColumn() - 2) {</span>
+<span class="nc" id="L216">			Position sourceT = new Position(source.getRow(), source.getColumn() - 4);</span>
+<span class="nc" id="L217">			Position targetT = new Position(source.getRow(), source.getColumn() - 1);</span>
+<span class="nc" id="L218">			ChessPiece rook = (ChessPiece)board.removePiece(targetT);</span>
+<span class="nc" id="L219">			board.placePiece(rook, sourceT);</span>
+<span class="nc" id="L220">			rook.decreaseMoveCount();</span>
+		}
+
+		//SPECIALMOVE en passant
+<span class="nc bnc" id="L224" title="All 2 branches missed.">		if (p instanceof Pawn) {</span>
+<span class="nc bnc" id="L225" title="All 4 branches missed.">			if (source.getColumn() != target.getColumn() &amp;&amp; capturedPiece == enPassantVulnerable) {</span>
+<span class="nc" id="L226">				ChessPiece pawn = (ChessPiece)board.removePiece(target);</span>
+				Position pawnPosition;
+<span class="nc bnc" id="L228" title="All 2 branches missed.">				if (p.getColor() == Color.WHITE) {</span>
+<span class="nc" id="L229">					pawnPosition = new Position(3, target.getColumn());</span>
+				}
+				else {
+<span class="nc" id="L232">					pawnPosition = new Position(4, target.getColumn());</span>
+				}
+<span class="nc" id="L234">				board.placePiece(pawn, pawnPosition);</span>
+			}
+		}
+<span class="nc" id="L237">	}</span>
+
+	private void validateSourcePosition(Position position) {
+<span class="nc bnc" id="L240" title="All 2 branches missed.">		if (!board.thereIsAPiece(position)) {</span>
+<span class="nc" id="L241">			throw new ChessException(&quot;There is no piece on source position&quot;);</span>
+		}
+<span class="nc bnc" id="L243" title="All 2 branches missed.">		if (currentPlayer != ((ChessPiece)board.piece(position)).getColor()) {</span>
+<span class="nc" id="L244">			throw new ChessException(&quot;The chosen piece is not yours&quot;);</span>
+		}
+<span class="nc bnc" id="L246" title="All 2 branches missed.">		if (!board.piece(position).isThereAnyPossibleMove()) {</span>
+<span class="nc" id="L247">			throw new ChessException(&quot;There is no possible move for the chosen piece&quot;);</span>
+		}
+<span class="nc" id="L249">	}</span>
+	
+	private void validateTargetPosition(Position source, Position target) {
+<span class="nc bnc" id="L252" title="All 2 branches missed.">		if(!board.piece(source).possibleMove(target)) {</span>
+<span class="nc" id="L253">			throw new ChessException(&quot;The chosen piece can't move to target position&quot;);</span>
+		}
+<span class="nc" id="L255">	}</span>
+	
+	private void nextTurn() {
+<span class="nc" id="L258">		turn++;</span>
+<span class="nc bnc" id="L259" title="All 2 branches missed.">		currentPlayer = (currentPlayer == Color.WHITE) ? Color.BLACK : Color.WHITE;</span>
+<span class="nc" id="L260">	}</span>
+	
+	private Color opponent(Color color) {
+<span class="nc bnc" id="L263" title="All 2 branches missed.">		return (color == Color.WHITE) ? Color.BLACK : Color.WHITE;</span>
+	}
+
+	private ChessPiece king(Color color) {
+<span class="nc bnc" id="L267" title="All 2 branches missed.">		List&lt;Piece&gt; list = piecesOnTheBoard.stream().filter(x -&gt; ((ChessPiece)x).getColor() == color).collect(Collectors.toList());</span>
+<span class="nc bnc" id="L268" title="All 2 branches missed.">		for (Piece p : list) {</span>
+<span class="nc bnc" id="L269" title="All 2 branches missed.">			if (p instanceof King) {</span>
+<span class="nc" id="L270">				return (ChessPiece)p;</span>
+			}
+<span class="nc" id="L272">		}</span>
+<span class="nc" id="L273">		throw new IllegalStateException(&quot;There is no &quot; + color + &quot; king on the board&quot;);</span>
+	}
+
+	private boolean testCheck(Color color) {
+<span class="nc" id="L277">		Position kingPosition = king(color).getChessPosition().toPosition();</span>
+<span class="nc bnc" id="L278" title="All 2 branches missed.">		List&lt;Piece&gt; opponentPieces = piecesOnTheBoard.stream().filter(x -&gt; ((ChessPiece)x).getColor() == opponent(color)).collect(Collectors.toList());</span>
+<span class="nc bnc" id="L279" title="All 2 branches missed.">		for (Piece p : opponentPieces) {</span>
+<span class="nc" id="L280">			boolean[][] mat = p.possibleMoves();</span>
+<span class="nc bnc" id="L281" title="All 2 branches missed.">			if (mat[kingPosition.getRow()][kingPosition.getColumn()]) {</span>
+<span class="nc" id="L282">				return true;</span>
+			}
+<span class="nc" id="L284">		}</span>
+<span class="nc" id="L285">		return false;</span>
+	}
+	
+	private boolean testCheckMate(Color color) {
+<span class="nc bnc" id="L289" title="All 2 branches missed.">		if (!testCheck(color)) {</span>
+<span class="nc" id="L290">			return false;</span>
+		}
+<span class="nc bnc" id="L292" title="All 2 branches missed.">		List&lt;Piece&gt; list = piecesOnTheBoard.stream().filter(x -&gt; ((ChessPiece)x).getColor() == color).collect(Collectors.toList());</span>
+<span class="nc bnc" id="L293" title="All 2 branches missed.">		for (Piece p : list) {</span>
+<span class="nc" id="L294">			boolean[][] mat = p.possibleMoves();</span>
+<span class="nc bnc" id="L295" title="All 2 branches missed.">			for (int i=0; i&lt;board.getRows(); i++) {</span>
+<span class="nc bnc" id="L296" title="All 2 branches missed.">				for (int j=0; j&lt;board.getColumns(); j++) {</span>
+<span class="nc bnc" id="L297" title="All 2 branches missed.">					if (mat[i][j]) {</span>
+<span class="nc" id="L298">						Position source = ((ChessPiece)p).getChessPosition().toPosition();</span>
+<span class="nc" id="L299">						Position target = new Position(i, j);</span>
+<span class="nc" id="L300">						Piece capturedPiece = makeMove(source, target);</span>
+<span class="nc" id="L301">						boolean testCheck = testCheck(color);</span>
+<span class="nc" id="L302">						undoMove(source, target, capturedPiece);</span>
+<span class="nc bnc" id="L303" title="All 2 branches missed.">						if (!testCheck) {</span>
+<span class="nc" id="L304">							return false;</span>
+						}
+					}
+				}
+			}
+<span class="nc" id="L309">		}</span>
+<span class="nc" id="L310">		return true;</span>
+	}	
+	
+	private void placeNewPiece(char column, int row, ChessPiece piece) {
+<span class="nc" id="L314">		board.placePiece(piece, new ChessPosition(column, row).toPosition());</span>
+<span class="nc" id="L315">		piecesOnTheBoard.add(piece);</span>
+<span class="nc" id="L316">	}</span>
+	
+	private void initialSetup() {
+<span class="nc" id="L319">        placeNewPiece('a', 1, new Rook(board, Color.WHITE));</span>
+<span class="nc" id="L320">        placeNewPiece('b', 1, new Knight(board, Color.WHITE));</span>
+<span class="nc" id="L321">        placeNewPiece('c', 1, new Bishop(board, Color.WHITE));</span>
+<span class="nc" id="L322">        placeNewPiece('d', 1, new Queen(board, Color.WHITE));</span>
+<span class="nc" id="L323">        placeNewPiece('e', 1, new King(board, Color.WHITE, this));</span>
+<span class="nc" id="L324">        placeNewPiece('f', 1, new Bishop(board, Color.WHITE));</span>
+<span class="nc" id="L325">        placeNewPiece('g', 1, new Knight(board, Color.WHITE));</span>
+<span class="nc" id="L326">        placeNewPiece('h', 1, new Rook(board, Color.WHITE));</span>
+<span class="nc" id="L327">        placeNewPiece('a', 2, new Pawn(board, Color.WHITE, this));</span>
+<span class="nc" id="L328">        placeNewPiece('b', 2, new Pawn(board, Color.WHITE, this));</span>
+<span class="nc" id="L329">        placeNewPiece('c', 2, new Pawn(board, Color.WHITE, this));</span>
+<span class="nc" id="L330">        placeNewPiece('d', 2, new Pawn(board, Color.WHITE, this));</span>
+<span class="nc" id="L331">        placeNewPiece('e', 2, new Pawn(board, Color.WHITE, this));</span>
+<span class="nc" id="L332">        placeNewPiece('f', 2, new Pawn(board, Color.WHITE, this));</span>
+<span class="nc" id="L333">        placeNewPiece('g', 2, new Pawn(board, Color.WHITE, this));</span>
+<span class="nc" id="L334">        placeNewPiece('h', 2, new Pawn(board, Color.WHITE, this));</span>
+
+<span class="nc" id="L336">        placeNewPiece('a', 8, new Rook(board, Color.BLACK));</span>
+<span class="nc" id="L337">        placeNewPiece('b', 8, new Knight(board, Color.BLACK));</span>
+<span class="nc" id="L338">        placeNewPiece('c', 8, new Bishop(board, Color.BLACK));</span>
+<span class="nc" id="L339">        placeNewPiece('d', 8, new Queen(board, Color.BLACK));</span>
+<span class="nc" id="L340">        placeNewPiece('e', 8, new King(board, Color.BLACK, this));</span>
+<span class="nc" id="L341">        placeNewPiece('f', 8, new Bishop(board, Color.BLACK));</span>
+<span class="nc" id="L342">        placeNewPiece('g', 8, new Knight(board, Color.BLACK));</span>
+<span class="nc" id="L343">        placeNewPiece('h', 8, new Rook(board, Color.BLACK));</span>
+<span class="nc" id="L344">        placeNewPiece('a', 7, new Pawn(board, Color.BLACK, this));</span>
+<span class="nc" id="L345">        placeNewPiece('b', 7, new Pawn(board, Color.BLACK, this));</span>
+<span class="nc" id="L346">        placeNewPiece('c', 7, new Pawn(board, Color.BLACK, this));</span>
+<span class="nc" id="L347">        placeNewPiece('d', 7, new Pawn(board, Color.BLACK, this));</span>
+<span class="nc" id="L348">        placeNewPiece('e', 7, new Pawn(board, Color.BLACK, this));</span>
+<span class="nc" id="L349">        placeNewPiece('f', 7, new Pawn(board, Color.BLACK, this));</span>
+<span class="nc" id="L350">        placeNewPiece('g', 7, new Pawn(board, Color.BLACK, this));</span>
+<span class="nc" id="L351">        placeNewPiece('h', 7, new Pawn(board, Color.BLACK, this));</span>
+<span class="nc" id="L352">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

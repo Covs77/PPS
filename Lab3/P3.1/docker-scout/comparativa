@@ -1,0 +1,1353 @@
+  
+  
+  ## Overview
+  
+                      │           Analyzed Image           │          Comparison Image           
+  ────────────────────┼────────────────────────────────────┼─────────────────────────────────────
+    Target            │  node:18                           │  node:16                            
+      digest          │  c0d22c846dfb                      │  1ddc7e4055fd                       
+      tag             │  18                                │  16                                 
+      platform        │ linux/amd64                        │ linux/amd64                         
+      vulnerabilities │    0C     3H     5M   110L     5?  │    0C     2H     2M     7L     6?   
+                      │           +1     +3   +103     -1  │                                     
+      size            │ 448 MB (+56 MB)                    │ 392 MB                              
+      packages        │ 742 (-9)                           │ 751                                 
+                      │                                    │                                     
+    Base image        │  buildpack-deps:bookworm           │  buildpack-deps:buster              
+      tags            │ also known as                      │ also known as                       
+                      │   • latest                         │                                     
+                      │   • stable                         │                                     
+      vulnerabilities │    0C     2H     5M   110L     5?  │    0C     0H     1M     6L     6?   
+  
+  
+  ## Environment Variables
+  
+  
+    - NODE_VERSION=16.20.2
+    + NODE_VERSION=18.20.6
+      PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    - YARN_VERSION=1.22.19
+    + YARN_VERSION=1.22.22
+  
+  
+  
+  ## Packages and Vulnerabilities
+  
+  
+    +  134 packages added  
+    -  151 packages removed  
+    ⎌  535 packages changed (↑ 535 upgraded, ↓ 0 downgraded)  
+        57 packages unchanged
+  
+  
+    + 119 vulnerabilities added  
+    - 13 vulnerabilities removed
+  
+  
+     Package                             Type    Version                         Compared Version              
+  
+  -  @colors/colors                      npm                                     1.5.0                         
+  -  @gar/promisify                      npm                                     1.1.3                         
+  +  @isaacs/cliui                       npm     8.0.2                                                         
+     @isaacs/string-locale-compare       npm     1.1.0                           1.1.0                         
+  +  @npmcli/agent                       npm     2.2.2                                                         
+  ↑  @npmcli/arborist                    npm     7.5.4                           5.6.3                         
+  -  @npmcli/ci-detect                   npm                                     2.0.0                         
+  ↑  @npmcli/config                      npm     8.3.4                           4.2.2                         
+  -  @npmcli/disparity-colors            npm                                     2.0.0                         
+  ↑  @npmcli/fs                          npm     3.1.1                           2.1.2                         
+  ↑  @npmcli/git                         npm     5.0.8                           3.0.2                         
+  ↑  @npmcli/installed-package-contents  npm     2.1.0                           1.0.7                         
+  ↑  @npmcli/map-workspaces              npm     3.0.6                           2.0.4                         
+  ↑  @npmcli/metavuln-calculator         npm     7.1.1                           3.1.1                         
+  -  @npmcli/move-file                   npm                                     2.0.1                         
+  ↑  @npmcli/name-from-folder            npm     2.0.0                           1.0.1                         
+  ↑  @npmcli/node-gyp                    npm     3.0.0                           2.0.0                         
+  ↑  @npmcli/package-json                npm     5.2.0                           2.0.0                         
+  ↑  @npmcli/promise-spawn               npm     7.0.2                           3.0.0                         
+  ↑  @npmcli/query                       npm     3.1.0                           1.2.0                         
+  +  @npmcli/redact                      npm     2.0.1                                                         
+  ↑  @npmcli/run-script                  npm     8.1.0                           4.2.1                         
+  +  @pkgjs/parseargs                    npm     0.11.0                                                        
+  +  @sigstore/bundle                    npm     2.3.2                                                         
+  +  @sigstore/core                      npm     1.1.0                                                         
+  +  @sigstore/protobuf-specs            npm     0.3.2                                                         
+  +  @sigstore/sign                      npm     2.3.2                                                         
+  +  @sigstore/tuf                       npm     2.3.4                                                         
+  +  @sigstore/verify                    npm     1.2.1                                                         
+  -  @tootallnate/once                   npm                                     2.0.0                         
+  +  @tufjs/canonical-json               npm     2.0.0                                                         
+  +  @tufjs/models                       npm     2.0.1                                                         
+  ↑  abbrev                              npm     2.0.0                           1.1.1                         
+  ↑  acl                                 deb     2.3.1-3                         2.2.53-4                      
+  ↑  adduser                             deb     3.134                           3.118                         
+  ↑  agent-base                          npm     7.1.1                           6.0.2                         
+  -  agentkeepalive                      npm                                     4.2.1                         
+     aggregate-error                     npm     3.1.0                           3.1.0                         
+  ↑  ansi-regex                          npm     6.0.1                           5.0.1                         
+  ↑  ansi-styles                         npm     6.2.1                           4.3.0                         
+  +  aom                                 deb     3.6.0-1+deb12u1                                               
+  ↑  apr                                 deb     1.7.2-3+deb12u1                 1.6.5-1                       
+  ↑  apr-util                            deb     1.6.3-1                         1.6.1-4+deb10u1               
+     aproba                              npm     2.0.0                           2.0.0                         
+  ↑  apt                                 deb     2.6.1                           1.8.2.3                       
+     └─  +  LOW          CVE-2011-3374   [https://scout.docker.com/v/CVE-2011-3374?s=debian&n=apt&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.6.1]                                        
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+     archy                               npm     1.0.0                           1.0.0                         
+  -  are-we-there-yet                    npm                                     3.0.1                         
+  -  argparse                            pypi                                    1.2.1                         
+  -  asap                                npm                                     2.0.6                         
+  ↑  attr                                deb     1:2.5.1-4                       1:2.4.48-4                    
+  ↑  audit                               deb     1:3.0.9-1                       1:2.8.4-3                     
+  ↑  autoconf                            deb     2.71-3                          2.69-11                       
+  ↑  automake                            deb     1:1.16.5-1.3                    1:1.16.1-4                    
+  ↑  automake-1.16                       deb     1:1.16.5-1.3                    1:1.16.1-4                    
+  ↑  autotools-dev                       deb     20220109.1                      20180224.1                    
+     balanced-match                      npm     1.0.2                           1.0.2                         
+  ↑  base-files                          deb     12.4+deb12u9                    10.3+deb10u13                 
+  ↑  base-passwd                         deb     3.6.1                           3.5.46                        
+  ↑  bash                                deb     5.2.15-2+b7                     5.0-4                         
+  ↑  bin-links                           npm     4.0.4                           3.0.3                         
+  ↑  binary-extensions                   npm     2.3.0                           2.2.0                         
+  ↑  binutils                            deb     2.40-2                          2.31.1-16                     
+     ├─  +  LOW          CVE-2025-0840   [https://scout.docker.com/v/CVE-2025-0840?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                  
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2024-57360  [https://scout.docker.com/v/CVE-2024-57360?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                 
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2024-53589  [https://scout.docker.com/v/CVE-2024-53589?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                 
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  -  LOW          CVE-2023-25587  [https://scout.docker.com/v/CVE-2023-25587?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=10&vr=%3E%3D2.31.1-16]                              
+     │                   0.0                                                                                  
+     ├─  -  LOW          CVE-2023-22608  [https://scout.docker.com/v/CVE-2023-22608?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=10&vr=%3E%3D2.31.1-16]                              
+     │                   0.0                                                                                  
+     ├─  -  LOW          CVE-2023-2222   [https://scout.docker.com/v/CVE-2023-2222?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=10&vr=%3E%3D2.31.1-16]                               
+     │                   0.0                                                                                  
+     ├─  +  LOW          CVE-2023-1972   [https://scout.docker.com/v/CVE-2023-1972?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                  
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  -  LOW          CVE-2021-3487   [https://scout.docker.com/v/CVE-2021-3487?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=10&vr=%3E%3D2.31.1-16]                               
+     │                   0.0                                                                                  
+     ├─  +  LOW          CVE-2021-32256  [https://scout.docker.com/v/CVE-2021-32256?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                 
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2018-9996   [https://scout.docker.com/v/CVE-2018-9996?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                  
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2018-20712  [https://scout.docker.com/v/CVE-2018-20712?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                 
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2018-20673  [https://scout.docker.com/v/CVE-2018-20673?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                 
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     └─  +  LOW          CVE-2017-13716  [https://scout.docker.com/v/CVE-2017-13716?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                 
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  binutils-common                     deb     2.40-2                          2.31.1-16                     
+  ↑  binutils-x86-64-linux-gnu           deb     2.40-2                          2.31.1-16                     
+     brace-expansion                     npm     2.0.1                           2.0.1                         
+  +  brotli                              deb     1.0.9-2                                                       
+  ↑  bsdutils                            deb     1:2.38.1-5+deb12u3              1:2.33.1-0.1                  
+  -  builtins                            npm                                     5.0.1                         
+  ↑  bzip2                               deb     1.0.8-5                         1.0.6-9.2~deb10u2             
+  ↑  ca-certificates                     deb     20230311                        20200601~deb10u2              
+  ↑  cacache                             npm     18.0.3                          16.1.3                        
+  ↑  cairo                               deb     1.16.0-7                        1.16.0-4+deb10u1              
+  ↑  cdebconf                            deb     0.270                           0.249                         
+  ↑  chalk                               npm     5.3.0                           4.1.2                         
+     chownr                              npm     2.0.0                           2.0.0                         
+  +  ci-info                             npm     4.0.0                                                         
+  ↑  cidr-regex                          npm     4.1.1                           3.1.1                         
+     clean-stack                         npm     2.2.0                           2.2.0                         
+     cli-columns                         npm     4.0.0                           4.0.0                         
+  -  cli-table3                          npm                                     0.6.2                         
+  -  clone                               npm                                     1.0.4                         
+  ↑  cmd-shim                            npm     6.0.3                           5.0.0                         
+     color-convert                       npm     2.0.1                           2.0.1                         
+     color-name                          npm     1.1.4                           1.1.4                         
+  -  color-support                       npm                                     1.1.3                         
+  -  columnify                           npm                                     1.6.0                         
+  ↑  comerr-dev                          deb     2.1-1.47.0-2                    2.1-1.44.5-1+deb10u3          
+     common-ancestor-path                npm     1.0.1                           1.0.1                         
+  -  concat-map                          npm                                     0.0.1                         
+  -  console-control-strings             npm                                     1.1.0                         
+  ↑  corepack                            npm     0.29.4                          0.17.0                        
+  ↑  coreutils                           deb     9.1-1                           8.30-3                        
+     └─  +  LOW          CVE-2017-18018  [https://scout.docker.com/v/CVE-2017-18018?s=debian&n=coreutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D9.1-1]                                 
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  cpp                                 deb     4:12.2.0-3                      4:8.3.0-1                     
+  +  cpp-12                              deb     12.2.0-14                                                     
+  -  cpp-8                               deb                                     8.3.0-6                       
+  +  cross-spawn                         npm     7.0.3                                                         
+     └─  +  HIGH         CVE-2024-21538  [https://scout.docker.com/v/CVE-2024-21538?s=github&n=cross-spawn&t=npm&vr=%3E%3D7.0.0%2C%3C7.0.5]                                                
+                         7.5  Inefficient Regular Expression Complexity                                       
+                         ✓ fixed in  7.0.5                
+  
+     cssesc                              npm     3.0.0                           3.0.0                         
+  ↑  curl                                deb     7.88.1-10+deb12u8               7.64.0-4+deb10u6              
+     └─  +  LOW          CVE-2024-2379   [https://scout.docker.com/v/CVE-2024-2379?s=debian&n=curl&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D7.88.1-10%2Bdeb12u8]                         
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  cyrus-sasl2                         deb     2.1.28+dfsg-10                  2.1.27+dfsg-1+deb10u2         
+  ↑  dash                                deb     0.5.12-2                        0.5.10.2-5                    
+  +  dav1d                               deb     1.0.0-2+deb12u1                                               
+  ↑  db-defaults                         deb     5.3.2                           5.3.1+nmu1                    
+  ↑  db5.3                               deb     5.3.28+dfsg2-1                  5.3.28+dfsg1-0.5              
+  ↑  debconf                             deb     1.5.82                          1.5.71+deb10u1                
+  ↑  debian-archive-keyring              deb     2023.3+deb12u1                  2019.1+deb10u2                
+  ↑  debianutils                         deb     5.7-0.5~deb12u1                 4.8.6.1                       
+  ↑  debug                               npm     4.3.5                           4.3.4                         
+  -  debuglog                            npm                                     1.0.1                         
+  ↑  default-libmysqlclient-dev          deb     1.1.0                           1.0.5                         
+  -  defaults                            npm                                     1.0.3                         
+  -  delegates                           npm                                     1.0.0                         
+  -  depd                                npm                                     1.1.2                         
+  -  dezalgo                             npm                                     1.0.4                         
+  ↑  diff                                npm     5.2.0                           5.1.0                         
+  ↑  diffutils                           deb     1:3.8-4                         1:3.7-3                       
+  ↑  dirmngr                             deb     2.2.40-1.1                      2.2.12-1+deb10u2              
+  ↑  djvulibre                           deb     3.5.28-2                        3.5.27.1-10+deb10u1           
+  ↑  dpkg                                deb     1.21.22                         1.19.8                        
+  ↑  dpkg-dev                            deb     1.21.22                         1.19.8                        
+  ↑  e2fsprogs                           deb     1.47.0-2                        1.44.5-1+deb10u3              
+  +  eastasianwidth                      npm     0.2.0                                                         
+  ↑  elfutils                            deb     0.188-2.1                       0.176-1.1                     
+     └─  +  LOW          CVE-2024-25260  [https://scout.docker.com/v/CVE-2024-25260?s=debian&n=elfutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D0.188-2.1]                              
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  emoji-regex                         npm     9.2.2                           8.0.0                         
+     encoding                            npm     0.1.13                          0.1.13                        
+     env-paths                           npm     2.2.1                           2.2.1                         
+     err-code                            npm     2.0.3                           2.0.3                         
+  ↑  expat                               deb     2.5.0-1+deb12u1                 2.2.6-2+deb10u6               
+     ├─  +  LOW          CVE-2024-28757  [https://scout.docker.com/v/CVE-2024-28757?s=debian&n=expat&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-1%2Bdeb12u1]                         
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     └─  +  LOW          CVE-2023-52426  [https://scout.docker.com/v/CVE-2023-52426?s=debian&n=expat&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-1%2Bdeb12u1]                         
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  +  exponential-backoff                 npm     3.1.1                                                         
+  ↑  fastest-levenshtein                 npm     1.0.16                          1.0.12                        
+  -  fdisk                               deb                                     2.33.1-0.1                    
+  ↑  fftw3                               deb     3.3.10-1                        3.3.8-2                       
+  ↑  file                                deb     1:5.44-3                        1:5.35-4+deb10u2              
+  ↑  findutils                           deb     4.9.0-4                         4.6.0+git+20190209-2          
+  ↑  fontconfig                          deb     2.14.1-4                        2.13.1-2                      
+  ↑  fontconfig-config                   deb     2.14.1-4                        2.13.1-2                      
+  ↑  fonts-dejavu                        deb     2.37-6                          2.37-1                        
+  ↑  fonts-dejavu-core                   deb     2.37-6                          2.37-1                        
+  +  foreground-child                    npm     3.2.1                                                         
+  ↑  freetype                            deb     2.12.1+dfsg-5+deb12u3           2.9.1-3+deb10u3               
+     └─  -  UNSPECIFIED  CVE-2023-21261  [https://scout.docker.com/v/CVE-2023-21261?s=debian&n=freetype&ns=debian&t=deb&osn=debian&osv=10&vr=%3E%3D2.9.1-3%2Bdeb10u3]                      
+                         0.0                                                                                  
+  
+  ↑  fribidi                             deb     1.0.8-2.1                       1.0.5-3.1+deb10u2             
+  ↑  fs-minipass                         npm     3.0.3                           2.1.0                         
+  -  fs.realpath                         npm                                     1.0.0                         
+  -  function-bind                       npm                                     1.1.1                         
+  ↑  g++                                 deb     4:12.2.0-3                      4:8.3.0-1                     
+  +  g++-12                              deb     12.2.0-14                                                     
+  -  g++-8                               deb                                     8.3.0-6                       
+  -  gauge                               npm                                     4.0.4                         
+  ↑  gcc                                 deb     4:12.2.0-3                      4:8.3.0-1                     
+  +  gcc-12                              deb     12.2.0-14                                                     
+     ├─  +  LOW          CVE-2023-4039   [https://scout.docker.com/v/CVE-2023-4039?s=debian&n=gcc-12&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D12.2.0-14]                                 
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     └─  +  LOW          CVE-2022-27943  [https://scout.docker.com/v/CVE-2022-27943?s=debian&n=gcc-12&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D12.2.0-14]                                
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  +  gcc-12-base                         deb     12.2.0-14                                                     
+  -  gcc-8                               deb                                     8.3.0-6                       
+  -  gcc-8-base                          deb                                     8.3.0-6                       
+  ↑  gcc-defaults                        deb     1.203                           1.181                         
+  ↑  gdbm                                deb     1.23-3                          1.18.1-4                      
+  ↑  gdk-pixbuf                          deb     2.42.10+dfsg-1+deb12u1          2.38.1+dfsg-1                 
+  ↑  gir1.2-freedesktop                  deb     1.74.0-3                        1.58.3-2                      
+  ↑  gir1.2-gdkpixbuf-2.0                deb     2.42.10+dfsg-1+deb12u1          2.38.1+dfsg-1                 
+  ↑  gir1.2-glib-2.0                     deb     1.74.0-3                        1.58.3-2                      
+  ↑  gir1.2-rsvg-2.0                     deb     2.54.7+dfsg-1~deb12u1           2.44.10-2.1+deb10u3           
+  ↑  git                                 deb     1:2.39.5-0+deb12u1              1:2.20.1-2+deb10u8            
+     ├─  +  LOW          CVE-2024-52006  [https://scout.docker.com/v/CVE-2024-52006?s=debian&n=git&ns=debian&t=deb&osn=debian&osv=12&vr=%3C1%3A2.39.5-0%2Bdeb12u2]                         
+     │                   2.1                                                                                  
+     │                   ✓ fixed in  1:2.39.5-0+deb12u2   
+     ├─  +  LOW          CVE-2024-50349  [https://scout.docker.com/v/CVE-2024-50349?s=debian&n=git&ns=debian&t=deb&osn=debian&osv=12&vr=%3C1%3A2.39.5-0%2Bdeb12u2]                         
+     │                   2.1                                                                                  
+     │                   ✓ fixed in  1:2.39.5-0+deb12u2   
+     ├─  +  LOW          CVE-2024-52005  [https://scout.docker.com/v/CVE-2024-52005?s=debian&n=git&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1%3A2.39.5-0%2Bdeb12u1]                      
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2022-24975  [https://scout.docker.com/v/CVE-2022-24975?s=debian&n=git&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1%3A2.39.5-0%2Bdeb12u1]                      
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     └─  +  LOW          CVE-2018-1000021 [https://scout.docker.com/v/CVE-2018-1000021?s=debian&n=git&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1%3A2.39.5-0%2Bdeb12u1]                   
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  git-man                             deb     1:2.39.5-0+deb12u1              1:2.20.1-2+deb10u8            
+  ↑  glib2.0                             deb     2.74.6-2+deb12u5                2.58.3-2+deb10u4              
+     ├─  +  LOW          CVE-2012-0039   [https://scout.docker.com/v/CVE-2012-0039?s=debian&n=glib2.0&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.74.6-2%2Bdeb12u5]                       
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  -  UNSPECIFIED  CVE-2023-25180  [https://scout.docker.com/v/CVE-2023-25180?s=debian&n=glib2.0&ns=debian&t=deb&osn=debian&osv=10&vr=%3E%3D2.58.3-2%2Bdeb10u3]                      
+     │                   0.0                                                                                  
+     └─  -  UNSPECIFIED  CVE-2023-24593  [https://scout.docker.com/v/CVE-2023-24593?s=debian&n=glib2.0&ns=debian&t=deb&osn=debian&osv=10&vr=%3E%3D2.58.3-2%2Bdeb10u3]                      
+                         0.0                                                                                  
+  
+  ↑  glibc                               deb     2.36-9+deb12u9                  2.28-10+deb10u2               
+     ├─  +  LOW          CVE-2019-9192   [https://scout.docker.com/v/CVE-2019-9192?s=debian&n=glibc&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.36-9%2Bdeb12u9]                           
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2019-1010025 [https://scout.docker.com/v/CVE-2019-1010025?s=debian&n=glibc&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.36-9%2Bdeb12u9]                       
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2019-1010024 [https://scout.docker.com/v/CVE-2019-1010024?s=debian&n=glibc&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.36-9%2Bdeb12u9]                       
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2019-1010023 [https://scout.docker.com/v/CVE-2019-1010023?s=debian&n=glibc&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.36-9%2Bdeb12u9]                       
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2019-1010022 [https://scout.docker.com/v/CVE-2019-1010022?s=debian&n=glibc&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.36-9%2Bdeb12u9]                       
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2018-20796  [https://scout.docker.com/v/CVE-2018-20796?s=debian&n=glibc&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.36-9%2Bdeb12u9]                          
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     └─  +  LOW          CVE-2010-4756   [https://scout.docker.com/v/CVE-2010-4756?s=debian&n=glibc&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.36-9%2Bdeb12u9]                           
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  glob                                npm     10.4.2                          8.0.3                         
+  ↑  gmp                                 deb     2:6.2.1+dfsg1-1.1               2:6.1.2+dfsg-4+deb10u1        
+  ↑  gnupg                               deb     2.2.40-1.1                      2.2.12-1+deb10u2              
+  ↑  gnupg-l10n                          deb     2.2.40-1.1                      2.2.12-1+deb10u2              
+  ↑  gnupg-utils                         deb     2.2.40-1.1                      2.2.12-1+deb10u2              
+  ↑  gnupg2                              deb     2.2.40-1.1                      2.2.12-1+deb10u2              
+     └─  +  LOW          CVE-2022-3219   [https://scout.docker.com/v/CVE-2022-3219?s=debian&n=gnupg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.2.40-1.1]                                
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  gnutls28                            deb     3.7.9-2+deb12u3                 3.6.7-4+deb10u10              
+     └─  +  LOW          CVE-2011-3389   [https://scout.docker.com/v/CVE-2011-3389?s=debian&n=gnutls28&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D3.7.9-2%2Bdeb12u3]                       
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  gobject-introspection               deb     1.74.0-3                        1.58.3-2                      
+  ↑  gpg                                 deb     2.2.40-1.1                      2.2.12-1+deb10u2              
+  ↑  gpg-agent                           deb     2.2.40-1.1                      2.2.12-1+deb10u2              
+  ↑  gpg-wks-client                      deb     2.2.40-1.1                      2.2.12-1+deb10u2              
+  ↑  gpg-wks-server                      deb     2.2.40-1.1                      2.2.12-1+deb10u2              
+  ↑  gpgconf                             deb     2.2.40-1.1                      2.2.12-1+deb10u2              
+  ↑  gpgsm                               deb     2.2.40-1.1                      2.2.12-1+deb10u2              
+  ↑  gpgv                                deb     2.2.40-1.1                      2.2.12-1+deb10u2              
+  ↑  graceful-fs                         npm     4.2.11                          4.2.10                        
+  ↑  graphite2                           deb     1.3.14-1                        1.3.13-7                      
+  ↑  grep                                deb     3.8-5                           3.3-1                         
+  ↑  gzip                                deb     1.12-1                          1.9-3+deb10u1                 
+  ↑  harfbuzz                            deb     6.0.0+dfsg-3                    2.3.1-1                       
+  -  has                                 npm                                     1.0.3                         
+  -  has-flag                            npm                                     4.0.0                         
+  -  has-unicode                         npm                                     2.0.1                         
+     hicolor-icon-theme                  deb     0.17-2                          0.17-2                        
+  ↑  hosted-git-info                     npm     7.0.2                           5.2.1                         
+  ↑  hostname                            deb     3.23+nmu1                       3.21                          
+     http-cache-semantics                npm     4.1.1                           4.1.1                         
+  ↑  http-proxy-agent                    npm     7.0.2                           5.0.0                         
+  ↑  https-proxy-agent                   npm     7.0.5                           5.0.1                         
+  -  humanize-ms                         npm                                     1.2.1                         
+     iconv-lite                          npm     0.6.3                           0.6.3                         
+  ↑  icu                                 deb     72.1-3                          63.1-6+deb10u3                
+  ↑  icu-devtools                        deb     72.1-3                          63.1-6+deb10u3                
+  ↑  ignore-walk                         npm     6.0.5                           5.0.1                         
+  -  ilmbase                             deb                                     2.2.1-2                       
+  ↑  imagemagick                         deb     8:6.9.11.60+dfsg-1.6+deb12u2    8:6.9.10.23+dfsg-2.1+deb10u5  
+     ├─  +  LOW          CVE-2023-34152  [https://scout.docker.com/v/CVE-2023-34152?s=debian&n=imagemagick&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D8%3A6.9.11.60%2Bdfsg-1.6%2Bdeb12u2]  
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2021-20311  [https://scout.docker.com/v/CVE-2021-20311?s=debian&n=imagemagick&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D8%3A6.9.11.60%2Bdfsg-1.6%2Bdeb12u2]  
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2018-15607  [https://scout.docker.com/v/CVE-2018-15607?s=debian&n=imagemagick&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D8%3A6.9.11.60%2Bdfsg-1.6%2Bdeb12u2]  
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2017-7275   [https://scout.docker.com/v/CVE-2017-7275?s=debian&n=imagemagick&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D8%3A6.9.11.60%2Bdfsg-1.6%2Bdeb12u2]   
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2017-11755  [https://scout.docker.com/v/CVE-2017-11755?s=debian&n=imagemagick&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D8%3A6.9.11.60%2Bdfsg-1.6%2Bdeb12u2]  
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2017-11754  [https://scout.docker.com/v/CVE-2017-11754?s=debian&n=imagemagick&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D8%3A6.9.11.60%2Bdfsg-1.6%2Bdeb12u2]  
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2016-8678   [https://scout.docker.com/v/CVE-2016-8678?s=debian&n=imagemagick&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D8%3A6.9.11.60%2Bdfsg-1.6%2Bdeb12u2]   
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2008-3134   [https://scout.docker.com/v/CVE-2008-3134?s=debian&n=imagemagick&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D8%3A6.9.11.60%2Bdfsg-1.6%2Bdeb12u2]   
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     └─  +  LOW          CVE-2005-0406   [https://scout.docker.com/v/CVE-2005-0406?s=debian&n=imagemagick&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D8%3A6.9.11.60%2Bdfsg-1.6%2Bdeb12u2]   
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  imagemagick-6-common                deb     8:6.9.11.60+dfsg-1.6+deb12u2    8:6.9.10.23+dfsg-2.1+deb10u5  
+  ↑  imagemagick-6.q16                   deb     8:6.9.11.60+dfsg-1.6+deb12u2    8:6.9.10.23+dfsg-2.1+deb10u5  
+  +  imath                               deb     3.1.6-1                                                       
+     imurmurhash                         npm     0.1.4                           0.1.4                         
+     indent-string                       npm     4.0.0                           4.0.0                         
+  -  infer-owner                         npm                                     1.0.4                         
+  -  inflight                            npm                                     1.0.6                         
+  -  inherits                            npm                                     2.0.4                         
+  ↑  ini                                 npm     4.1.3                           3.0.1                         
+  ↑  init-package-json                   npm     6.0.3                           3.0.2                         
+  ↑  init-system-helpers                 deb     1.65.2                          1.56+nmu1                     
+  -  ip                                  npm                                     2.0.0                         
+     ├─  -  HIGH         CVE-2024-29415  [https://scout.docker.com/v/CVE-2024-29415?s=github&n=ip&t=npm&vr=%3C%3D2.0.1]                                                                    
+     │                   8.1  Server-Side Request Forgery (SSRF)                                              
+     └─  -  LOW          CVE-2023-42282  [https://scout.docker.com/v/CVE-2023-42282?s=github&n=ip&t=npm&vr=%3E%3D2.0.0%2C%3C2.0.1]                                                         
+                         0.0  Server-Side Request Forgery (SSRF)                                              
+  
+  +  ip-address                          npm     9.0.5                                                         
+  ↑  ip-regex                            npm     5.0.0                           4.3.0                         
+  -  iproute2                            deb                                     4.20.0-2+deb10u1              
+  -  iptables                            deb                                     1.8.2-4                       
+  -  iputils                             deb                                     3:20180629-2+deb10u2          
+  -  iputils-ping                        deb                                     3:20180629-2+deb10u2          
+  ↑  is-cidr                             npm     5.1.0                           4.0.2                         
+  -  is-core-module                      npm                                     2.10.0                        
+     is-fullwidth-code-point             npm     3.0.0                           3.0.0                         
+     is-lambda                           npm     1.0.1                           1.0.1                         
+  ↑  isexe                               npm     3.1.1                           2.0.0                         
+  ↑  isl                                 deb     0.25-1.1                        0.20-2                        
+  +  jackspeak                           npm     3.4.0                                                         
+  +  jansson                             deb     2.14-2                                                        
+     └─  +  LOW          CVE-2020-36325  [https://scout.docker.com/v/CVE-2020-36325?s=debian&n=jansson&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.14-2]                                  
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  jbigkit                             deb     2.1-6.1                         2.1-3.1                       
+     └─  +  LOW          CVE-2017-9937   [https://scout.docker.com/v/CVE-2017-9937?s=debian&n=jbigkit&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.1-6.1]                                  
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  +  jsbn                                npm     1.1.0                                                         
+  ↑  json-parse-even-better-errors       npm     3.0.2                           2.3.1                         
+     json-stringify-nice                 npm     1.1.4                           1.1.4                         
+     jsonparse                           npm     1.3.1                           1.3.1                         
+  ↑  just-diff                           npm     6.0.2                           5.1.1                         
+  ↑  just-diff-apply                     npm     5.5.0                           5.4.1                         
+  ↑  keyutils                            deb     1.6.3-2                         1.6-6                         
+  ↑  krb5                                deb     1.20.1-2+deb12u2                1.17-3+deb10u5                
+     ├─  +  LOW          CVE-2024-26461  [https://scout.docker.com/v/CVE-2024-26461?s=debian&n=krb5&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1.20.1-2%2Bdeb12u2]                         
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2024-26458  [https://scout.docker.com/v/CVE-2024-26458?s=debian&n=krb5&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1.20.1-2%2Bdeb12u2]                         
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2018-5709   [https://scout.docker.com/v/CVE-2018-5709?s=debian&n=krb5&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1.20.1-2%2Bdeb12u2]                          
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     └─  +  UNSPECIFIED  CVE-2025-24528  [https://scout.docker.com/v/CVE-2025-24528?s=debian&n=krb5&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1.20.1-2%2Bdeb12u2]                         
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  krb5-multidev                       deb     1.20.1-2+deb12u2                1.17-3+deb10u5                
+  ↑  lcms2                               deb     2.14-2                          2.9-3                         
+  +  lerc                                deb     4.0.0+ds-2                                                    
+  ↑  libacl1                             deb     2.3.1-3                         2.2.53-4                      
+  +  libaom3                             deb     3.6.0-1+deb12u1                                               
+  ↑  libapr1                             deb     1.7.2-3+deb12u1                 1.6.5-1+b1                    
+  ↑  libaprutil1                         deb     1.6.3-1                         1.6.1-4+deb10u1               
+  -  libapt-pkg5.0                       deb                                     1.8.2.3                       
+  +  libapt-pkg6.0                       deb     2.6.1                                                         
+  -  libasan5                            deb                                     8.3.0-6                       
+  +  libasan8                            deb     12.2.0-14                                                     
+  ↑  libassuan                           deb     2.5.5-5                         2.5.2-1                       
+  ↑  libassuan0                          deb     2.5.5-5                         2.5.2-1                       
+  ↑  libatomic1                          deb     12.2.0-14                       8.3.0-6                       
+  ↑  libattr1                            deb     1:2.5.1-4                       1:2.4.48-4                    
+  ↑  libaudit-common                     deb     1:3.0.9-1                       1:2.8.4-3                     
+  ↑  libaudit1                           deb     1:3.0.9-1                       1:2.8.4-3                     
+  ↑  libbinutils                         deb     2.40-2                          2.31.1-16                     
+  ↑  libblkid-dev                        deb     2.38.1-5+deb12u3                2.33.1-0.1                    
+  ↑  libblkid1                           deb     2.38.1-5+deb12u3                2.33.1-0.1                    
+  +  libbrotli-dev                       deb     1.0.9-2+b6                                                    
+  +  libbrotli1                          deb     1.0.9-2+b6                                                    
+  ↑  libbsd                              deb     0.11.7-2                        0.9.1-2+deb10u1               
+  ↑  libbsd0                             deb     0.11.7-2                        0.9.1-2+deb10u1               
+  ↑  libbz2-1.0                          deb     1.0.8-5+b1                      1.0.6-9.2~deb10u2             
+  ↑  libbz2-dev                          deb     1.0.8-5+b1                      1.0.6-9.2~deb10u2             
+  ↑  libc-bin                            deb     2.36-9+deb12u9                  2.28-10+deb10u2               
+  ↑  libc-dev-bin                        deb     2.36-9+deb12u9                  2.28-10+deb10u2               
+  ↑  libc6                               deb     2.36-9+deb12u9                  2.28-10+deb10u2               
+  ↑  libc6-dev                           deb     2.36-9+deb12u9                  2.28-10+deb10u2               
+  ↑  libcairo-gobject2                   deb     1.16.0-7                        1.16.0-4+deb10u1              
+  ↑  libcairo-script-interpreter2        deb     1.16.0-7                        1.16.0-4+deb10u1              
+  ↑  libcairo2                           deb     1.16.0-7                        1.16.0-4+deb10u1              
+  ↑  libcairo2-dev                       deb     1.16.0-7                        1.16.0-4+deb10u1              
+  ↑  libcap-ng                           deb     0.8.3-1                         0.7.9-2                       
+  ↑  libcap-ng0                          deb     0.8.3-1+b3                      0.7.9-2                       
+  ↑  libcap2                             deb     1:2.66-4                        1:2.25-2                      
+  -  libcap2-bin                         deb                                     1:2.25-2                      
+  +  libcbor                             deb     0.8.0-2                                                       
+  +  libcbor0.8                          deb     0.8.0-2+b1                                                    
+  ↑  libcc1-0                            deb     12.2.0-14                       8.3.0-6                       
+  ↑  libcom-err2                         deb     1.47.0-2                        1.44.5-1+deb10u3              
+  -  libcroco                            deb                                     0.6.12-3                      
+  -  libcroco3                           deb                                     0.6.12-3                      
+  +  libcrypt-dev                        deb     1:4.4.33-2                                                    
+  +  libcrypt1                           deb     1:4.4.33-2                                                    
+  +  libctf-nobfd0                       deb     2.40-2                                                        
+  +  libctf0                             deb     2.40-2                                                        
+  ↑  libcurl3-gnutls                     deb     7.88.1-10+deb12u8               7.64.0-4+deb10u6              
+  ↑  libcurl4                            deb     7.88.1-10+deb12u8               7.64.0-4+deb10u6              
+  ↑  libcurl4-openssl-dev                deb     7.88.1-10+deb12u8               7.64.0-4+deb10u6              
+  ↑  libdatrie                           deb     0.2.13-2                        0.2.12-2                      
+  ↑  libdatrie1                          deb     0.2.13-2+b1                     0.2.12-2                      
+  +  libdav1d6                           deb     1.0.0-2+deb12u1                                               
+  ↑  libdb-dev                           deb     5.3.2                           5.3.1+nmu1                    
+  ↑  libdb5.3                            deb     5.3.28+dfsg2-1                  5.3.28+dfsg1-0.5              
+  ↑  libdb5.3-dev                        deb     5.3.28+dfsg2-1                  5.3.28+dfsg1-0.5              
+  ↑  libde265                            deb     1.0.11-1+deb12u2                1.0.11-0+deb10u4              
+  ↑  libde265-0                          deb     1.0.11-1+deb12u2                1.0.11-0+deb10u4              
+  ↑  libdebconfclient0                   deb     0.270                           0.249                         
+  +  libdeflate                          deb     1.14-1                                                        
+  +  libdeflate-dev                      deb     1.14-1                                                        
+  +  libdeflate0                         deb     1.14-1                                                        
+  ↑  libdjvulibre-dev                    deb     3.5.28-2+b1                     3.5.27.1-10+deb10u1           
+  ↑  libdjvulibre-text                   deb     3.5.28-2                        3.5.27.1-10+deb10u1           
+  ↑  libdjvulibre21                      deb     3.5.28-2+b1                     3.5.27.1-10+deb10u1           
+  ↑  libdpkg-perl                        deb     1.21.22                         1.19.8                        
+  ↑  libedit                             deb     3.1-20221030-2                  3.1-20181209-1                
+  ↑  libedit2                            deb     3.1-20221030-2                  3.1-20181209-1                
+  ↑  libelf1                             deb     0.188-2.1                       0.176-1.1                     
+  ↑  liberror-perl                       deb     0.17029-2                       0.17027-2                     
+  ↑  libevent                            deb     2.1.12-stable-8                 2.1.8-stable-4                
+  -  libevent-2.1-6                      deb                                     2.1.8-stable-4                
+  +  libevent-2.1-7                      deb     2.1.12-stable-8                                               
+  -  libevent-core-2.1-6                 deb                                     2.1.8-stable-4                
+  +  libevent-core-2.1-7                 deb     2.1.12-stable-8                                               
+  ↑  libevent-dev                        deb     2.1.12-stable-8                 2.1.8-stable-4                
+  -  libevent-extra-2.1-6                deb                                     2.1.8-stable-4                
+  +  libevent-extra-2.1-7                deb     2.1.12-stable-8                                               
+  -  libevent-openssl-2.1-6              deb                                     2.1.8-stable-4                
+  +  libevent-openssl-2.1-7              deb     2.1.12-stable-8                                               
+  -  libevent-pthreads-2.1-6             deb                                     2.1.8-stable-4                
+  +  libevent-pthreads-2.1-7             deb     2.1.12-stable-8                                               
+  ↑  libexif                             deb     0.6.24-1                        0.6.21-5.1+deb10u5            
+  ↑  libexif-dev                         deb     0.6.24-1+b1                     0.6.21-5.1+deb10u5            
+  ↑  libexif12                           deb     0.6.24-1+b1                     0.6.21-5.1+deb10u5            
+  ↑  libexpat1                           deb     2.5.0-1+deb12u1                 2.2.6-2+deb10u6               
+  ↑  libexpat1-dev                       deb     2.5.0-1+deb12u1                 2.2.6-2+deb10u6               
+  ↑  libext2fs2                          deb     1.47.0-2                        1.44.5-1+deb10u3              
+  -  libfdisk1                           deb                                     2.33.1-0.1                    
+  ↑  libffi                              deb     3.4.4-1                         3.2.1-9                       
+  ↑  libffi-dev                          deb     3.4.4-1                         3.2.1-9                       
+  -  libffi6                             deb                                     3.2.1-9                       
+  +  libffi8                             deb     3.4.4-1                                                       
+  ↑  libfftw3-double3                    deb     3.3.10-1                        3.3.8-2                       
+  +  libfido2                            deb     1.12.0-2                                                      
+  +  libfido2-1                          deb     1.12.0-2+b1                                                   
+  +  libfontconfig-dev                   deb     2.14.1-4                                                      
+  ↑  libfontconfig1                      deb     2.14.1-4                        2.13.1-2                      
+  -  libfontconfig1-dev                  deb                                     2.13.1-2                      
+  +  libfreetype-dev                     deb     2.12.1+dfsg-5+deb12u3                                         
+  ↑  libfreetype6                        deb     2.12.1+dfsg-5+deb12u3           2.9.1-3+deb10u3               
+  ↑  libfreetype6-dev                    deb     2.12.1+dfsg-5+deb12u3           2.9.1-3+deb10u3               
+  ↑  libfribidi0                         deb     1.0.8-2.1                       1.0.5-3.1+deb10u2             
+  +  libgcc-12-dev                       deb     12.2.0-14                                                     
+  -  libgcc-8-dev                        deb                                     8.3.0-6                       
+  +  libgcc-s1                           deb     12.2.0-14                                                     
+  -  libgcc1                             deb                                     1:8.3.0-6                     
+  ↑  libgcrypt20                         deb     1.10.1-3                        1.8.4-5+deb10u1               
+     └─  +  LOW          CVE-2018-6829   [https://scout.docker.com/v/CVE-2018-6829?s=debian&n=libgcrypt20&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1.10.1-3]                             
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  libgdbm-compat4                     deb     1.23-3                          1.18.1-4                      
+  ↑  libgdbm-dev                         deb     1.23-3                          1.18.1-4                      
+  ↑  libgdbm6                            deb     1.23-3                          1.18.1-4                      
+  +  libgdk-pixbuf-2.0-0                 deb     2.42.10+dfsg-1+deb12u1                                        
+  +  libgdk-pixbuf-2.0-dev               deb     2.42.10+dfsg-1+deb12u1                                        
+  -  libgdk-pixbuf2.0-0                  deb                                     2.38.1+dfsg-1                 
+  ↑  libgdk-pixbuf2.0-bin                deb     2.42.10+dfsg-1+deb12u1          2.38.1+dfsg-1                 
+  ↑  libgdk-pixbuf2.0-common             deb     2.42.10+dfsg-1+deb12u1          2.38.1+dfsg-1                 
+  -  libgdk-pixbuf2.0-dev                deb                                     2.38.1+dfsg-1                 
+  ↑  libgirepository-1.0-1               deb     1.74.0-3                        1.58.3-2                      
+  ↑  libglib2.0-0                        deb     2.74.6-2+deb12u5                2.58.3-2+deb10u4              
+  ↑  libglib2.0-bin                      deb     2.74.6-2+deb12u5                2.58.3-2+deb10u4              
+  ↑  libglib2.0-data                     deb     2.74.6-2+deb12u5                2.58.3-2+deb10u4              
+  ↑  libglib2.0-dev                      deb     2.74.6-2+deb12u5                2.58.3-2+deb10u4              
+  ↑  libglib2.0-dev-bin                  deb     2.74.6-2+deb12u5                2.58.3-2+deb10u4              
+  ↑  libgmp-dev                          deb     2:6.2.1+dfsg1-1.1               2:6.1.2+dfsg-4+deb10u1        
+  ↑  libgmp10                            deb     2:6.2.1+dfsg1-1.1               2:6.1.2+dfsg-4+deb10u1        
+  ↑  libgmpxx4ldbl                       deb     2:6.2.1+dfsg1-1.1               2:6.1.2+dfsg-4+deb10u1        
+  -  libgnutls-dane0                     deb                                     3.6.7-4+deb10u10              
+  -  libgnutls-openssl27                 deb                                     3.6.7-4+deb10u10              
+  -  libgnutls28-dev                     deb                                     3.6.7-4+deb10u10              
+  ↑  libgnutls30                         deb     3.7.9-2+deb12u3                 3.6.7-4+deb10u10              
+  -  libgnutlsxx28                       deb                                     3.6.7-4+deb10u10              
+  ↑  libgomp1                            deb     12.2.0-14                       8.3.0-6                       
+  ↑  libgpg-error                        deb     1.46-1                          1.35-1                        
+  ↑  libgpg-error0                       deb     1.46-1                          1.35-1                        
+  +  libgprofng0                         deb     2.40-2                                                        
+  ↑  libgraphite2-3                      deb     1.3.14-1                        1.3.13-7                      
+  ↑  libgssapi-krb5-2                    deb     1.20.1-2+deb12u2                1.17-3+deb10u5                
+  ↑  libgssrpc4                          deb     1.20.1-2+deb12u2                1.17-3+deb10u5                
+  ↑  libharfbuzz0b                       deb     6.0.0+dfsg-3                    2.3.1-1                       
+  ↑  libheif                             deb     1.15.1-1+deb12u1                1.3.2-2~deb10u1               
+     ├─  +  LOW          CVE-2024-25269  [https://scout.docker.com/v/CVE-2024-25269?s=debian&n=libheif&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1.15.1-1%2Bdeb12u1]                      
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     └─  +  LOW          CVE-2023-49463  [https://scout.docker.com/v/CVE-2023-49463?s=debian&n=libheif&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1.15.1-1%2Bdeb12u1]                      
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  libheif1                            deb     1.15.1-1+deb12u1                1.3.2-2~deb10u1               
+  -  libhogweed4                         deb                                     3.4.1-1+deb10u1               
+  +  libhogweed6                         deb     3.8.1-2                                                       
+  ↑  libice                              deb     2:1.0.10-1                      2:1.0.9-2                     
+  ↑  libice-dev                          deb     2:1.0.10-1                      2:1.0.9-2                     
+  ↑  libice6                             deb     2:1.0.10-1                      2:1.0.9-2                     
+  ↑  libicu-dev                          deb     72.1-3                          63.1-6+deb10u3                
+  -  libicu63                            deb                                     63.1-6+deb10u3                
+  +  libicu72                            deb     72.1-3                                                        
+  ↑  libidn2                             deb     2.3.3-1                         2.0.5-1+deb10u1               
+  ↑  libidn2-0                           deb     2.3.3-1+b1                      2.0.5-1+deb10u1               
+  -  libidn2-dev                         deb                                     2.0.5-1+deb10u1               
+  -  libilmbase-dev                      deb                                     2.2.1-2                       
+  -  libilmbase23                        deb                                     2.2.1-2                       
+  +  libimath-3-1-29                     deb     3.1.6-1                                                       
+  +  libimath-dev                        deb     3.1.6-1                                                       
+  -  libisl19                            deb                                     0.20-2                        
+  +  libisl23                            deb     0.25-1.1                                                      
+  ↑  libitm1                             deb     12.2.0-14                       8.3.0-6                       
+  +  libjansson4                         deb     2.14-2                                                        
+  ↑  libjbig-dev                         deb     2.1-6.1                         2.1-3.1+b2                    
+  ↑  libjbig0                            deb     2.1-6.1                         2.1-3.1+b2                    
+  ↑  libjpeg-dev                         deb     1:2.1.5-2                       1:1.5.2-2+deb10u1             
+  ↑  libjpeg-turbo                       deb     1:2.1.5-2                       1:1.5.2-2+deb10u1             
+  ↑  libjpeg62-turbo                     deb     1:2.1.5-2                       1:1.5.2-2+deb10u1             
+  ↑  libjpeg62-turbo-dev                 deb     1:2.1.5-2                       1:1.5.2-2+deb10u1             
+  ↑  libk5crypto3                        deb     1.20.1-2+deb12u2                1.17-3+deb10u5                
+  -  libkadm5clnt-mit11                  deb                                     1.17-3+deb10u5                
+  +  libkadm5clnt-mit12                  deb     1.20.1-2+deb12u2                                              
+  -  libkadm5srv-mit11                   deb                                     1.17-3+deb10u5                
+  +  libkadm5srv-mit12                   deb     1.20.1-2+deb12u2                                              
+  +  libkdb5-10                          deb     1.20.1-2+deb12u2                                              
+  -  libkdb5-9                           deb                                     1.17-3+deb10u5                
+  ↑  libkeyutils1                        deb     1.6.3-2                         1.6-6                         
+  ↑  libkrb5-3                           deb     1.20.1-2+deb12u2                1.17-3+deb10u5                
+  ↑  libkrb5-dev                         deb     1.20.1-2+deb12u2                1.17-3+deb10u5                
+  ↑  libkrb5support0                     deb     1.20.1-2+deb12u2                1.17-3+deb10u5                
+  ↑  libksba                             deb     1.6.3-2                         1.3.5-2+deb10u2               
+  ↑  libksba8                            deb     1.6.3-2                         1.3.5-2+deb10u2               
+  ↑  liblcms2-2                          deb     2.14-2                          2.9-3                         
+  ↑  liblcms2-dev                        deb     2.14-2                          2.9-3                         
+  -  libldap-2.4-2                       deb                                     2.4.47+dfsg-3+deb10u7         
+  +  libldap-2.5-0                       deb     2.5.13+dfsg-5                                                 
+  -  libldap-common                      deb                                     2.4.47+dfsg-3+deb10u7         
+  +  liblerc-dev                         deb     4.0.0+ds-2                                                    
+  +  liblerc4                            deb     4.0.0+ds-2                                                    
+     liblqr                              deb     0.4.2-2.1                       0.4.2-2.1                     
+     liblqr-1-0                          deb     0.4.2-2.1                       0.4.2-2.1                     
+     liblqr-1-0-dev                      deb     0.4.2-2.1                       0.4.2-2.1                     
+  ↑  liblsan0                            deb     12.2.0-14                       8.3.0-6                       
+  ↑  libltdl-dev                         deb     2.4.7-7~deb12u1                 2.4.6-9                       
+  ↑  libltdl7                            deb     2.4.7-7~deb12u1                 2.4.6-9                       
+  ↑  liblz4-1                            deb     1.9.4-1                         1.8.3-1+deb10u1               
+  ↑  liblzma-dev                         deb     5.4.1-0.2                       5.2.4-1+deb10u1               
+  ↑  liblzma5                            deb     5.4.1-0.2                       5.2.4-1+deb10u1               
+  ↑  liblzo2-2                           deb     2.10-2                          2.10-0.1                      
+  ↑  libmagic-mgc                        deb     1:5.44-3                        1:5.35-4+deb10u2              
+  ↑  libmagic1                           deb     1:5.44-3                        1:5.35-4+deb10u2              
+  ↑  libmagickcore-6-arch-config         deb     8:6.9.11.60+dfsg-1.6+deb12u2    8:6.9.10.23+dfsg-2.1+deb10u5  
+  ↑  libmagickcore-6-headers             deb     8:6.9.11.60+dfsg-1.6+deb12u2    8:6.9.10.23+dfsg-2.1+deb10u5  
+  ↑  libmagickcore-6.q16-6               deb     8:6.9.11.60+dfsg-1.6+deb12u2    8:6.9.10.23+dfsg-2.1+deb10u5  
+  ↑  libmagickcore-6.q16-6-extra         deb     8:6.9.11.60+dfsg-1.6+deb12u2    8:6.9.10.23+dfsg-2.1+deb10u5  
+  ↑  libmagickcore-6.q16-dev             deb     8:6.9.11.60+dfsg-1.6+deb12u2    8:6.9.10.23+dfsg-2.1+deb10u5  
+  ↑  libmagickcore-dev                   deb     8:6.9.11.60+dfsg-1.6+deb12u2    8:6.9.10.23+dfsg-2.1+deb10u5  
+  ↑  libmagickwand-6-headers             deb     8:6.9.11.60+dfsg-1.6+deb12u2    8:6.9.10.23+dfsg-2.1+deb10u5  
+  ↑  libmagickwand-6.q16-6               deb     8:6.9.11.60+dfsg-1.6+deb12u2    8:6.9.10.23+dfsg-2.1+deb10u5  
+  ↑  libmagickwand-6.q16-dev             deb     8:6.9.11.60+dfsg-1.6+deb12u2    8:6.9.10.23+dfsg-2.1+deb10u5  
+  ↑  libmagickwand-dev                   deb     8:6.9.11.60+dfsg-1.6+deb12u2    8:6.9.10.23+dfsg-2.1+deb10u5  
+  ↑  libmariadb-dev                      deb     1:10.11.6-0+deb12u1             1:10.3.39-0+deb10u1           
+  ↑  libmariadb-dev-compat               deb     1:10.11.6-0+deb12u1             1:10.3.39-0+deb10u1           
+  ↑  libmariadb3                         deb     1:10.11.6-0+deb12u1             1:10.3.39-0+deb10u1           
+  ↑  libmaxminddb                        deb     1.7.1-1                         1.3.2-1+deb10u1               
+  ↑  libmaxminddb-dev                    deb     1.7.1-1                         1.3.2-1+deb10u1               
+  ↑  libmaxminddb0                       deb     1.7.1-1                         1.3.2-1+deb10u1               
+  +  libmd                               deb     1.0.4-2                                                       
+  +  libmd0                              deb     1.0.4-2                                                       
+  -  libmnl                              deb                                     1.0.4-2                       
+  -  libmnl0                             deb                                     1.0.4-2                       
+  ↑  libmount-dev                        deb     2.38.1-5+deb12u3                2.33.1-0.1                    
+  ↑  libmount1                           deb     2.38.1-5+deb12u3                2.33.1-0.1                    
+  ↑  libmpc3                             deb     1.3.1-1                         1.1.0-1                       
+  -  libmpdec2                           deb                                     2.4.2-2                       
+  ↑  libmpfr6                            deb     4.2.0-1                         4.0.2-1                       
+  -  libmpx2                             deb                                     8.3.0-6                       
+  ↑  libncurses-dev                      deb     6.4-4                           6.1+20181013-2+deb10u3        
+  ↑  libncurses5-dev                     deb     6.4-4                           6.1+20181013-2+deb10u3        
+  ↑  libncurses6                         deb     6.4-4                           6.1+20181013-2+deb10u3        
+  ↑  libncursesw5-dev                    deb     6.4-4                           6.1+20181013-2+deb10u3        
+  ↑  libncursesw6                        deb     6.4-4                           6.1+20181013-2+deb10u3        
+  -  libnettle6                          deb                                     3.4.1-1+deb10u1               
+  +  libnettle8                          deb     3.8.1-2                                                       
+  ↑  libnghttp2-14                       deb     1.52.0-1+deb12u2                1.36.0-2+deb10u1              
+  ↑  libnpmaccess                        npm     8.0.6                           6.0.4                         
+  ↑  libnpmdiff                          npm     6.1.4                           4.0.5                         
+  ↑  libnpmexec                          npm     8.1.3                           4.0.14                        
+  ↑  libnpmfund                          npm     5.0.12                          3.0.5                         
+  ↑  libnpmhook                          npm     10.0.5                          8.0.4                         
+  ↑  libnpmorg                           npm     6.0.6                           4.0.4                         
+  ↑  libnpmpack                          npm     7.0.4                           4.1.3                         
+  ↑  libnpmpublish                       npm     9.0.9                           6.0.5                         
+  ↑  libnpmsearch                        npm     7.0.6                           5.0.4                         
+  ↑  libnpmteam                          npm     6.0.5                           4.0.4                         
+  ↑  libnpmversion                       npm     6.0.3                           3.0.7                         
+  ↑  libnpth0                            deb     1.6-3                           1.6-1                         
+  +  libnsl                              deb     1.3.0-2                                                       
+  +  libnsl-dev                          deb     1.3.0-2                                                       
+  +  libnsl2                             deb     1.3.0-2                                                       
+  ↑  libnuma1                            deb     2.0.16-1                        2.0.12-1                      
+  +  libopenexr-3-1-30                   deb     3.1.5-5                                                       
+  ↑  libopenexr-dev                      deb     3.1.5-5                         2.2.1-4.1+deb10u2             
+  -  libopenexr23                        deb                                     2.2.1-4.1+deb10u2             
+  ↑  libopenjp2-7                        deb     2.5.0-2                         2.3.0-2+deb10u2               
+  ↑  libopenjp2-7-dev                    deb     2.5.0-2                         2.3.0-2+deb10u2               
+  -  libp11-kit-dev                      deb                                     0.23.15-2+deb10u1             
+  ↑  libp11-kit0                         deb     0.24.1-2                        0.23.15-2+deb10u1             
+  ↑  libpam-modules                      deb     1.5.2-6+deb12u1                 1.3.1-5                       
+  ↑  libpam-modules-bin                  deb     1.5.2-6+deb12u1                 1.3.1-5                       
+  ↑  libpam-runtime                      deb     1.5.2-6+deb12u1                 1.3.1-5                       
+  ↑  libpam0g                            deb     1.5.2-6+deb12u1                 1.3.1-5                       
+  ↑  libpango-1.0-0                      deb     1.50.12+ds-1                    1.42.4-8~deb10u1              
+  ↑  libpangocairo-1.0-0                 deb     1.50.12+ds-1                    1.42.4-8~deb10u1              
+  ↑  libpangoft2-1.0-0                   deb     1.50.12+ds-1                    1.42.4-8~deb10u1              
+  -  libpcre16-3                         deb                                     2:8.39-12                     
+  +  libpcre2-16-0                       deb     10.42-1                                                       
+  +  libpcre2-32-0                       deb     10.42-1                                                       
+  ↑  libpcre2-8-0                        deb     10.42-1                         10.32-5+deb10u1               
+  +  libpcre2-dev                        deb     10.42-1                                                       
+  +  libpcre2-posix3                     deb     10.42-1                                                       
+  -  libpcre3                            deb                                     2:8.39-12                     
+  -  libpcre3-dev                        deb                                     2:8.39-12                     
+  -  libpcre32-3                         deb                                     2:8.39-12                     
+  -  libpcrecpp0v5                       deb                                     2:8.39-12                     
+  -  libperl5.28                         deb                                     5.28.1-6+deb10u1              
+  +  libperl5.36                         deb     5.36.0-7+deb12u1                                              
+  ↑  libpixman-1-0                       deb     0.42.2-1                        0.36.0-1+deb10u1              
+  ↑  libpixman-1-dev                     deb     0.42.2-1                        0.36.0-1+deb10u1              
+  +  libpkgconf3                         deb     1.8.1-1                                                       
+  ↑  libpng-dev                          deb     1.6.39-2                        1.6.36-6                      
+  ↑  libpng1.6                           deb     1.6.39-2                        1.6.36-6                      
+     └─  +  LOW          CVE-2021-4214   [https://scout.docker.com/v/CVE-2021-4214?s=debian&n=libpng1.6&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1.6.39-2]                               
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  libpng16-16                         deb     1.6.39-2                        1.6.36-6                      
+  ↑  libpq-dev                           deb     15.10-0+deb12u1                 11.20-0+deb10u1               
+  ↑  libpq5                              deb     15.10-0+deb12u1                 11.20-0+deb10u1               
+  +  libproc2-0                          deb     2:4.0.2-3                                                     
+  -  libprocps7                          deb                                     2:3.3.15-2                    
+  ↑  libpsl                              deb     0.21.2-1                        0.20.2-2                      
+  ↑  libpsl5                             deb     0.21.2-1                        0.20.2-2                      
+     libpthread-stubs                    deb     0.4-1                           0.4-1                         
+     libpthread-stubs0-dev               deb     0.4-1                           0.4-1                         
+  -  libpython-stdlib                    deb                                     2.7.16-1                      
+  -  libpython2-stdlib                   deb                                     2.7.16-1                      
+  -  libpython2.7-minimal                deb                                     2.7.16-2+deb10u2              
+  -  libpython2.7-stdlib                 deb                                     2.7.16-2+deb10u2              
+  ↑  libpython3-stdlib                   deb     3.11.2-1+b1                     3.7.3-1                       
+  +  libpython3.11-minimal               deb     3.11.2-6+deb12u5                                              
+  +  libpython3.11-stdlib                deb     3.11.2-6+deb12u5                                              
+  -  libpython3.7-minimal                deb                                     3.7.3-2+deb10u5               
+  -  libpython3.7-stdlib                 deb                                     3.7.3-2+deb10u5               
+  ↑  libquadmath0                        deb     12.2.0-14                       8.3.0-6                       
+  ↑  libreadline-dev                     deb     8.2-1.3                         7.0-5                         
+  -  libreadline7                        deb                                     7.0-5                         
+  +  libreadline8                        deb     8.2-1.3                                                       
+  ↑  librsvg                             deb     2.54.7+dfsg-1~deb12u1           2.44.10-2.1+deb10u3           
+  ↑  librsvg2-2                          deb     2.54.7+dfsg-1~deb12u1           2.44.10-2.1+deb10u3           
+  ↑  librsvg2-common                     deb     2.54.7+dfsg-1~deb12u1           2.44.10-2.1+deb10u3           
+  ↑  librsvg2-dev                        deb     2.54.7+dfsg-1~deb12u1           2.44.10-2.1+deb10u3           
+  ↑  librtmp1                            deb     2.4+20151223.gitfa8646d.1-2+b2  2.4+20151223.gitfa8646d.1-2   
+  ↑  libsasl2-2                          deb     2.1.28+dfsg-10                  2.1.27+dfsg-1+deb10u2         
+  ↑  libsasl2-modules-db                 deb     2.1.28+dfsg-10                  2.1.27+dfsg-1+deb10u2         
+  ↑  libseccomp                          deb     2.5.4-1+deb12u1                 2.3.3-4                       
+  ↑  libseccomp2                         deb     2.5.4-1+deb12u1                 2.3.3-4                       
+  ↑  libselinux                          deb     3.4-1                           2.8-1                         
+  ↑  libselinux1                         deb     3.4-1+b6                        2.8-1+b1                      
+  ↑  libselinux1-dev                     deb     3.4-1+b6                        2.8-1+b1                      
+  ↑  libsemanage                         deb     3.4-1                           2.8-2                         
+  ↑  libsemanage-common                  deb     3.4-1                           2.8-2                         
+  -  libsemanage1                        deb                                     2.8-2                         
+  +  libsemanage2                        deb     3.4-1+b5                                                      
+  ↑  libsepol                            deb     3.4-2.1                         2.8-1                         
+  +  libsepol-dev                        deb     3.4-2.1                                                       
+  -  libsepol1                           deb                                     2.8-1                         
+  -  libsepol1-dev                       deb                                     2.8-1                         
+  +  libsepol2                           deb     3.4-2.1                                                       
+  ↑  libserf-1-1                         deb     1.3.9-11                        1.3.9-7+b10                   
+  -  libsigsegv                          deb                                     2.12-2                        
+  -  libsigsegv2                         deb                                     2.12-2                        
+     libsm                               deb     2:1.2.3-1                       2:1.2.3-1                     
+     libsm-dev                           deb     2:1.2.3-1                       2:1.2.3-1                     
+     libsm6                              deb     2:1.2.3-1                       2:1.2.3-1                     
+  ↑  libsmartcols1                       deb     2.38.1-5+deb12u3                2.33.1-0.1                    
+  ↑  libsqlite3-0                        deb     3.40.1-2+deb12u1                3.27.2-3+deb10u2              
+  ↑  libsqlite3-dev                      deb     3.40.1-2+deb12u1                3.27.2-3+deb10u2              
+  ↑  libss2                              deb     1.47.0-2                        1.44.5-1+deb10u3              
+  ↑  libssh2                             deb     1.10.0-3                        1.8.0-2.1                     
+  ↑  libssh2-1                           deb     1.10.0-3+b1                     1.8.0-2.1                     
+  ↑  libssl-dev                          deb     3.0.15-1~deb12u1                1.1.1n-0+deb10u6              
+  -  libssl1.1                           deb                                     1.1.1n-0+deb10u6              
+  +  libssl3                             deb     3.0.15-1~deb12u1                                              
+  +  libstdc++-12-dev                    deb     12.2.0-14                                                     
+  -  libstdc++-8-dev                     deb                                     8.3.0-6                       
+  ↑  libstdc++6                          deb     12.2.0-14                       8.3.0-6                       
+  ↑  libsvn1                             deb     1.14.2-4+b2                     1.10.4-1+deb10u3              
+  ↑  libsystemd0                         deb     252.33-1~deb12u1                241-7~deb10u10                
+  ↑  libtasn1-6                          deb     4.19.0-2                        4.13-3+deb10u1                
+  -  libtasn1-6-dev                      deb                                     4.13-3+deb10u1                
+  ↑  libthai                             deb     0.1.29-1                        0.1.28-2                      
+  ↑  libthai-data                        deb     0.1.29-1                        0.1.28-2                      
+  ↑  libthai0                            deb     0.1.29-1                        0.1.28-2                      
+  ↑  libtiff-dev                         deb     4.5.0-6+deb12u2                 4.1.0+git191117-2~deb10u8     
+  -  libtiff5                            deb                                     4.1.0+git191117-2~deb10u8     
+  +  libtiff6                            deb     4.5.0-6+deb12u2                                               
+  -  libtiffxx5                          deb                                     4.1.0+git191117-2~deb10u8     
+  +  libtiffxx6                          deb     4.5.0-6+deb12u2                                               
+  ↑  libtinfo6                           deb     6.4-4                           6.1+20181013-2+deb10u3        
+  +  libtirpc                            deb     1.3.3+ds-1                                                    
+  +  libtirpc-common                     deb     1.3.3+ds-1                                                    
+  +  libtirpc-dev                        deb     1.3.3+ds-1                                                    
+  +  libtirpc3                           deb     1.3.3+ds-1                                                    
+  ↑  libtool                             deb     2.4.7-7~deb12u1                 2.4.6-9                       
+  -  libtsan0                            deb                                     8.3.0-6                       
+  +  libtsan2                            deb     12.2.0-14                                                     
+  ↑  libubsan1                           deb     12.2.0-14                       8.3.0-6                       
+  ↑  libudev1                            deb     252.33-1~deb12u1                241-7~deb10u10                
+  -  libunbound8                         deb                                     1.9.0-2+deb10u3               
+  ↑  libunistring                        deb     1.0-2                           0.9.10-1                      
+  ↑  libunistring2                       deb     1.0-2                           0.9.10-1                      
+  ↑  libutf8proc2                        deb     2.8.0-1                         2.3.0-1                       
+  ↑  libuuid1                            deb     2.38.1-5+deb12u3                2.33.1-0.1                    
+  ↑  libwebp                             deb     1.2.4-0.2+deb12u1               0.6.1-2+deb10u2               
+     └─  -  UNSPECIFIED  CVE-2023-5129   [https://scout.docker.com/v/CVE-2023-5129?s=debian&n=libwebp&ns=debian&t=deb&osn=debian&osv=10&vr=%3C0.6.1-2%2Bdeb10u3]                           
+                         0.0                                                                                  
+  
+  ↑  libwebp-dev                         deb     1.2.4-0.2+deb12u1               0.6.1-2+deb10u2               
+  -  libwebp6                            deb                                     0.6.1-2+deb10u2               
+  +  libwebp7                            deb     1.2.4-0.2+deb12u1                                             
+  ↑  libwebpdemux2                       deb     1.2.4-0.2+deb12u1               0.6.1-2+deb10u2               
+  ↑  libwebpmux3                         deb     1.2.4-0.2+deb12u1               0.6.1-2+deb10u2               
+  ↑  libwmf                              deb     0.2.12-5.1                      0.2.8.4-14                    
+     ├─  +  MEDIUM       CVE-2009-3546   [https://scout.docker.com/v/CVE-2009-3546?s=debian&n=libwmf&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D0.2.12-5.1]                                
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  MEDIUM       CVE-2007-3996   [https://scout.docker.com/v/CVE-2007-3996?s=debian&n=libwmf&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D0.2.12-5.1]                                
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2007-3477   [https://scout.docker.com/v/CVE-2007-3477?s=debian&n=libwmf&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D0.2.12-5.1]                                
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     └─  +  LOW          CVE-2007-3476   [https://scout.docker.com/v/CVE-2007-3476?s=debian&n=libwmf&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D0.2.12-5.1]                                
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  +  libwmf-0.2-7                        deb     0.2.12-5.1                                                    
+  ↑  libwmf-dev                          deb     0.2.12-5.1                      0.2.8.4-14                    
+  -  libwmf0.2-7                         deb                                     0.2.8.4-14                    
+  +  libwmflite-0.2-7                    deb     0.2.12-5.1                                                    
+  ↑  libx11                              deb     2:1.8.4-2+deb12u2               2:1.6.7-1+deb10u3             
+  ↑  libx11-6                            deb     2:1.8.4-2+deb12u2               2:1.6.7-1+deb10u3             
+  ↑  libx11-data                         deb     2:1.8.4-2+deb12u2               2:1.6.7-1+deb10u3             
+  ↑  libx11-dev                          deb     2:1.8.4-2+deb12u2               2:1.6.7-1+deb10u3             
+  -  libx265-165                         deb                                     2.9-4                         
+  +  libx265-199                         deb     3.5-2+b1                                                      
+  ↑  libxau                              deb     1:1.0.9-1                       1:1.0.8-1                     
+  ↑  libxau-dev                          deb     1:1.0.9-1                       1:1.0.8-1+b2                  
+  ↑  libxau6                             deb     1:1.0.9-1                       1:1.0.8-1+b2                  
+  ↑  libxcb                              deb     1.15-1                          1.13.1-2                      
+  ↑  libxcb-render0                      deb     1.15-1                          1.13.1-2                      
+  ↑  libxcb-render0-dev                  deb     1.15-1                          1.13.1-2                      
+  ↑  libxcb-shm0                         deb     1.15-1                          1.13.1-2                      
+  ↑  libxcb-shm0-dev                     deb     1.15-1                          1.13.1-2                      
+  ↑  libxcb1                             deb     1.15-1                          1.13.1-2                      
+  ↑  libxcb1-dev                         deb     1.15-1                          1.13.1-2                      
+  +  libxcrypt                           deb     1:4.4.33-2                                                    
+     libxdmcp                            deb     1:1.1.2-3                       1:1.1.2-3                     
+     libxdmcp-dev                        deb     1:1.1.2-3                       1:1.1.2-3                     
+     libxdmcp6                           deb     1:1.1.2-3                       1:1.1.2-3                     
+  ↑  libxext                             deb     2:1.3.4-1                       2:1.3.3-1                     
+  ↑  libxext-dev                         deb     2:1.3.4-1+b1                    2:1.3.3-1+b2                  
+  ↑  libxext6                            deb     2:1.3.4-1+b1                    2:1.3.3-1+b2                  
+  ↑  libxml2                             deb     2.9.14+dfsg-1.3~deb12u1         2.9.4+dfsg1-7+deb10u6         
+     ├─  +  HIGH         CVE-2022-49043  [https://scout.docker.com/v/CVE-2022-49043?s=debian&n=libxml2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.9.14%2Bdfsg-1.3%7Edeb12u1]             
+     │                   8.1                                                                                  
+     │                   ✗ not fixed                      
+     └─  +  LOW          CVE-2024-34459  [https://scout.docker.com/v/CVE-2024-34459?s=debian&n=libxml2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.9.14%2Bdfsg-1.3%7Edeb12u1]             
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  libxml2-dev                         deb     2.9.14+dfsg-1.3~deb12u1         2.9.4+dfsg1-7+deb10u6         
+  ↑  libxrender                          deb     1:0.9.10-1.1                    1:0.9.10-1                    
+  ↑  libxrender-dev                      deb     1:0.9.10-1.1                    1:0.9.10-1                    
+  ↑  libxrender1                         deb     1:0.9.10-1.1                    1:0.9.10-1                    
+  ↑  libxslt                             deb     1.1.35-1                        1.1.32-2.2~deb10u2            
+     └─  +  LOW          CVE-2015-9019   [https://scout.docker.com/v/CVE-2015-9019?s=debian&n=libxslt&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1.1.35-1]                                 
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  libxslt1-dev                        deb     1.1.35-1                        1.1.32-2.2~deb10u2            
+  ↑  libxslt1.1                          deb     1.1.35-1                        1.1.32-2.2~deb10u2            
+  ↑  libxt                               deb     1:1.2.1-1.1                     1:1.1.5-1                     
+  ↑  libxt-dev                           deb     1:1.2.1-1.1                     1:1.1.5-1+b3                  
+  ↑  libxt6                              deb     1:1.2.1-1.1                     1:1.1.5-1+b3                  
+  -  libxtables12                        deb                                     1.8.2-4                       
+  +  libxxhash0                          deb     0.8.1-1                                                       
+  ↑  libyaml                             deb     0.2.5-1                         0.2.1-1                       
+  ↑  libyaml-0-2                         deb     0.2.5-1                         0.2.1-1                       
+  ↑  libyaml-dev                         deb     0.2.5-1                         0.2.1-1                       
+  ↑  libzstd                             deb     1.5.4+dfsg2-5                   1.3.8+dfsg-3+deb10u2          
+  +  libzstd-dev                         deb     1.5.4+dfsg2-5                                                 
+  ↑  libzstd1                            deb     1.5.4+dfsg2-5                   1.3.8+dfsg-3+deb10u2          
+  ↑  linux                               deb     6.1.123-1                       4.19.289-2                    
+  ↑  linux-libc-dev                      deb     6.1.123-1                       4.19.289-2                    
+  ↑  login                               deb     1:4.13+dfsg1-1+b1               1:4.5-1.1                     
+  +  logsave                             deb     1.47.0-2                                                      
+  ↑  lru-cache                           npm     10.2.2                          7.13.2                        
+  -  lsb                                 deb                                     10.2019051400                 
+  -  lsb-base                            deb                                     10.2019051400                 
+  ↑  lz4                                 deb     1.9.4-1                         1.8.3-1+deb10u1               
+  ↑  lzo2                                deb     2.10-2                          2.10-0.1                      
+  ↑  m4                                  deb     1.4.19-3                        1.4.18-2                      
+     ├─  +  LOW          CVE-2008-1688   [https://scout.docker.com/v/CVE-2008-1688?s=debian&n=m4&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1.4.19-3]                                      
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     └─  +  LOW          CVE-2008-1687   [https://scout.docker.com/v/CVE-2008-1687?s=debian&n=m4&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1.4.19-3]                                      
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  make                                deb     4.3-4.1                         4.2.1-1.2                     
+  ↑  make-dfsg                           deb     4.3-4.1                         4.2.1-1.2                     
+  ↑  make-fetch-happen                   npm     13.0.1                          10.2.1                        
+  +  mariadb                             deb     1:10.11.6-0+deb12u1                                           
+  -  mariadb-10.3                        deb                                     1:10.3.39-0+deb10u1           
+  ↑  mariadb-common                      deb     1:10.11.6-0+deb12u1             1:10.3.39-0+deb10u1           
+  ↑  mawk                                deb     1.3.4.20200120-3.1              1.3.3-17+b3                   
+  +  media-types                         deb     10.0.0                                                        
+  ↑  mercurial                           pypi    6.3.2                           4.8.2                         
+     └─  -  MEDIUM       CVE-2019-3902   [https://scout.docker.com/v/CVE-2019-3902?s=github&n=mercurial&t=pypi&vr=%3C4.9]                                                                  
+                         5.9  Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')  
+  
+  ↑  mercurial                           deb     6.3.2-1                         4.8.2-1+deb10u1               
+  ↑  mercurial-common                    deb     6.3.2-1                         4.8.2-1+deb10u1               
+  -  mime-support                        deb                                     3.62                          
+  ↑  minimatch                           npm     9.0.5                           5.1.0                         
+  ↑  minipass                            npm     7.1.2                           3.3.4                         
+  ↑  minipass-collect                    npm     2.0.1                           1.0.2                         
+  ↑  minipass-fetch                      npm     3.0.5                           2.1.1                         
+     minipass-flush                      npm     1.0.5                           1.0.5                         
+  -  minipass-json-stream                npm                                     1.0.1                         
+     minipass-pipeline                   npm     1.2.4                           1.2.4                         
+     minipass-sized                      npm     1.0.3                           1.0.3                         
+     minizlib                            npm     2.1.2                           2.1.2                         
+     mkdirp                              npm     1.0.4                           1.0.4                         
+  -  mkdirp-infer-owner                  npm                                     2.0.0                         
+  ↑  mount                               deb     2.38.1-5+deb12u3                2.33.1-0.1                    
+  ↑  mpclib3                             deb     1.3.1-1                         1.1.0-1                       
+  -  mpdecimal                           deb                                     2.4.2-2                       
+  ↑  mpfr4                               deb     4.2.0-1                         4.0.2-1                       
+     ms                                  npm     2.1.3                           2.1.3                         
+  ↑  mute-stream                         npm     1.0.0                           0.0.8                         
+  ↑  mysql-common                        deb     5.8+1.1.0                       5.8+1.0.5                     
+  ↑  mysql-defaults                      deb     1.1.0                           1.0.5                         
+  ↑  ncurses                             deb     6.4-4                           6.1+20181013-2+deb10u3        
+  ↑  ncurses-base                        deb     6.4-4                           6.1+20181013-2+deb10u3        
+  ↑  ncurses-bin                         deb     6.4-4                           6.1+20181013-2+deb10u3        
+     negotiator                          npm     0.6.3                           0.6.3                         
+  ↑  netbase                             deb     6.4                             5.6                           
+  ↑  nettle                              deb     3.8.1-2                         3.4.1-1+deb10u1               
+  -  nettle-dev                          deb                                     3.4.1-1+deb10u1               
+  ↑  nghttp2                             deb     1.52.0-1+deb12u2                1.36.0-2+deb10u1              
+  ↑  node                                github  18.20.6                         16.20.2                       
+  ↑  node-gyp                            npm     10.1.0                          9.1.0                         
+  ↑  nopt                                npm     7.2.1                           6.0.0                         
+  ↑  normalize-package-data              npm     6.0.2                           4.0.1                         
+  ↑  npm                                 npm     10.8.2                          8.19.4                        
+  ↑  npm-audit-report                    npm     5.0.0                           3.0.0                         
+  ↑  npm-bundled                         npm     3.0.1                           2.0.1                         
+  -  npm-init                            npm                                     0.0.0                         
+  ↑  npm-install-checks                  npm     6.3.0                           5.0.0                         
+  ↑  npm-normalize-package-bin           npm     3.0.1                           2.0.0                         
+  ↑  npm-package-arg                     npm     11.0.2                          9.1.0                         
+  ↑  npm-packlist                        npm     8.0.2                           5.1.3                         
+  ↑  npm-pick-manifest                   npm     9.1.0                           7.0.2                         
+  ↑  npm-profile                         npm     10.0.0                          6.2.1                         
+  ↑  npm-registry-fetch                  npm     17.1.0                          13.3.1                        
+  ↑  npm-user-validate                   npm     2.0.1                           1.0.1                         
+  -  npmlog                              npm                                     6.0.2                         
+  ↑  npth                                deb     1.6-3                           1.6-1                         
+  ↑  numactl                             deb     2.0.16-1                        2.0.12-1                      
+  -  once                                npm                                     1.4.0                         
+  -  opener                              npm                                     1.5.2                         
+  ↑  openexr                             deb     3.1.5-5                         2.2.1-4.1+deb10u2             
+     └─  +  LOW          CVE-2017-14988  [https://scout.docker.com/v/CVE-2017-14988?s=debian&n=openexr&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D3.1.5-5]                                 
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  openjpeg2                           deb     2.5.0-2                         2.3.0-2+deb10u2               
+     ├─  +  HIGH         CVE-2021-3575   [https://scout.docker.com/v/CVE-2021-3575?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3C2.5.0-2%2Bdeb12u1]                         
+     │                   7.8                                                                                  
+     │                   ✓ fixed in  2.5.0-2+deb12u1      
+     ├─  +  MEDIUM       CVE-2024-56827  [https://scout.docker.com/v/CVE-2024-56827?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3C2.5.0-2%2Bdeb12u1]                        
+     │                   5.6                                                                                  
+     │                   ✓ fixed in  2.5.0-2+deb12u1      
+     ├─  +  MEDIUM       CVE-2024-56826  [https://scout.docker.com/v/CVE-2024-56826?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3C2.5.0-2%2Bdeb12u1]                        
+     │                   5.6                                                                                  
+     │                   ✓ fixed in  2.5.0-2+deb12u1      
+     ├─  +  MEDIUM       CVE-2023-39327  [https://scout.docker.com/v/CVE-2023-39327?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3C2.5.0-2%2Bdeb12u1]                        
+     │                   4.3                                                                                  
+     │                   ✓ fixed in  2.5.0-2+deb12u1      
+     ├─  +  LOW          CVE-2018-20846  [https://scout.docker.com/v/CVE-2018-20846?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                               
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2018-16376  [https://scout.docker.com/v/CVE-2018-16376?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                               
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2018-16375  [https://scout.docker.com/v/CVE-2018-16375?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                               
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2017-17479  [https://scout.docker.com/v/CVE-2017-17479?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                               
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2016-9581   [https://scout.docker.com/v/CVE-2016-9581?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                                
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2016-9580   [https://scout.docker.com/v/CVE-2016-9580?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                                
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2016-9117   [https://scout.docker.com/v/CVE-2016-9117?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                                
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2016-9116   [https://scout.docker.com/v/CVE-2016-9116?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                                
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2016-9115   [https://scout.docker.com/v/CVE-2016-9115?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                                
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2016-9114   [https://scout.docker.com/v/CVE-2016-9114?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                                
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2016-9113   [https://scout.docker.com/v/CVE-2016-9113?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                                
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     └─  +  LOW          CVE-2016-10505  [https://scout.docker.com/v/CVE-2016-10505?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                               
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  openldap                            deb     2.5.13+dfsg-5                   2.4.47+dfsg-3+deb10u7         
+     ├─  +  LOW          CVE-2020-15719  [https://scout.docker.com/v/CVE-2020-15719?s=debian&n=openldap&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.13%2Bdfsg-5]                        
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2017-17740  [https://scout.docker.com/v/CVE-2017-17740?s=debian&n=openldap&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.13%2Bdfsg-5]                        
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2017-14159  [https://scout.docker.com/v/CVE-2017-14159?s=debian&n=openldap&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.13%2Bdfsg-5]                        
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     └─  +  LOW          CVE-2015-3276   [https://scout.docker.com/v/CVE-2015-3276?s=debian&n=openldap&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.13%2Bdfsg-5]                         
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  openssh                             deb     1:9.2p1-2+deb12u4               1:7.9p1-10+deb10u3            
+     ├─  +  LOW          CVE-2023-51767  [https://scout.docker.com/v/CVE-2023-51767?s=debian&n=openssh&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1%3A9.2p1-2%2Bdeb12u4]                   
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2020-15778  [https://scout.docker.com/v/CVE-2020-15778?s=debian&n=openssh&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1%3A9.2p1-2%2Bdeb12u4]                   
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2020-14145  [https://scout.docker.com/v/CVE-2020-14145?s=debian&n=openssh&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1%3A9.2p1-2%2Bdeb12u4]                   
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2019-6110   [https://scout.docker.com/v/CVE-2019-6110?s=debian&n=openssh&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1%3A9.2p1-2%2Bdeb12u4]                    
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2018-15919  [https://scout.docker.com/v/CVE-2018-15919?s=debian&n=openssh&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1%3A9.2p1-2%2Bdeb12u4]                   
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2016-20012  [https://scout.docker.com/v/CVE-2016-20012?s=debian&n=openssh&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1%3A9.2p1-2%2Bdeb12u4]                   
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2008-3234   [https://scout.docker.com/v/CVE-2008-3234?s=debian&n=openssh&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1%3A9.2p1-2%2Bdeb12u4]                    
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2007-2768   [https://scout.docker.com/v/CVE-2007-2768?s=debian&n=openssh&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1%3A9.2p1-2%2Bdeb12u4]                    
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     └─  +  LOW          CVE-2007-2243   [https://scout.docker.com/v/CVE-2007-2243?s=debian&n=openssh&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1%3A9.2p1-2%2Bdeb12u4]                    
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  openssh-client                      deb     1:9.2p1-2+deb12u4               1:7.9p1-10+deb10u3            
+  ↑  openssl                             deb     3.0.15-1~deb12u1                1.1.1n-0+deb10u6              
+     p-map                               npm     4.0.0                           4.0.0                         
+  ↑  p11-kit                             deb     0.24.1-2                        0.23.15-2+deb10u1             
+  +  package-json-from-dist              npm     1.0.0                                                         
+  ↑  pacote                              npm     18.0.6                          13.6.2                        
+  ↑  pam                                 deb     1.5.2-6+deb12u1                 1.3.1-5                       
+  ↑  pango1.0                            deb     1.50.12+ds-1                    1.42.4-8~deb10u1              
+  ↑  parse-conflict-json                 npm     3.0.1                           2.0.2                         
+  ↑  passwd                              deb     1:4.13+dfsg1-1+b1               1:4.5-1.1                     
+  ↑  patch                               deb     2.7.6-7                         2.7.6-3+deb10u1               
+     ├─  +  LOW          CVE-2021-45261  [https://scout.docker.com/v/CVE-2021-45261?s=debian&n=patch&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.7.6-7]                                   
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2018-6952   [https://scout.docker.com/v/CVE-2018-6952?s=debian&n=patch&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.7.6-7]                                    
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2018-6951   [https://scout.docker.com/v/CVE-2018-6951?s=debian&n=patch&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.7.6-7]                                    
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     └─  +  LOW          CVE-2010-4651   [https://scout.docker.com/v/CVE-2010-4651?s=debian&n=patch&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.7.6-7]                                    
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  -  path-is-absolute                    npm                                     1.0.1                         
+  +  path-key                            npm     3.1.1                                                         
+  +  path-scurry                         npm     1.11.1                                                        
+  ↑  pcre2                               deb     10.42-1                         10.32-5+deb10u1               
+  -  pcre3                               deb                                     2:8.39-12                     
+  ↑  perl                                deb     5.36.0-7+deb12u1                5.28.1-6+deb10u1              
+     ├─  +  LOW          CVE-2023-31486  [https://scout.docker.com/v/CVE-2023-31486?s=debian&n=perl&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D5.36.0-7%2Bdeb12u1]                         
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     └─  +  LOW          CVE-2011-4116   [https://scout.docker.com/v/CVE-2011-4116?s=debian&n=perl&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D5.36.0-7%2Bdeb12u1]                          
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  perl-base                           deb     5.36.0-7+deb12u1                5.28.1-6+deb10u1              
+  -  perl-modules-5.28                   deb                                     5.28.1-6+deb10u1              
+  +  perl-modules-5.36                   deb     5.36.0-7+deb12u1                                              
+  ↑  pinentry                            deb     1.2.1-1                         1.1.0-2                       
+  ↑  pinentry-curses                     deb     1.2.1-1                         1.1.0-2                       
+  ↑  pixman                              deb     0.42.2-1                        0.36.0-1+deb10u1              
+     └─  +  LOW          CVE-2023-37769  [https://scout.docker.com/v/CVE-2023-37769?s=debian&n=pixman&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D0.42.2-1]                                 
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  pkg-config                          deb     1.8.1-1                         0.29-6                        
+  +  pkgconf                             deb     1.8.1-1                                                       
+  +  pkgconf-bin                         deb     1.8.1-1                                                       
+  ↑  postcss-selector-parser             npm     6.1.0                           6.0.10                        
+  -  postgresql-11                       deb                                     11.20-0+deb10u1               
+  +  postgresql-15                       deb     15.10-0+deb12u1                                               
+  ↑  proc-log                            npm     4.2.0                           2.0.1                         
+  ↑  procps                              deb     2:4.0.2-3                       2:3.3.15-2                    
+  +  proggy                              npm     2.0.0                                                         
+     promise-all-reject-late             npm     1.0.1                           1.0.1                         
+  ↑  promise-call-limit                  npm     3.0.1                           1.0.1                         
+     promise-inflight                    npm     1.0.1                           1.0.1                         
+     promise-retry                       npm     2.0.1                           2.0.1                         
+  ↑  promzard                            npm     1.0.2                           0.3.0                         
+  -  python                              deb                                     2.7.16-1                      
+  -  python-defaults                     deb                                     2.7.16-1                      
+  -  python-minimal                      deb                                     2.7.16-1                      
+  -  python2                             deb                                     2.7.16-1                      
+  -  python2-minimal                     deb                                     2.7.16-1                      
+  -  python2.7                           deb                                     2.7.16-2+deb10u2              
+  -  python2.7-minimal                   deb                                     2.7.16-2+deb10u2              
+  ↑  python3                             deb     3.11.2-1+b1                     3.7.3-1                       
+  ↑  python3-defaults                    deb     3.11.2-1                        3.7.3-1                       
+  ↑  python3-distutils                   deb     3.11.2-3                        3.7.3-1                       
+  ↑  python3-lib2to3                     deb     3.11.2-3                        3.7.3-1                       
+  ↑  python3-minimal                     deb     3.11.2-1+b1                     3.7.3-1                       
+  ↑  python3-stdlib-extensions           deb     3.11.2-3                        3.7.3-1                       
+  +  python3.11                          deb     3.11.2-6+deb12u5                                              
+  +  python3.11-minimal                  deb     3.11.2-6+deb12u5                                              
+  -  python3.7                           deb                                     3.7.3-2+deb10u5               
+  -  python3.7-minimal                   deb                                     3.7.3-2+deb10u5               
+     qrcode-terminal                     npm     0.12.0                          0.12.0                        
+  ↑  read                                npm     3.0.1                           1.0.7                         
+  ↑  read-cmd-shim                       npm     4.0.0                           3.0.0                         
+  -  read-package-json                   npm                                     5.0.2                         
+  ↑  read-package-json-fast              npm     3.0.2                           2.0.3                         
+  -  readable-stream                     npm                                     3.6.0                         
+  -  readdir-scoped-modules              npm                                     1.1.0                         
+  ↑  readline                            deb     8.2-1.3                         7.0-5                         
+  ↑  readline-common                     deb     8.2-1.3                         7.0-5                         
+     retry                               npm     0.12.0                          0.12.0                        
+  -  rimraf                              npm                                     3.0.2                         
+  +  rpcsvc-proto                        deb     1.4.3-1                                                       
+     rtmpdump                            deb     2.4+20151223.gitfa8646d.1-2     2.4+20151223.gitfa8646d.1-2   
+  +  rust-sequoia-sq                     deb     0.27.0-2                                                      
+  -  safe-buffer                         npm                                     5.2.1                         
+     safer-buffer                        npm     2.1.2                           2.1.2                         
+  ↑  sed                                 deb     4.9-1                           4.7-1                         
+  ↑  semver                              npm     7.6.2                           7.3.7                         
+     └─  -  HIGH         CVE-2022-25883  [https://scout.docker.com/v/CVE-2022-25883?s=github&n=semver&t=npm&vr=%3E%3D7.0.0%2C%3C7.5.2]                                                     
+                         7.5  Inefficient Regular Expression Complexity                                       
+  
+  ↑  sensible-utils                      deb     0.0.17+nmu1                     0.0.12                        
+  ↑  serf                                deb     1.3.9-11                        1.3.9-7                       
+  -  set-blocking                        npm                                     2.0.0                         
+  ↑  shadow                              deb     1:4.13+dfsg1-1                  1:4.5-1.1                     
+     └─  +  LOW          CVE-2007-5686   [https://scout.docker.com/v/CVE-2007-5686?s=debian&n=shadow&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1%3A4.13%2Bdfsg1-1]                        
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  shared-mime-info                    deb     2.2-1                           1.10-1                        
+  +  shebang-command                     npm     2.0.0                                                         
+  +  shebang-regex                       npm     3.0.0                                                         
+  ↑  signal-exit                         npm     4.1.0                           3.0.7                         
+  +  sigstore                            npm     2.3.1                                                         
+     smart-buffer                        npm     4.2.0                           4.2.0                         
+  ↑  socks                               npm     2.8.3                           2.7.0                         
+  ↑  socks-proxy-agent                   npm     8.0.4                           7.0.0                         
+  ↑  spdx-correct                        npm     3.2.0                           3.1.1                         
+  ↑  spdx-exceptions                     npm     2.5.0                           2.3.0                         
+  ↑  spdx-expression-parse               npm     4.0.0                           3.0.1                         
+  ↑  spdx-license-ids                    npm     3.0.18                          3.0.11                        
+  +  sprintf-js                          npm     1.1.3                                                         
+  +  sq                                  deb     0.27.0-2+b1                                                   
+  ↑  sqlite3                             deb     3.40.1-2+deb12u1                3.27.2-3+deb10u2              
+     └─  +  LOW          CVE-2021-45346  [https://scout.docker.com/v/CVE-2021-45346?s=debian&n=sqlite3&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D3.40.1-2%2Bdeb12u1]                      
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  ↑  ssri                                npm     10.0.6                          9.0.1                         
+  ↑  string-width                        npm     5.1.2                           4.2.3                         
+  -  string_decoder                      npm                                     1.3.0                         
+  ↑  strip-ansi                          npm     7.1.0                           6.0.1                         
+  ↑  subversion                          deb     1.14.2-4                        1.10.4-1+deb10u3              
+  ↑  supports-color                      npm     9.4.0                           7.2.0                         
+  ↑  systemd                             deb     252.33-1~deb12u1                241-7~deb10u10                
+     ├─  +  LOW          CVE-2023-31439  [https://scout.docker.com/v/CVE-2023-31439?s=debian&n=systemd&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D252.33-1%7Edeb12u1]                      
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2023-31438  [https://scout.docker.com/v/CVE-2023-31438?s=debian&n=systemd&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D252.33-1%7Edeb12u1]                      
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2023-31437  [https://scout.docker.com/v/CVE-2023-31437?s=debian&n=systemd&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D252.33-1%7Edeb12u1]                      
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     └─  +  LOW          CVE-2013-4392   [https://scout.docker.com/v/CVE-2013-4392?s=debian&n=systemd&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D252.33-1%7Edeb12u1]                       
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  sysvinit                            deb     3.06-4                          2.93-8                        
+  ↑  sysvinit-utils                      deb     3.06-4                          2.93-8                        
+  ↑  tar                                 deb     1.34+dfsg-1.2+deb12u1           1.30+dfsg-6                   
+     └─  +  LOW          CVE-2005-2541   [https://scout.docker.com/v/CVE-2005-2541?s=debian&n=tar&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1.34%2Bdfsg-1.2%2Bdeb12u1]                    
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  ↑  tar                                 npm     6.2.1                           6.1.11                        
+     └─  -  MEDIUM       CVE-2024-28863  [https://scout.docker.com/v/CVE-2024-28863?s=github&n=tar&t=npm&vr=%3C6.2.1]                                                                      
+                         6.5  Uncontrolled Resource Consumption                                               
+  
+     text-table                          npm     0.2.0                           0.2.0                         
+  ↑  tiff                                deb     4.5.0-6+deb12u2                 4.1.0+git191117-2~deb10u8     
+     ├─  +  LOW          CVE-2024-6716   [https://scout.docker.com/v/CVE-2024-6716?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6%2Bdeb12u1]                           
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2023-6228   [https://scout.docker.com/v/CVE-2023-6228?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6%2Bdeb12u2]                           
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2023-3164   [https://scout.docker.com/v/CVE-2023-3164?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6%2Bdeb12u2]                           
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2023-1916   [https://scout.docker.com/v/CVE-2023-1916?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6%2Bdeb12u2]                           
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2022-1210   [https://scout.docker.com/v/CVE-2022-1210?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6%2Bdeb12u2]                           
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2018-10126  [https://scout.docker.com/v/CVE-2018-10126?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6%2Bdeb12u2]                          
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2017-9117   [https://scout.docker.com/v/CVE-2017-9117?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6%2Bdeb12u2]                           
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2017-5563   [https://scout.docker.com/v/CVE-2017-5563?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6%2Bdeb12u2]                           
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2017-17973  [https://scout.docker.com/v/CVE-2017-17973?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6%2Bdeb12u2]                          
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  LOW          CVE-2017-16232  [https://scout.docker.com/v/CVE-2017-16232?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6%2Bdeb12u2]                          
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     ├─  +  UNSPECIFIED  CVE-2023-38289  [https://scout.docker.com/v/CVE-2023-38289?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6]                                    
+     │                   0.0                                                                                  
+     │                   ✗ not fixed                      
+     └─  +  UNSPECIFIED  CVE-2023-38288  [https://scout.docker.com/v/CVE-2023-38288?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6]                                    
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+     tiny-relative-date                  npm     1.3.0                           1.3.0                         
+  ↑  treeverse                           npm     3.0.0                           2.0.0                         
+  +  tuf-js                              npm     2.2.1                                                         
+  ↑  tzdata                              deb     2024b-0+deb12u1                 2021a-0+deb10u11              
+  ↑  ucf                                 deb     3.0043+nmu1+deb12u1             3.0038+nmu1                   
+  -  unbound                             deb                                     1.9.0-2+deb10u3               
+  ↑  unique-filename                     npm     3.0.0                           2.0.1                         
+  ↑  unique-slug                         npm     4.0.0                           3.0.0                         
+  ↑  unzip                               deb     6.0-28                          6.0-23+deb10u3                
+     └─  +  LOW          CVE-2021-4217   [https://scout.docker.com/v/CVE-2021-4217?s=debian&n=unzip&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D6.0-28]                                     
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  +  usr-is-merged                       deb     37~deb12u1                                                    
+  +  usrmerge                            deb     37~deb12u1                                                    
+  ↑  utf8proc                            deb     2.8.0-1                         2.3.0-1                       
+     util-deprecate                      npm     1.0.2                           1.0.2                         
+  ↑  util-linux                          deb     2.38.1-5+deb12u3                2.33.1-0.1                    
+     └─  +  LOW          CVE-2022-0563   [https://scout.docker.com/v/CVE-2022-0563?s=debian&n=util-linux&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.38.1-5%2Bdeb12u3]                    
+                         0.0                                                                                  
+                         ✗ not fixed                      
+  
+  +  util-linux-extra                    deb     2.38.1-5+deb12u3                                              
+  ↑  uuid-dev                            deb     2.38.1-5+deb12u3                2.33.1-0.1                    
+     validate-npm-package-license        npm     3.0.4                           3.0.4                         
+  ↑  validate-npm-package-name           npm     5.0.1                           4.0.0                         
+  ↑  walk-up-path                        npm     3.0.1                           1.0.0                         
+  -  wcwidth                             npm                                     1.0.1                         
+  ↑  wget                                deb     1.21.3-1+b2                     1.20.1-1.1                    
+  ↑  which                               npm     4.0.0                           2.0.2                         
+  -  wide-align                          npm                                     1.1.5                         
+  +  wrap-ansi                           npm     8.1.0                                                         
+  -  wrappy                              npm                                     1.0.2                         
+  ↑  write-file-atomic                   npm     5.0.1                           4.0.2                         
+  -  wsgiref                             pypi                                    0.1.2                         
+  ↑  x11-common                          deb     1:7.7+23                        1:7.7+19                      
+  ↑  x11proto-core-dev                   deb     2022.1-1                        2018.4-4                      
+  ↑  x11proto-dev                        deb     2022.1-1                        2018.4-4                      
+  -  x11proto-xext-dev                   deb                                     2018.4-4                      
+  ↑  x265                                deb     3.5-2                           2.9-4                         
+  ↑  xorg                                deb     1:7.7+23                        1:7.7+19                      
+  ↑  xorg-sgml-doctools                  deb     1:1.11-1.1                      1:1.11-1                      
+  ↑  xorgproto                           deb     2022.1-1                        2018.4-4                      
+  ↑  xtrans                              deb     1.4.0-1                         1.3.5-1                       
+  ↑  xtrans-dev                          deb     1.4.0-1                         1.3.5-1                       
+  +  xxhash                              deb     0.8.1-1                                                       
+  ↑  xz-utils                            deb     5.4.1-0.2                       5.2.4-1+deb10u1               
+     yallist                             npm     4.0.0                           4.0.0                         
+  ↑  yarn                                npm     1.22.22                         1.22.19                       
+  ↑  zlib                                deb     1:1.2.13.dfsg-1                 1:1.2.11.dfsg-1+deb10u2       
+  ↑  zlib1g                              deb     1:1.2.13.dfsg-1                 1:1.2.11.dfsg-1+deb10u2       
+  ↑  zlib1g-dev                          deb     1:1.2.13.dfsg-1                 1:1.2.11.dfsg-1+deb10u2       
+  
+  

@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "Ejecutando commit-msg hook"
+# Aquí puedes agregar comandos para validar el formato del mensaje de commit
+exit 0

@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  app:
+    image: alpine
+    command: sh -c "while true; do echo 'Working...'; sleep 10; done"
+    deploy:
+      resources:
+        limits:
+          memory: 128m
+          cpus: "0.5"
+        reservations:
+          memory: 64m

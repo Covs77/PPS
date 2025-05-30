@@ -1,0 +1,34 @@
+Acceptance Criteria
+
+Scenario: Calculate BMI for valid values
+
+Given [mass]
+And [height]
+When [BMI is calculated]
+Then [BMI should be -bmi-]
+
+
+Scenario: Handle zero or negative values
+
+Given [mass] 
+And [height]
+When [BMI is calculated]
+Then [an error should be thrown with message "Values cannot be a zero or a negative number"]
+
+
+
+Scenario: Categorize BMI as underweight/normal/overweight/obese
+
+Given [BMI is -bmi-]
+When [BMI category is determined]
+Then [BMI category should be "UNDERWEIGHT/NORMAL/OVERWEIGHT/OBESE"]
+  
+
+Scenario: Identify abdominal obesity in females/males
+
+Given [waist circumference]
+And [gender is  'F' 'M']
+When [checking for abdominal obesity]
+Then [it should be true/false]
+	
+

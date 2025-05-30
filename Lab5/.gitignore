@@ -1,0 +1,20 @@
+# Ignora archivos temporales comunes
+*.log
+*.tmp
+*.swp
+*.bak
+*.~ 
+.DS_Store
+Thumbs.db
+
+# Ignorar directorios y archivos de sistema
+node_modules/
+.env
+__pycache__/
+.vscode/
+.idea/
+
+/build
+/dist
+
+.code-workspace

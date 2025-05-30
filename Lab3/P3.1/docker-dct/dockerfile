@@ -1,0 +1,2 @@
+FROM nginx:latest
+RUN echo "Hello from Cova's secure docker image!" > /usr/share/nginx/html/index.html

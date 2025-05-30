@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.29">
+<file name="/home/cova/Documentos/pps-Covs77/Practica1.2/ChessSystem-main/src/main/java/application/Program.java">
+</file>
+<file name="/home/cova/Documentos/pps-Covs77/Practica1.2/ChessSystem-main/src/main/java/application/UI.java">
+</file>
+<file name="/home/cova/Documentos/pps-Covs77/Practica1.2/ChessSystem-main/src/main/java/chess/ChessPosition.java">
+</file>
+<file name="/home/cova/Documentos/pps-Covs77/Practica1.2/ChessSystem-main/src/main/java/chess/ChessPiece.java">
+</file>
+<file name="/home/cova/Documentos/pps-Covs77/Practica1.2/ChessSystem-main/src/main/java/chess/ChessMatch.java">
+</file>
+<file name="/home/cova/Documentos/pps-Covs77/Practica1.2/ChessSystem-main/src/main/java/chess/Color.java">
+</file>
+<file name="/home/cova/Documentos/pps-Covs77/Practica1.2/ChessSystem-main/src/main/java/chess/ChessException.java">
+</file>
+<file name="/home/cova/Documentos/pps-Covs77/Practica1.2/ChessSystem-main/src/main/java/chess/pieces/Bishop.java">
+</file>
+<file name="/home/cova/Documentos/pps-Covs77/Practica1.2/ChessSystem-main/src/main/java/chess/pieces/Rook.java">
+</file>
+<file name="/home/cova/Documentos/pps-Covs77/Practica1.2/ChessSystem-main/src/main/java/chess/pieces/Pawn.java">
+</file>
+<file name="/home/cova/Documentos/pps-Covs77/Practica1.2/ChessSystem-main/src/main/java/chess/pieces/Knight.java">
+</file>
+<file name="/home/cova/Documentos/pps-Covs77/Practica1.2/ChessSystem-main/src/main/java/chess/pieces/King.java">
+</file>
+<file name="/home/cova/Documentos/pps-Covs77/Practica1.2/ChessSystem-main/src/main/java/chess/pieces/Queen.java">
+</file>
+<file name="/home/cova/Documentos/pps-Covs77/Practica1.2/ChessSystem-main/src/main/java/boardgame/Piece.java">
+</file>
+<file name="/home/cova/Documentos/pps-Covs77/Practica1.2/ChessSystem-main/src/main/java/boardgame/Position.java">
+</file>
+<file name="/home/cova/Documentos/pps-Covs77/Practica1.2/ChessSystem-main/src/main/java/boardgame/BoardException.java">
+</file>
+<file name="/home/cova/Documentos/pps-Covs77/Practica1.2/ChessSystem-main/src/main/java/boardgame/Board.java">
+</file>
+</checkstyle>

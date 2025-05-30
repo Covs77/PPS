@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Piece.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">proyecto</a> &gt; <a href="index.source.html" class="el_package">boardgame</a> &gt; <span class="el_source">Piece.java</span></div><h1>Piece.java</h1><pre class="source lang-java linenums">package boardgame;
+
+public abstract class Piece {
+	
+	protected Position position;
+	private Board board;
+	
+<span class="nc" id="L8">	public Piece(Board board) {</span>
+<span class="nc" id="L9">		this.board = board;</span>
+<span class="nc" id="L10">	}</span>
+
+	protected Board getBoard() {
+<span class="nc" id="L13">		return board;</span>
+	}
+	
+	public abstract boolean[][] possibleMoves();
+	
+	public boolean possibleMove(Position position) {
+<span class="nc" id="L19">		return possibleMoves()[position.getRow()][position.getColumn()];</span>
+	}
+
+	public boolean isThereAnyPossibleMove() {
+<span class="nc" id="L23">		boolean[][] mat = possibleMoves();</span>
+<span class="nc bnc" id="L24" title="All 2 branches missed.">		for (int i=0; i&lt;mat.length; i++) {</span>
+<span class="nc bnc" id="L25" title="All 2 branches missed.">			for (int j=0; j&lt;mat.length; j++) {</span>
+<span class="nc bnc" id="L26" title="All 2 branches missed.">				if (mat[i][j]) {</span>
+<span class="nc" id="L27">					return true;</span>
+				}
+			}
+		}
+<span class="nc" id="L31">		return false;</span>
+	}
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

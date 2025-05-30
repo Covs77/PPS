@@ -1,0 +1,29 @@
+services:
+
+    pms-docker:
+        image: plexinc/pms-docker
+        container_name: plex
+#        user: "1000:1000"  # No ejecutar como root
+#        read_only: true  # Modo de solo lectura
+        environment:
+            - "TZ=${TZ}"
+            - "PLEX_CLAIM=${PLEX_CLAIM}"
+        volumes:
+            - "${DATA_PATH}/plex/config:/config"
+            - "${DATA_PATH}/plex/transcode:/transcode"
+            - "${DATA_PATH}/plex/media:/data"
+        restart: unless-stopped
+        ports:
+            - "${PLEX_PORT}:32400"
+        expose:
+            - 32400
+        deploy:
+          resources:
+            limits:
+              cpus: "1.5"     # Máximo 1.5 CPUs
+              memory: "2GB"   # Máximo 2GB de RAM
+            reservations:
+              cpus: "0.5"     # Reserva 0.5 CPU
+              memory: "512MB" # Reserva 512MB RAM
+        security_opt:
+        - no-new-privileges:true  # Evita escalada de privilegios

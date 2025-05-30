@@ -1,0 +1,25 @@
+version: '3.7'
+services:
+  web:
+    image: nginx:latest
+    container_name: web
+    ports:
+      - "8080:80"
+    environment:
+      - API_KEY=${API_KEY}
+    networks:
+      - front_end
+      - back_end
+
+  db:
+    image: mysql:5.7
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    networks:
+      - back_end
+networks:
+  front_end:
+    driver: bridge
+  back_end:
+    driver: bridge

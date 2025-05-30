@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "Ejecutando post-merge hook"
+# Aquí puedes agregar comandos para ejecutar pruebas automatizadas
+exit 0

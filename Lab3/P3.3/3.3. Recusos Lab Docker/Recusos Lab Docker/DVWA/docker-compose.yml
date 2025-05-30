@@ -1,0 +1,24 @@
+version: '3'
+services:
+    mysqlserver:
+        container_name: mysqldvwa
+        image: mysql
+        restart: always
+        hostname: mysqldvwa
+        ports:
+           - 9002:3306
+        command: --default-authentication-plugin=mysql_native_password
+        environment: 
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_USER: dvwa
+            MYSQL_PASSWORD: p@ssw0rd
+            MYSQL_DATABASE: dvwa
+    webserver:
+        container_name: dvwa
+        build: .
+        image: dvwa
+        restart: always
+        ports:
+           - 9001:80
+        depends_on:
+           - mysqlserver

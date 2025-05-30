@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npm test
+echo 'Ejecutando pre-commit hook'; # Aquí puedes agregar comandos para verificar el formato del código

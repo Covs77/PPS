@@ -1,0 +1,2 @@
+He añadido a la configuracion de GPG el correo asociado a GitHub para poder verificar los commits en GitHub. También modifico el correo en la cofiguración de Git.
+

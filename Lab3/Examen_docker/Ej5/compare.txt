@@ -1,0 +1,1295 @@
+  
+  
+  ## Overview
+  
+                      │                             Analyzed Image                             │                            Comparison Image                             
+  ────────────────────┼────────────────────────────────────────────────────────────────────────┼─────────────────────────────────────────────────────────────────────────
+    Target            │  wordpress:latest                                                      │  wordpress:beta-6.7.2-php8.1-fpm-alpine                                 
+      digest          │  02d0a3a5594d                                                          │  2dabf47e5030                                                           
+      tag             │  latest                                                                │  beta-6.7.2-php8.1-fpm-alpine                                           
+      platform        │ linux/amd64                                                            │ linux/amd64                                                             
+      provenance      │ https://github.com/docker-library/wordpress.git                        │ https://github.com/docker-library/wordpress.git                         
+                      │  470084224c4a2b4f0c2e19da2af9ab96298739e4                              │  3b86de3fe7c99001e32ac2e7048a8adf4f85db5a                               
+      vulnerabilities │    0C     3H     3M   112L     2?                                      │    0C     2H     2M     1L     1?                                       
+                      │           +1     +1   +111     +1                                      │                                                                         
+      size            │ 247 MB (+153 MB)                                                       │ 94 MB                                                                   
+      packages        │ 365 (+251)                                                             │ 114                                                                     
+                      │                                                                        │                                                                         
+    Base image        │  php:df99e1b675f2e0b0bd0d2121abe4d5ed94c6d5f4435abd6082425529550e9210  │  php:54b5ff554357a1100058bcce13b21851a693ca1636d4d8dae493079075d47ba0   
+      tags            │ also known as                                                          │ also known as                                                           
+                      │   • 8.2-apache                                                         │   • 8.1-fpm-alpine                                                      
+                      │   • 8.2-apache-bookworm                                                │   • 8.1-fpm-alpine3.21                                                  
+                      │   • 8.2.27-apache                                                      │   • 8.1.31-fpm-alpine                                                   
+                      │   • 8.2.27-apache-bookworm                                             │   • 8.1.31-fpm-alpine3.21                                               
+      vulnerabilities │    0C     3H     3M    71L                                             │    0C     2H     2M     1L     1?                                       
+  
+  
+  ## Environment Variables
+  
+  
+    + APACHE_CONFDIR=/etc/apache2
+    + APACHE_ENVVARS=/etc/apache2/envvars
+    - GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD
+    + GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC
+      PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    - PHPIZE_DEPS=autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c
+    + PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
+    - PHP_ASC_URL=https://www.php.net/distributions/php-8.1.31.tar.xz.asc
+    + PHP_ASC_URL=https://www.php.net/distributions/php-8.2.27.tar.xz.asc
+      PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+      PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+      PHP_INI_DIR=/usr/local/etc/php
+      PHP_LDFLAGS=-Wl,-O1 -pie
+    - PHP_SHA256=c4f244d46ba51c72f7d13d4f66ce6a9e9a8d6b669c51be35e01765ba58e7afca
+    + PHP_SHA256=3eec91294d8c09b3df80b39ec36d574ed9b05de4c8afcb25fa215d48f9ecbc6b
+    - PHP_URL=https://www.php.net/distributions/php-8.1.31.tar.xz
+    + PHP_URL=https://www.php.net/distributions/php-8.2.27.tar.xz
+    - PHP_VERSION=8.1.31
+    + PHP_VERSION=8.2.27
+  
+  
+  
+  ## Packages and Vulnerabilities
+  
+  
+    +  363 packages added  
+    -  113 packages removed  
+    ⎌    1 packages changed (↑ 1 upgraded, ↓ 0 downgraded)
+  
+  
+    + 119 vulnerabilities added  
+    - 5 vulnerabilities removed
+  
+  
+     Package                     Type     Version                         Compared Version  
+  
+  -  .wordpress-phpexts-rundeps  apk                                      20250211.002808   
+  +  abseil                      deb      20220623.1-1                                      
+  +  acl                         deb      2.3.1-3                                           
+  -  acl                         apk                                      2.3.2-r1          
+  -  acl-libs                    apk                                      2.3.2-r1          
+  +  adduser                     deb      3.134                                             
+  -  alpine-base                 apk                                      3.21.2-r0         
+  -  alpine-baselayout           apk                                      3.6.8-r1          
+  -  alpine-baselayout-data      apk                                      3.6.8-r1          
+  -  alpine-keys                 apk                                      2.5-r0            
+  -  alpine-release              apk                                      3.21.2-r0         
+  +  aom                         deb      3.6.0-1+deb12u1                                   
+  -  aom                         apk                                      3.11.0-r0         
+  -  aom-libs                    apk                                      3.11.0-r0         
+  +  apache2                     deb      2.4.62-1~deb12u2                                  
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     ├─  +  LOW          CVE-2007-0086   [https://scout.docker.com/v/CVE-2007-0086?s=debian&n=apache2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.4.62-1%7Edeb12u2]                       
+     │                   0.0    
+     │                   ✗ not fixed                    
+     └─  +  LOW          CVE-2003-1307   [https://scout.docker.com/v/CVE-2003-1307?s=debian&n=apache2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.4.62-1%7Edeb12u2]                       
+                         0.0    
+                         ✗ not fixed                    
+  
+  +  apache2-bin                 deb      2.4.62-1~deb12u2                                  
+  +  apache2-data                deb      2.4.62-1~deb12u2                                  
+  +  apache2-utils               deb      2.4.62-1~deb12u2                                  
+  -  apk-tools                   apk                                      2.14.6-r2         
+  +  apr                         deb      1.7.2-3+deb12u1                                   
+  +  apr-util                    deb      1.6.3-1                                           
+  +  apt                         deb      2.6.1                                             
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     └─  +  LOW          CVE-2011-3374   [https://scout.docker.com/v/CVE-2011-3374?s=debian&n=apt&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.6.1]                                        
+                         0.0    
+                         ✗ not fixed                    
+  
+  -  argon2                      apk                                      20190702-r5       
+  +  argon2                      deb      0~20171227-0.3+deb12u1                            
+  -  argon2-libs                 apk                                      20190702-r5       
+  +  attr                        deb      1:2.5.1-4                                         
+  +  audit                       deb      1:3.0.9-1                                         
+  +  autoconf                    deb      2.71-3                                            
+  +  avahi                       deb      0.8-10+deb12u1                                    
+  -  avahi                       apk                                      0.8-r19           
+  -  avahi-libs                  apk                                      0.8-r19           
+  +  base-files                  deb      12.4+deb12u9                                      
+  +  base-passwd                 deb      3.6.1                                             
+  +  bash                        deb      5.2.15-2+b7                                       
+  -  bash                        apk                                      5.2.37-r0         
+  +  binutils                    deb      2.40-2                                            
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     ├─  +  LOW          CVE-2025-1182   [https://scout.docker.com/v/CVE-2025-1182?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                  
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2025-1181   [https://scout.docker.com/v/CVE-2025-1181?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                  
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2025-1180   [https://scout.docker.com/v/CVE-2025-1180?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                  
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2025-1179   [https://scout.docker.com/v/CVE-2025-1179?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                  
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2025-1178   [https://scout.docker.com/v/CVE-2025-1178?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                  
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2025-1176   [https://scout.docker.com/v/CVE-2025-1176?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                  
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2025-1153   [https://scout.docker.com/v/CVE-2025-1153?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                  
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2025-1152   [https://scout.docker.com/v/CVE-2025-1152?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                  
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2025-1151   [https://scout.docker.com/v/CVE-2025-1151?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                  
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2025-1150   [https://scout.docker.com/v/CVE-2025-1150?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                  
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2025-1149   [https://scout.docker.com/v/CVE-2025-1149?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                  
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2025-1148   [https://scout.docker.com/v/CVE-2025-1148?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                  
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2025-1147   [https://scout.docker.com/v/CVE-2025-1147?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                  
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2025-0840   [https://scout.docker.com/v/CVE-2025-0840?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                  
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2024-57360  [https://scout.docker.com/v/CVE-2024-57360?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                 
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2024-53589  [https://scout.docker.com/v/CVE-2024-53589?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                 
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2023-1972   [https://scout.docker.com/v/CVE-2023-1972?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                  
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2021-32256  [https://scout.docker.com/v/CVE-2021-32256?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                 
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2018-9996   [https://scout.docker.com/v/CVE-2018-9996?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                  
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2018-20712  [https://scout.docker.com/v/CVE-2018-20712?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                 
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2018-20673  [https://scout.docker.com/v/CVE-2018-20673?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                 
+     │                   0.0    
+     │                   ✗ not fixed                    
+     └─  +  LOW          CVE-2017-13716  [https://scout.docker.com/v/CVE-2017-13716?s=debian&n=binutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.40-2]                                 
+                         0.0    
+                         ✗ not fixed                    
+  
+  +  binutils-common             deb      2.40-2                                            
+  +  binutils-x86-64-linux-gnu   deb      2.40-2                                            
+  -  brotli                      apk                                      1.1.0-r2          
+  +  brotli                      deb      1.0.9-2                                           
+  -  brotli-libs                 apk                                      1.1.0-r2          
+  +  bsdutils                    deb      1:2.38.1-5+deb12u3                                
+  -  busybox                     apk                                      1.37.0-r9         
+  -  busybox-binsh               apk                                      1.37.0-r9         
+  +  bzip2                       deb      1.0.8-5                                           
+  -  bzip2                       apk                                      1.0.8-r6          
+  -  c-ares                      apk                                      1.34.3-r0         
+  +  ca-certificates             deb      20230311                                          
+  -  ca-certificates             apk                                      20241121-r1       
+  -  ca-certificates-bundle      apk                                      20241121-r1       
+  +  cdebconf                    deb      0.270                                             
+  +  coreutils                   deb      9.1-1                                             
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     └─  +  LOW          CVE-2017-18018  [https://scout.docker.com/v/CVE-2017-18018?s=debian&n=coreutils&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D9.1-1]                                 
+                         0.0    
+                         ✗ not fixed                    
+  
+  +  cpp                         deb      4:12.2.0-3                                        
+  +  cpp-12                      deb      12.2.0-14                                         
+  -  cups                        apk                                      2.4.11-r0         
+  +  cups                        deb      2.4.2-3+deb12u8                                   
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L10-L16                               
+     │   +  RUN set -eux; \                                                                                                                                                 
+     │   +  	apt-get update; \                                                                                                                                               
+     │   +  	apt-get install -y --no-install-recommends \                                                                                                                    
+     │   +  # Ghostscript is required for rendering PDF previews                                                                                                            
+     │   +  		ghostscript \                                                                                                                                                   
+     │   +  	; \                                                                                                                                                             
+     │   +  	rm -rf /var/lib/apt/lists/*                                                                                                                                     
+     │   
+     └─  +  LOW          CVE-2014-8166   [https://scout.docker.com/v/CVE-2014-8166?s=debian&n=cups&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.4.2-3%2Bdeb12u8]                           
+                         0.0    
+                         ✗ not fixed                    
+  
+  -  cups-libs                   apk                                      2.4.11-r0         
+  +  curl                        deb      7.88.1-10+deb12u8                                 
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     ├─  +  LOW          CVE-2025-0725   [https://scout.docker.com/v/CVE-2025-0725?s=debian&n=curl&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D7.88.1-10%2Bdeb12u8]                         
+     │                   0.0    
+     │                   ✗ not fixed                    
+     └─  +  LOW          CVE-2024-2379   [https://scout.docker.com/v/CVE-2024-2379?s=debian&n=curl&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D7.88.1-10%2Bdeb12u8]                         
+                         0.0    
+                         ✗ not fixed                    
+  
+  -  curl                        apk                                      8.11.1-r0         
+     │   -  https://github.com/docker-library/wordpress/blob/3b86de3fe7c99001e32ac2e7048a8adf4f85db5a/beta/php8.1/fpm-alpine/Dockerfile#L0-L0                               
+     │   
+     ├─  -  HIGH         CVE-2025-0725   [https://scout.docker.com/v/CVE-2025-0725?s=alpine&n=curl&ns=alpine&t=apk&osn=alpine&osv=3.21&vr=%3C8.12.0-r0]                                    
+     │                   7.3    
+     ├─  -  LOW          CVE-2025-0167   [https://scout.docker.com/v/CVE-2025-0167?s=alpine&n=curl&ns=alpine&t=apk&osn=alpine&osv=3.21&vr=%3C8.12.0-r0]                                    
+     │                   3.4    
+     └─  -  UNSPECIFIED  CVE-2025-0665   [https://scout.docker.com/v/CVE-2025-0665?s=alpine&n=curl&ns=alpine&t=apk&osn=alpine&osv=3.21&vr=%3C8.12.0-r0]                                    
+                         0.0    
+  
+  +  cyrus-sasl2                 deb      2.1.28+dfsg-10                                    
+  +  dash                        deb      0.5.12-2                                          
+  -  dav1d                       apk                                      1.5.0-r0          
+  +  dav1d                       deb      1.0.0-2+deb12u1                                   
+  +  db5.3                       deb      5.3.28+dfsg2-1                                    
+  +  dbus                        deb      1.14.10-1~deb12u1                                 
+  -  dbus                        apk                                      1.14.10-r4        
+  -  dbus-libs                   apk                                      1.14.10-r4        
+  +  debconf                     deb      1.5.82                                            
+  +  debian-archive-keyring      deb      2023.3+deb12u1                                    
+  +  debianutils                 deb      5.7-0.5~deb12u1                                   
+  +  diffutils                   deb      1:3.8-4                                           
+  +  dpkg                        deb      1.21.22                                           
+  +  dpkg-dev                    deb      1.21.22                                           
+  +  e2fsprogs                   deb      1.47.0-2                                          
+  +  expat                       deb      2.5.0-1+deb12u1                                   
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     ├─  +  LOW          CVE-2024-28757  [https://scout.docker.com/v/CVE-2024-28757?s=debian&n=expat&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-1%2Bdeb12u1]                         
+     │                   0.0    
+     │                   ✗ not fixed                    
+     └─  +  LOW          CVE-2023-52426  [https://scout.docker.com/v/CVE-2023-52426?s=debian&n=expat&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-1%2Bdeb12u1]                         
+                         0.0    
+                         ✗ not fixed                    
+  
+  -  expat                       apk                                      2.6.4-r0          
+  -  fftw                        apk                                      3.3.10-r6         
+  -  fftw-double-libs            apk                                      3.3.10-r6         
+  +  fftw3                       deb      3.3.10-1                                          
+  +  file                        deb      1:5.44-3                                          
+  +  findutils                   deb      4.9.0-4                                           
+  -  fontconfig                  apk                                      2.15.0-r1         
+  +  fontconfig                  deb      2.14.1-4                                          
+  +  fontconfig-config           deb      2.14.1-4                                          
+  +  fonts-urw-base35            deb      20200910-7                                        
+  +  freetype                    deb      2.12.1+dfsg-5+deb12u3                             
+  -  freetype                    apk                                      2.13.3-r0         
+  +  g++                         deb      4:12.2.0-3                                        
+  +  g++-12                      deb      12.2.0-14                                         
+  +  gcc                         deb      4:12.2.0-3                                        
+  -  gcc                         apk                                      14.2.0-r4         
+  +  gcc-12                      deb      12.2.0-14                                         
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     ├─  +  LOW          CVE-2023-4039   [https://scout.docker.com/v/CVE-2023-4039?s=debian&n=gcc-12&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D12.2.0-14]                                 
+     │                   0.0    
+     │                   ✗ not fixed                    
+     └─  +  LOW          CVE-2022-27943  [https://scout.docker.com/v/CVE-2022-27943?s=debian&n=gcc-12&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D12.2.0-14]                                
+                         0.0    
+                         ✗ not fixed                    
+  
+  +  gcc-12-base                 deb      12.2.0-14                                         
+  +  gcc-defaults                deb      1.203                                             
+  +  gdbm                        deb      1.23-3                                            
+  -  gettext                     apk                                      0.22.5-r0         
+  -  ghostscript                 apk                                      10.04.0-r0        
+  +  ghostscript                 deb      10.0.0~dfsg-11+deb12u6                            
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L10-L16                               
+     │   +  RUN set -eux; \                                                                                                                                                 
+     │   +  	apt-get update; \                                                                                                                                               
+     │   +  	apt-get install -y --no-install-recommends \                                                                                                                    
+     │   +  # Ghostscript is required for rendering PDF previews                                                                                                            
+     │   +  		ghostscript \                                                                                                                                                   
+     │   +  	; \                                                                                                                                                             
+     │   +  	rm -rf /var/lib/apt/lists/*                                                                                                                                     
+     │   
+     ├─  +  LOW          CVE-2024-29511  [https://scout.docker.com/v/CVE-2024-29511?s=debian&n=ghostscript&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D10.0.0%7Edfsg-11%2Bdeb12u6]          
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2023-38560  [https://scout.docker.com/v/CVE-2023-38560?s=debian&n=ghostscript&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D10.0.0%7Edfsg-11%2Bdeb12u6]          
+     │                   0.0    
+     │                   ✗ not fixed                    
+     └─  +  LOW          CVE-2022-1350   [https://scout.docker.com/v/CVE-2022-1350?s=debian&n=ghostscript&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D10.0.0%7Edfsg-11%2Bdeb12u6]           
+                         0.0    
+                         ✗ not fixed                    
+  
+  +  glib2.0                     deb      2.74.6-2+deb12u5                                  
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L19-L88                               
+     │   +  RUN set -ex; \                                                                                                                                                  
+     │   +  	\                                                                                                                                                               
+     │   +  	savedAptMark="$(apt-mark showmanual)"; \                                                                                                                        
+     │   +  	\                                                                                                                                                               
+     │   +  	apt-get update; \                                                                                                                                               
+     │   +  	apt-get install -y --no-install-recommends \                                                                                                                    
+     │   +  		libavif-dev \                                                                                                                                                   
+     │   +  		libfreetype6-dev \                                                                                                                                              
+     │   +  		libicu-dev \                                                                                                                                                    
+     │   +  		libjpeg-dev \                                                                                                                                                   
+     │   +  		libmagickwand-dev \                                                                                                                                             
+     │   +  		libpng-dev \                                                                                                                                                    
+     │   +  		libwebp-dev \                                                                                                                                                   
+     │   +  		libzip-dev \                                                                                                                                                    
+     │   +  	; \                                                                                                                                                             
+     │   +  	\                                                                                                                                                               
+     │   +  	docker-php-ext-configure gd \                                                                                                                                   
+     │   +  		--with-avif \                                                                                                                                                   
+     │   +  		--with-freetype \                                                                                                                                               
+     │   +  		--with-jpeg \                                                                                                                                                   
+     │   +  		--with-webp \                                                                                                                                                   
+     │   +  	; \                                                                                                                                                             
+     │   +  	docker-php-ext-install -j "$(nproc)" \                                                                                                                          
+     │   +  		bcmath \                                                                                                                                                        
+     │   +  		exif \                                                                                                                                                          
+     │   +  		gd \                                                                                                                                                            
+     │   +  		intl \                                                                                                                                                          
+     │   +  		mysqli \                                                                                                                                                        
+     │   +  		zip \                                                                                                                                                           
+     │   +  	; \                                                                                                                                                             
+     │   +  # https://pecl.php.net/package/imagick                                                                                                                          
+     │   +  # https://github.com/Imagick/imagick/commit/5ae2ecf20a1157073bad0170106ad0cf74e01cb6 (causes a lot of build failures, but strangely only intermittent ones 🤔)  
+     │   +  # see also https://github.com/Imagick/imagick/pull/641                                                                                                          
+     │   +  # this is "pecl install imagick-3.7.0", but by hand so we can apply a small hack / part of the above commit                                                     
+     │   +  	curl -fL -o imagick.tgz 'https://pecl.php.net/get/imagick-3.7.0.tgz'; \                                                                                         
+     │   +  	echo '5a364354109029d224bcbb2e82e15b248be9b641227f45e63425c06531792d3e *imagick.tgz' | sha256sum -c -; \                                                        
+     │   +  	tar --extract --directory /tmp --file imagick.tgz imagick-3.7.0; \                                                                                              
+     │   +  	grep '^//#endif$' /tmp/imagick-3.7.0/Imagick.stub.php; \                                                                                                        
+     │   +  	test "$(grep -c '^//#endif$' /tmp/imagick-3.7.0/Imagick.stub.php)" = '1'; \                                                                                     
+     │   +  	sed -i -e 's!^//#endif$!#endif!' /tmp/imagick-3.7.0/Imagick.stub.php; \                                                                                         
+     │   +  	grep '^//#endif$' /tmp/imagick-3.7.0/Imagick.stub.php && exit 1 || :; \                                                                                         
+     │   +  	docker-php-ext-install /tmp/imagick-3.7.0; \                                                                                                                    
+     │   +  	rm -rf imagick.tgz /tmp/imagick-3.7.0; \                                                                                                                        
+     │   +  	\                                                                                                                                                               
+     │   +  # some misbehaving extensions end up outputting to stdout 🙈 (https://github.com/docker-library/wordpress/issues/669#issuecomment-993945967)                    
+     │   +  	out="$(php -r 'exit(0);')"; \                                                                                                                                   
+     │   +  	[ -z "$out" ]; \                                                                                                                                                
+     │   +  	err="$(php -r 'exit(0);' 3>&1 1>&2 2>&3)"; \                                                                                                                    
+     │   +  	[ -z "$err" ]; \                                                                                                                                                
+     │   +  	\                                                                                                                                                               
+     │   +  	extDir="$(php -r 'echo ini_get("extension_dir");')"; \                                                                                                          
+     │   +  	[ -d "$extDir" ]; \                                                                                                                                             
+     │   +  # reset apt-mark's "manual" list so that "purge --auto-remove" will remove all build dependencies                                                               
+     │   +  	apt-mark auto '.*' > /dev/null; \                                                                                                                               
+     │   +  	apt-mark manual $savedAptMark; \                                                                                                                                
+     │   +  	ldd "$extDir"/*.so \                                                                                                                                            
+     │   +  		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); printf "*%s\n", so }' \                                     
+     │   +  		| sort -u \                                                                                                                                                     
+     │   +  		| xargs -r dpkg-query --search \                                                                                                                                
+     │   +  		| cut -d: -f1 \                                                                                                                                                 
+     │   +  		| sort -u \                                                                                                                                                     
+     │   +  		| xargs -rt apt-mark manual; \                                                                                                                                  
+     │   +  	\                                                                                                                                                               
+     │   +  	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \                                                                                 
+     │   +  	rm -rf /var/lib/apt/lists/*; \                                                                                                                                  
+     │   +  	\                                                                                                                                                               
+     │   +  	! { ldd "$extDir"/*.so | grep 'not found'; }; \                                                                                                                 
+     │   +  # check for output like "PHP Warning:  PHP Startup: Unable to load dynamic library 'foo' (tried: ...)                                                           
+     │   +  	err="$(php --version 3>&1 1>&2 2>&3)"; \                                                                                                                        
+     │   +  	[ -z "$err" ]                                                                                                                                                   
+     │   
+     └─  +  LOW          CVE-2012-0039   [https://scout.docker.com/v/CVE-2012-0039?s=debian&n=glib2.0&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.74.6-2%2Bdeb12u5]                       
+                         0.0    
+                         ✗ not fixed                    
+  
+  +  glibc                       deb      2.36-9+deb12u9                                    
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     ├─  +  LOW          CVE-2019-9192   [https://scout.docker.com/v/CVE-2019-9192?s=debian&n=glibc&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.36-9%2Bdeb12u9]                           
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2019-1010025 [https://scout.docker.com/v/CVE-2019-1010025?s=debian&n=glibc&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.36-9%2Bdeb12u9]                       
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2019-1010024 [https://scout.docker.com/v/CVE-2019-1010024?s=debian&n=glibc&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.36-9%2Bdeb12u9]                       
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2019-1010023 [https://scout.docker.com/v/CVE-2019-1010023?s=debian&n=glibc&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.36-9%2Bdeb12u9]                       
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2019-1010022 [https://scout.docker.com/v/CVE-2019-1010022?s=debian&n=glibc&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.36-9%2Bdeb12u9]                       
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2018-20796  [https://scout.docker.com/v/CVE-2018-20796?s=debian&n=glibc&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.36-9%2Bdeb12u9]                          
+     │                   0.0    
+     │                   ✗ not fixed                    
+     └─  +  LOW          CVE-2010-4756   [https://scout.docker.com/v/CVE-2010-4756?s=debian&n=glibc&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.36-9%2Bdeb12u9]                           
+                         0.0    
+                         ✗ not fixed                    
+  
+  -  gmp                         apk                                      6.3.0-r2          
+  +  gmp                         deb      2:6.2.1+dfsg1-1.1                                 
+  -  gnu-libiconv                apk                                      1.17-r2           
+  -  gnu-libiconv-libs           apk                                      1.17-r2           
+  +  gnupg2                      deb      2.2.40-1.1                                        
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     └─  +  LOW          CVE-2022-3219   [https://scout.docker.com/v/CVE-2022-3219?s=debian&n=gnupg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.2.40-1.1]                                
+                         0.0    
+                         ✗ not fixed                    
+  
+  -  gnutls                      apk                                      3.8.8-r0          
+  +  gnutls28                    deb      3.7.9-2+deb12u3                                   
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     ├─  +  MEDIUM       CVE-2024-12243  [https://scout.docker.com/v/CVE-2024-12243?s=debian&n=gnutls28&ns=debian&t=deb&osn=debian&osv=12&vr=%3C3.7.9-2%2Bdeb12u4]                         
+     │                   5.3    
+     │                   ✓ fixed in  3.7.9-2+deb12u4    
+     └─  +  LOW          CVE-2011-3389   [https://scout.docker.com/v/CVE-2011-3389?s=debian&n=gnutls28&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D3.7.9-2%2Bdeb12u3]                       
+                         0.0    
+                         ✗ not fixed                    
+  
+  +  gpgv                        deb      2.2.40-1.1                                        
+  +  grep                        deb      3.8-5                                             
+  +  gzip                        deb      1.12-1                                            
+  +  hostname                    deb      3.23+nmu1                                         
+  +  icu                         deb      72.1-3                                            
+  -  icu                         apk                                      74.2-r0           
+  -  icu-data-en                 apk                                      74.2-r0           
+  -  icu-libs                    apk                                      74.2-r0           
+  +  ijs                         deb      0.35-15                                           
+  +  imagemagick                 deb      8:6.9.11.60+dfsg-1.6+deb12u2                      
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L19-L88                               
+     │   +  RUN set -ex; \                                                                                                                                                  
+     │   +  	\                                                                                                                                                               
+     │   +  	savedAptMark="$(apt-mark showmanual)"; \                                                                                                                        
+     │   +  	\                                                                                                                                                               
+     │   +  	apt-get update; \                                                                                                                                               
+     │   +  	apt-get install -y --no-install-recommends \                                                                                                                    
+     │   +  		libavif-dev \                                                                                                                                                   
+     │   +  		libfreetype6-dev \                                                                                                                                              
+     │   +  		libicu-dev \                                                                                                                                                    
+     │   +  		libjpeg-dev \                                                                                                                                                   
+     │   +  		libmagickwand-dev \                                                                                                                                             
+     │   +  		libpng-dev \                                                                                                                                                    
+     │   +  		libwebp-dev \                                                                                                                                                   
+     │   +  		libzip-dev \                                                                                                                                                    
+     │   +  	; \                                                                                                                                                             
+     │   +  	\                                                                                                                                                               
+     │   +  	docker-php-ext-configure gd \                                                                                                                                   
+     │   +  		--with-avif \                                                                                                                                                   
+     │   +  		--with-freetype \                                                                                                                                               
+     │   +  		--with-jpeg \                                                                                                                                                   
+     │   +  		--with-webp \                                                                                                                                                   
+     │   +  	; \                                                                                                                                                             
+     │   +  	docker-php-ext-install -j "$(nproc)" \                                                                                                                          
+     │   +  		bcmath \                                                                                                                                                        
+     │   +  		exif \                                                                                                                                                          
+     │   +  		gd \                                                                                                                                                            
+     │   +  		intl \                                                                                                                                                          
+     │   +  		mysqli \                                                                                                                                                        
+     │   +  		zip \                                                                                                                                                           
+     │   +  	; \                                                                                                                                                             
+     │   +  # https://pecl.php.net/package/imagick                                                                                                                          
+     │   +  # https://github.com/Imagick/imagick/commit/5ae2ecf20a1157073bad0170106ad0cf74e01cb6 (causes a lot of build failures, but strangely only intermittent ones 🤔)  
+     │   +  # see also https://github.com/Imagick/imagick/pull/641                                                                                                          
+     │   +  # this is "pecl install imagick-3.7.0", but by hand so we can apply a small hack / part of the above commit                                                     
+     │   +  	curl -fL -o imagick.tgz 'https://pecl.php.net/get/imagick-3.7.0.tgz'; \                                                                                         
+     │   +  	echo '5a364354109029d224bcbb2e82e15b248be9b641227f45e63425c06531792d3e *imagick.tgz' | sha256sum -c -; \                                                        
+     │   +  	tar --extract --directory /tmp --file imagick.tgz imagick-3.7.0; \                                                                                              
+     │   +  	grep '^//#endif$' /tmp/imagick-3.7.0/Imagick.stub.php; \                                                                                                        
+     │   +  	test "$(grep -c '^//#endif$' /tmp/imagick-3.7.0/Imagick.stub.php)" = '1'; \                                                                                     
+     │   +  	sed -i -e 's!^//#endif$!#endif!' /tmp/imagick-3.7.0/Imagick.stub.php; \                                                                                         
+     │   +  	grep '^//#endif$' /tmp/imagick-3.7.0/Imagick.stub.php && exit 1 || :; \                                                                                         
+     │   +  	docker-php-ext-install /tmp/imagick-3.7.0; \                                                                                                                    
+     │   +  	rm -rf imagick.tgz /tmp/imagick-3.7.0; \                                                                                                                        
+     │   +  	\                                                                                                                                                               
+     │   +  # some misbehaving extensions end up outputting to stdout 🙈 (https://github.com/docker-library/wordpress/issues/669#issuecomment-993945967)                    
+     │   +  	out="$(php -r 'exit(0);')"; \                                                                                                                                   
+     │   +  	[ -z "$out" ]; \                                                                                                                                                
+     │   +  	err="$(php -r 'exit(0);' 3>&1 1>&2 2>&3)"; \                                                                                                                    
+     │   +  	[ -z "$err" ]; \                                                                                                                                                
+     │   +  	\                                                                                                                                                               
+     │   +  	extDir="$(php -r 'echo ini_get("extension_dir");')"; \                                                                                                          
+     │   +  	[ -d "$extDir" ]; \                                                                                                                                             
+     │   +  # reset apt-mark's "manual" list so that "purge --auto-remove" will remove all build dependencies                                                               
+     │   +  	apt-mark auto '.*' > /dev/null; \                                                                                                                               
+     │   +  	apt-mark manual $savedAptMark; \                                                                                                                                
+     │   +  	ldd "$extDir"/*.so \                                                                                                                                            
+     │   +  		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); printf "*%s\n", so }' \                                     
+     │   +  		| sort -u \                                                                                                                                                     
+     │   +  		| xargs -r dpkg-query --search \                                                                                                                                
+     │   +  		| cut -d: -f1 \                                                                                                                                                 
+     │   +  		| sort -u \                                                                                                                                                     
+     │   +  		| xargs -rt apt-mark manual; \                                                                                                                                  
+     │   +  	\                                                                                                                                                               
+     │   +  	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \                                                                                 
+     │   +  	rm -rf /var/lib/apt/lists/*; \                                                                                                                                  
+     │   +  	\                                                                                                                                                               
+     │   +  	! { ldd "$extDir"/*.so | grep 'not found'; }; \                                                                                                                 
+     │   +  # check for output like "PHP Warning:  PHP Startup: Unable to load dynamic library 'foo' (tried: ...)                                                           
+     │   +  	err="$(php --version 3>&1 1>&2 2>&3)"; \                                                                                                                        
+     │   +  	[ -z "$err" ]                                                                                                                                                   
+     │   
+     ├─  +  LOW          CVE-2023-34152  [https://scout.docker.com/v/CVE-2023-34152?s=debian&n=imagemagick&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D8%3A6.9.11.60%2Bdfsg-1.6%2Bdeb12u2]  
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2021-20311  [https://scout.docker.com/v/CVE-2021-20311?s=debian&n=imagemagick&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D8%3A6.9.11.60%2Bdfsg-1.6%2Bdeb12u2]  
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2018-15607  [https://scout.docker.com/v/CVE-2018-15607?s=debian&n=imagemagick&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D8%3A6.9.11.60%2Bdfsg-1.6%2Bdeb12u2]  
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2017-7275   [https://scout.docker.com/v/CVE-2017-7275?s=debian&n=imagemagick&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D8%3A6.9.11.60%2Bdfsg-1.6%2Bdeb12u2]   
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2017-11755  [https://scout.docker.com/v/CVE-2017-11755?s=debian&n=imagemagick&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D8%3A6.9.11.60%2Bdfsg-1.6%2Bdeb12u2]  
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2017-11754  [https://scout.docker.com/v/CVE-2017-11754?s=debian&n=imagemagick&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D8%3A6.9.11.60%2Bdfsg-1.6%2Bdeb12u2]  
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2016-8678   [https://scout.docker.com/v/CVE-2016-8678?s=debian&n=imagemagick&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D8%3A6.9.11.60%2Bdfsg-1.6%2Bdeb12u2]   
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2008-3134   [https://scout.docker.com/v/CVE-2008-3134?s=debian&n=imagemagick&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D8%3A6.9.11.60%2Bdfsg-1.6%2Bdeb12u2]   
+     │                   0.0    
+     │                   ✗ not fixed                    
+     └─  +  LOW          CVE-2005-0406   [https://scout.docker.com/v/CVE-2005-0406?s=debian&n=imagemagick&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D8%3A6.9.11.60%2Bdfsg-1.6%2Bdeb12u2]   
+                         0.0    
+                         ✗ not fixed                    
+  
+  -  imagemagick                 apk                                      7.1.1.41-r0       
+  +  imagemagick-6-common        deb      8:6.9.11.60+dfsg-1.6+deb12u2                      
+  -  imagemagick-jpeg            apk                                      7.1.1.41-r0       
+  -  imagemagick-libs            apk                                      7.1.1.41-r0       
+  -  imagemagick-pdf             apk                                      7.1.1.41-r0       
+  -  imagemagick-tiff            apk                                      7.1.1.41-r0       
+  -  imagemagick-webp            apk                                      7.1.1.41-r0       
+  +  init-system-helpers         deb      1.65.2                                            
+  +  isl                         deb      0.25-1.1                                          
+  +  jansson                     deb      2.14-2                                            
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     └─  +  LOW          CVE-2020-36325  [https://scout.docker.com/v/CVE-2020-36325?s=debian&n=jansson&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.14-2]                                  
+                         0.0    
+                         ✗ not fixed                    
+  
+  +  jbig2dec                    deb      0.19-3                                            
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L10-L16                               
+     │   +  RUN set -eux; \                                                                                                                                                 
+     │   +  	apt-get update; \                                                                                                                                               
+     │   +  	apt-get install -y --no-install-recommends \                                                                                                                    
+     │   +  # Ghostscript is required for rendering PDF previews                                                                                                            
+     │   +  		ghostscript \                                                                                                                                                   
+     │   +  	; \                                                                                                                                                             
+     │   +  	rm -rf /var/lib/apt/lists/*                                                                                                                                     
+     │   
+     └─  +  LOW          CVE-2023-46361  [https://scout.docker.com/v/CVE-2023-46361?s=debian&n=jbig2dec&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D0.19-3]                                 
+                         0.0    
+                         ✗ not fixed                    
+  
+  -  jbig2dec                    apk                                      0.20-r0           
+  +  jbigkit                     deb      2.1-6.1                                           
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L10-L16                               
+     │   +  RUN set -eux; \                                                                                                                                                 
+     │   +  	apt-get update; \                                                                                                                                               
+     │   +  	apt-get install -y --no-install-recommends \                                                                                                                    
+     │   +  # Ghostscript is required for rendering PDF previews                                                                                                            
+     │   +  		ghostscript \                                                                                                                                                   
+     │   +  	; \                                                                                                                                                             
+     │   +  	rm -rf /var/lib/apt/lists/*                                                                                                                                     
+     │   
+     └─  +  LOW          CVE-2017-9937   [https://scout.docker.com/v/CVE-2017-9937?s=debian&n=jbigkit&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.1-6.1]                                  
+                         0.0    
+                         ✗ not fixed                    
+  
+  +  keyutils                    deb      1.6.3-2                                           
+  +  krb5                        deb      1.20.1-2+deb12u2                                  
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     ├─  +  LOW          CVE-2024-26461  [https://scout.docker.com/v/CVE-2024-26461?s=debian&n=krb5&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1.20.1-2%2Bdeb12u2]                         
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2024-26458  [https://scout.docker.com/v/CVE-2024-26458?s=debian&n=krb5&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1.20.1-2%2Bdeb12u2]                         
+     │                   0.0    
+     │                   ✗ not fixed                    
+     └─  +  LOW          CVE-2018-5709   [https://scout.docker.com/v/CVE-2018-5709?s=debian&n=krb5&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1.20.1-2%2Bdeb12u2]                          
+                         0.0    
+                         ✗ not fixed                    
+  
+  -  lcms2                       apk                                      2.16-r0           
+  +  lcms2                       deb      2.14-2                                            
+  +  lerc                        deb      4.0.0+ds-2                                        
+  +  libabsl20220623             deb      20220623.1-1                                      
+  +  libacl1                     deb      2.3.1-3                                           
+  +  libaom3                     deb      3.6.0-1+deb12u1                                   
+  +  libapr1                     deb      1.7.2-3+deb12u1                                   
+  +  libaprutil1                 deb      1.6.3-1                                           
+  +  libaprutil1-dbd-sqlite3     deb      1.6.3-1                                           
+  +  libaprutil1-ldap            deb      1.6.3-1                                           
+  +  libapt-pkg6.0               deb      2.6.1                                             
+  +  libargon2-1                 deb      0~20171227-0.3+deb12u1                            
+  +  libasan8                    deb      12.2.0-14                                         
+  +  libatomic1                  deb      12.2.0-14                                         
+  +  libattr1                    deb      1:2.5.1-4                                         
+  +  libaudit-common             deb      1:3.0.9-1                                         
+  +  libaudit1                   deb      1:3.0.9-1                                         
+  +  libavahi-client3            deb      0.8-10+deb12u1                                    
+  +  libavahi-common-data        deb      0.8-10+deb12u1                                    
+  +  libavahi-common3            deb      0.8-10+deb12u1                                    
+  +  libavif                     deb      0.11.1-1                                          
+  -  libavif                     apk                                      1.0.4-r0          
+  +  libavif15                   deb      0.11.1-1                                          
+  +  libbinutils                 deb      2.40-2                                            
+  +  libblkid1                   deb      2.38.1-5+deb12u3                                  
+  +  libbrotli1                  deb      1.0.9-2+b6                                        
+  +  libbsd                      deb      0.11.7-2                                          
+  -  libbsd                      apk                                      0.12.2-r0         
+  +  libbsd0                     deb      0.11.7-2                                          
+  -  libbz2                      apk                                      1.0.8-r6          
+  +  libbz2-1.0                  deb      1.0.8-5+b1                                        
+  +  libc-bin                    deb      2.36-9+deb12u9                                    
+  +  libc-dev-bin                deb      2.36-9+deb12u9                                    
+  +  libc6                       deb      2.36-9+deb12u9                                    
+  +  libc6-dev                   deb      2.36-9+deb12u9                                    
+  +  libcap-ng                   deb      0.8.3-1                                           
+  +  libcap-ng0                  deb      0.8.3-1+b3                                        
+  +  libcap2                     deb      1:2.66-4                                          
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     └─  +  MEDIUM       CVE-2025-1390   [https://scout.docker.com/v/CVE-2025-1390?s=debian&n=libcap2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1%3A2.66-4]                               
+                         6.1    
+                         ✗ not fixed                    
+  
+  +  libcc1-0                    deb      12.2.0-14                                         
+  +  libcom-err2                 deb      1.47.0-2                                          
+  +  libcrypt-dev                deb      1:4.4.33-2                                        
+  +  libcrypt1                   deb      1:4.4.33-2                                        
+  -  libcrypto3                  apk                                      3.3.2-r4          
+  +  libctf-nobfd0               deb      2.40-2                                            
+  +  libctf0                     deb      2.40-2                                            
+  +  libcups2                    deb      2.4.2-3+deb12u8                                   
+  -  libcurl                     apk                                      8.11.1-r0         
+  +  libcurl4                    deb      7.88.1-10+deb12u8                                 
+  -  libdav1d                    apk                                      1.5.0-r0          
+  +  libdav1d6                   deb      1.0.0-2+deb12u1                                   
+  +  libdb5.3                    deb      5.3.28+dfsg2-1                                    
+  +  libdbus-1-3                 deb      1.14.10-1~deb12u1                                 
+  +  libde265                    deb      1.0.11-1+deb12u2                                  
+  +  libde265-0                  deb      1.0.11-1+deb12u2                                  
+  +  libdebconfclient0           deb      0.270                                             
+  +  libdeflate                  deb      1.14-1                                            
+  +  libdeflate0                 deb      1.14-1                                            
+  +  libdpkg-perl                deb      1.21.22                                           
+  -  libexpat                    apk                                      2.6.4-r0          
+  +  libexpat1                   deb      2.5.0-1+deb12u1                                   
+  +  libext2fs2                  deb      1.47.0-2                                          
+  -  libffi                      apk                                      3.4.6-r0          
+  +  libffi                      deb      3.4.4-1                                           
+  +  libffi8                     deb      3.4.4-1                                           
+  +  libfftw3-double3            deb      3.3.10-1                                          
+  +  libfontconfig1              deb      2.14.1-4                                          
+  +  libfontenc                  deb      1:1.1.4-1                                         
+  +  libfontenc1                 deb      1:1.1.4-1                                         
+  +  libfreetype6                deb      2.12.1+dfsg-5+deb12u3                             
+  +  libgav1                     deb      0.18.0-1                                          
+  +  libgav1-1                   deb      0.18.0-1+b1                                       
+  -  libgcc                      apk                                      14.2.0-r4         
+  +  libgcc-12-dev               deb      12.2.0-14                                         
+  +  libgcc-s1                   deb      12.2.0-14                                         
+  +  libgcrypt20                 deb      1.10.1-3                                          
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     └─  +  LOW          CVE-2018-6829   [https://scout.docker.com/v/CVE-2018-6829?s=debian&n=libgcrypt20&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1.10.1-3]                             
+                         0.0    
+                         ✗ not fixed                    
+  
+  +  libgdbm-compat4             deb      1.23-3                                            
+  +  libgdbm6                    deb      1.23-3                                            
+  +  libglib2.0-0                deb      2.74.6-2+deb12u5                                  
+  +  libgmp10                    deb      2:6.2.1+dfsg1-1.1                                 
+  +  libgnutls30                 deb      3.7.9-2+deb12u3                                   
+  -  libgomp                     apk                                      14.2.0-r4         
+  +  libgomp1                    deb      12.2.0-14                                         
+  +  libgpg-error                deb      1.46-1                                            
+  +  libgpg-error0               deb      1.46-1                                            
+  +  libgprofng0                 deb      2.40-2                                            
+  +  libgs-common                deb      10.0.0~dfsg-11+deb12u6                            
+  +  libgs10                     deb      10.0.0~dfsg-11+deb12u6                            
+  +  libgs10-common              deb      10.0.0~dfsg-11+deb12u6                            
+  +  libgssapi-krb5-2            deb      1.20.1-2+deb12u2                                  
+  +  libheif                     deb      1.15.1-1+deb12u1                                  
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L19-L88                               
+     │   +  RUN set -ex; \                                                                                                                                                  
+     │   +  	\                                                                                                                                                               
+     │   +  	savedAptMark="$(apt-mark showmanual)"; \                                                                                                                        
+     │   +  	\                                                                                                                                                               
+     │   +  	apt-get update; \                                                                                                                                               
+     │   +  	apt-get install -y --no-install-recommends \                                                                                                                    
+     │   +  		libavif-dev \                                                                                                                                                   
+     │   +  		libfreetype6-dev \                                                                                                                                              
+     │   +  		libicu-dev \                                                                                                                                                    
+     │   +  		libjpeg-dev \                                                                                                                                                   
+     │   +  		libmagickwand-dev \                                                                                                                                             
+     │   +  		libpng-dev \                                                                                                                                                    
+     │   +  		libwebp-dev \                                                                                                                                                   
+     │   +  		libzip-dev \                                                                                                                                                    
+     │   +  	; \                                                                                                                                                             
+     │   +  	\                                                                                                                                                               
+     │   +  	docker-php-ext-configure gd \                                                                                                                                   
+     │   +  		--with-avif \                                                                                                                                                   
+     │   +  		--with-freetype \                                                                                                                                               
+     │   +  		--with-jpeg \                                                                                                                                                   
+     │   +  		--with-webp \                                                                                                                                                   
+     │   +  	; \                                                                                                                                                             
+     │   +  	docker-php-ext-install -j "$(nproc)" \                                                                                                                          
+     │   +  		bcmath \                                                                                                                                                        
+     │   +  		exif \                                                                                                                                                          
+     │   +  		gd \                                                                                                                                                            
+     │   +  		intl \                                                                                                                                                          
+     │   +  		mysqli \                                                                                                                                                        
+     │   +  		zip \                                                                                                                                                           
+     │   +  	; \                                                                                                                                                             
+     │   +  # https://pecl.php.net/package/imagick                                                                                                                          
+     │   +  # https://github.com/Imagick/imagick/commit/5ae2ecf20a1157073bad0170106ad0cf74e01cb6 (causes a lot of build failures, but strangely only intermittent ones 🤔)  
+     │   +  # see also https://github.com/Imagick/imagick/pull/641                                                                                                          
+     │   +  # this is "pecl install imagick-3.7.0", but by hand so we can apply a small hack / part of the above commit                                                     
+     │   +  	curl -fL -o imagick.tgz 'https://pecl.php.net/get/imagick-3.7.0.tgz'; \                                                                                         
+     │   +  	echo '5a364354109029d224bcbb2e82e15b248be9b641227f45e63425c06531792d3e *imagick.tgz' | sha256sum -c -; \                                                        
+     │   +  	tar --extract --directory /tmp --file imagick.tgz imagick-3.7.0; \                                                                                              
+     │   +  	grep '^//#endif$' /tmp/imagick-3.7.0/Imagick.stub.php; \                                                                                                        
+     │   +  	test "$(grep -c '^//#endif$' /tmp/imagick-3.7.0/Imagick.stub.php)" = '1'; \                                                                                     
+     │   +  	sed -i -e 's!^//#endif$!#endif!' /tmp/imagick-3.7.0/Imagick.stub.php; \                                                                                         
+     │   +  	grep '^//#endif$' /tmp/imagick-3.7.0/Imagick.stub.php && exit 1 || :; \                                                                                         
+     │   +  	docker-php-ext-install /tmp/imagick-3.7.0; \                                                                                                                    
+     │   +  	rm -rf imagick.tgz /tmp/imagick-3.7.0; \                                                                                                                        
+     │   +  	\                                                                                                                                                               
+     │   +  # some misbehaving extensions end up outputting to stdout 🙈 (https://github.com/docker-library/wordpress/issues/669#issuecomment-993945967)                    
+     │   +  	out="$(php -r 'exit(0);')"; \                                                                                                                                   
+     │   +  	[ -z "$out" ]; \                                                                                                                                                
+     │   +  	err="$(php -r 'exit(0);' 3>&1 1>&2 2>&3)"; \                                                                                                                    
+     │   +  	[ -z "$err" ]; \                                                                                                                                                
+     │   +  	\                                                                                                                                                               
+     │   +  	extDir="$(php -r 'echo ini_get("extension_dir");')"; \                                                                                                          
+     │   +  	[ -d "$extDir" ]; \                                                                                                                                             
+     │   +  # reset apt-mark's "manual" list so that "purge --auto-remove" will remove all build dependencies                                                               
+     │   +  	apt-mark auto '.*' > /dev/null; \                                                                                                                               
+     │   +  	apt-mark manual $savedAptMark; \                                                                                                                                
+     │   +  	ldd "$extDir"/*.so \                                                                                                                                            
+     │   +  		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); printf "*%s\n", so }' \                                     
+     │   +  		| sort -u \                                                                                                                                                     
+     │   +  		| xargs -r dpkg-query --search \                                                                                                                                
+     │   +  		| cut -d: -f1 \                                                                                                                                                 
+     │   +  		| sort -u \                                                                                                                                                     
+     │   +  		| xargs -rt apt-mark manual; \                                                                                                                                  
+     │   +  	\                                                                                                                                                               
+     │   +  	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \                                                                                 
+     │   +  	rm -rf /var/lib/apt/lists/*; \                                                                                                                                  
+     │   +  	\                                                                                                                                                               
+     │   +  	! { ldd "$extDir"/*.so | grep 'not found'; }; \                                                                                                                 
+     │   +  # check for output like "PHP Warning:  PHP Startup: Unable to load dynamic library 'foo' (tried: ...)                                                           
+     │   +  	err="$(php --version 3>&1 1>&2 2>&3)"; \                                                                                                                        
+     │   +  	[ -z "$err" ]                                                                                                                                                   
+     │   
+     ├─  +  LOW          CVE-2024-25269  [https://scout.docker.com/v/CVE-2024-25269?s=debian&n=libheif&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1.15.1-1%2Bdeb12u1]                      
+     │                   0.0    
+     │                   ✗ not fixed                    
+     └─  +  LOW          CVE-2023-49463  [https://scout.docker.com/v/CVE-2023-49463?s=debian&n=libheif&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1.15.1-1%2Bdeb12u1]                      
+                         0.0    
+                         ✗ not fixed                    
+  
+  +  libheif1                    deb      1.15.1-1+deb12u1                                  
+  +  libhogweed6                 deb      3.8.1-2                                           
+  +  libice                      deb      2:1.0.10-1                                        
+  +  libice6                     deb      2:1.0.10-1                                        
+  +  libicu72                    deb      72.1-3                                            
+  +  libidn                      deb      1.41-1                                            
+  +  libidn12                    deb      1.41-1                                            
+  -  libidn2                     apk                                      2.3.7-r0          
+  +  libidn2                     deb      2.3.3-1                                           
+  +  libidn2-0                   deb      2.3.3-1+b1                                        
+  +  libijs-0.35                 deb      0.35-15                                           
+  -  libintl                     apk                                      0.22.5-r0         
+  +  libisl23                    deb      0.25-1.1                                          
+  +  libitm1                     deb      12.2.0-14                                         
+  +  libjansson4                 deb      2.14-2                                            
+  +  libjbig0                    deb      2.1-6.1                                           
+  +  libjbig2dec0                deb      0.19-3                                            
+  -  libjpeg-turbo               apk                                      3.0.4-r0          
+  +  libjpeg-turbo               deb      1:2.1.5-2                                         
+  +  libjpeg62-turbo             deb      1:2.1.5-2                                         
+  +  libk5crypto3                deb      1.20.1-2+deb12u2                                  
+  +  libkeyutils1                deb      1.6.3-2                                           
+  +  libkrb5-3                   deb      1.20.1-2+deb12u2                                  
+  +  libkrb5support0             deb      1.20.1-2+deb12u2                                  
+  +  liblcms2-2                  deb      2.14-2                                            
+  +  libldap-2.5-0               deb      2.5.13+dfsg-5                                     
+  +  liblerc4                    deb      4.0.0+ds-2                                        
+  +  liblqr                      deb      0.4.2-2.1                                         
+  +  liblqr-1-0                  deb      0.4.2-2.1                                         
+  +  liblsan0                    deb      12.2.0-14                                         
+  -  libltdl                     apk                                      2.4.7-r3          
+  +  libltdl7                    deb      2.4.7-7~deb12u1                                   
+  +  liblua5.3-0                 deb      5.3.6-2                                           
+  +  liblz4-1                    deb      1.9.4-1                                           
+  +  liblzma5                    deb      5.4.1-0.2                                         
+  +  libmagic-mgc                deb      1:5.44-3                                          
+  +  libmagic1                   deb      1:5.44-3                                          
+  +  libmagickcore-6.q16-6       deb      8:6.9.11.60+dfsg-1.6+deb12u2                      
+  +  libmagickwand-6.q16-6       deb      8:6.9.11.60+dfsg-1.6+deb12u2                      
+  -  libmd                       apk                                      1.1.0-r0          
+  +  libmd                       deb      1.0.4-2                                           
+  +  libmd0                      deb      1.0.4-2                                           
+  +  libmount1                   deb      2.38.1-5+deb12u3                                  
+  +  libmpc3                     deb      1.3.1-1                                           
+  +  libmpfr6                    deb      4.2.0-1                                           
+  -  libncursesw                 apk                                      6.5_p20241006-r3  
+  +  libncursesw6                deb      6.4-4                                             
+  +  libnettle8                  deb      3.8.1-2                                           
+  +  libnghttp2-14               deb      1.52.0-1+deb12u2                                  
+  +  libnsl                      deb      1.3.0-2                                           
+  +  libnsl-dev                  deb      1.3.0-2                                           
+  +  libnsl2                     deb      1.3.0-2                                           
+  +  libnuma1                    deb      2.0.16-1                                          
+  +  libonig                     deb      6.9.8-1                                           
+  +  libonig5                    deb      6.9.8-1                                           
+  +  libopenjp2-7                deb      2.5.0-2+deb12u1                                   
+  +  libp11-kit0                 deb      0.24.1-2                                          
+  +  libpam-modules              deb      1.5.2-6+deb12u1                                   
+  +  libpam-modules-bin          deb      1.5.2-6+deb12u1                                   
+  +  libpam-runtime              deb      1.5.2-6+deb12u1                                   
+  +  libpam0g                    deb      1.5.2-6+deb12u1                                   
+  +  libpaper                    deb      1.1.29                                            
+  +  libpaper1                   deb      1.1.29                                            
+  +  libpcre2-8-0                deb      10.42-1                                           
+  +  libperl5.36                 deb      5.36.0-7+deb12u1                                  
+  +  libpkgconf3                 deb      1.8.1-1                                           
+  -  libpng                      apk                                      1.6.44-r0         
+  +  libpng1.6                   deb      1.6.39-2                                          
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L10-L16                               
+     │   +  RUN set -eux; \                                                                                                                                                 
+     │   +  	apt-get update; \                                                                                                                                               
+     │   +  	apt-get install -y --no-install-recommends \                                                                                                                    
+     │   +  # Ghostscript is required for rendering PDF previews                                                                                                            
+     │   +  		ghostscript \                                                                                                                                                   
+     │   +  	; \                                                                                                                                                             
+     │   +  	rm -rf /var/lib/apt/lists/*                                                                                                                                     
+     │   
+     └─  +  LOW          CVE-2021-4214   [https://scout.docker.com/v/CVE-2021-4214?s=debian&n=libpng1.6&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1.6.39-2]                               
+                         0.0    
+                         ✗ not fixed                    
+  
+  +  libpng16-16                 deb      1.6.39-2                                          
+  +  libproc2-0                  deb      2:4.0.2-3                                         
+  -  libpsl                      apk                                      0.21.5-r3         
+  +  libpsl                      deb      0.21.2-1                                          
+  +  libpsl5                     deb      0.21.2-1                                          
+  +  libquadmath0                deb      12.2.0-14                                         
+  +  librav1e0                   deb      0.5.1-6                                           
+  +  libreadline8                deb      8.2-1.3                                           
+  +  librtmp1                    deb      2.4+20151223.gitfa8646d.1-2+b2                    
+  +  libsasl2-2                  deb      2.1.28+dfsg-10                                    
+  +  libsasl2-modules-db         deb      2.1.28+dfsg-10                                    
+  +  libseccomp                  deb      2.5.4-1+deb12u1                                   
+  +  libseccomp2                 deb      2.5.4-1+deb12u1                                   
+  +  libselinux                  deb      3.4-1                                             
+  +  libselinux1                 deb      3.4-1+b6                                          
+  +  libsemanage                 deb      3.4-1                                             
+  +  libsemanage-common          deb      3.4-1                                             
+  +  libsemanage2                deb      3.4-1+b5                                          
+  +  libsepol                    deb      3.4-2.1                                           
+  +  libsepol2                   deb      3.4-2.1                                           
+  -  libsharpyuv                 apk                                      1.4.0-r0          
+  +  libsm                       deb      2:1.2.3-1                                         
+  +  libsm6                      deb      2:1.2.3-1                                         
+  +  libsmartcols1               deb      2.38.1-5+deb12u3                                  
+  -  libsodium                   apk                                      1.0.20-r0         
+  +  libsodium                   deb      1.0.18-1                                          
+  +  libsodium23                 deb      1.0.18-1                                          
+  +  libsqlite3-0                deb      3.40.1-2+deb12u1                                  
+  +  libss2                      deb      1.47.0-2                                          
+  +  libssh2                     deb      1.10.0-3                                          
+  +  libssh2-1                   deb      1.10.0-3+b1                                       
+  +  libssl3                     deb      3.0.15-1~deb12u1                                  
+  -  libssl3                     apk                                      3.3.2-r4          
+  -  libstdc++                   apk                                      14.2.0-r4         
+  +  libstdc++-12-dev            deb      12.2.0-14                                         
+  +  libstdc++6                  deb      12.2.0-14                                         
+  +  libsvtav1enc1               deb      1.4.1+dfsg-1                                      
+  +  libsystemd0                 deb      252.33-1~deb12u1                                  
+  -  libtasn1                    apk                                      4.20.0-r0         
+  +  libtasn1-6                  deb      4.19.0-2                                          
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     └─  +  MEDIUM       CVE-2024-12133  [https://scout.docker.com/v/CVE-2024-12133?s=debian&n=libtasn1-6&ns=debian&t=deb&osn=debian&osv=12&vr=%3C4.19.0-2%2Bdeb12u1]                      
+                         5.3    
+                         ✓ fixed in  4.19.0-2+deb12u1   
+  
+  +  libtiff6                    deb      4.5.0-6+deb12u2                                   
+  +  libtinfo6                   deb      6.4-4                                             
+  +  libtirpc                    deb      1.3.3+ds-1                                        
+  +  libtirpc-common             deb      1.3.3+ds-1                                        
+  +  libtirpc-dev                deb      1.3.3+ds-1                                        
+  +  libtirpc3                   deb      1.3.3+ds-1                                        
+  +  libtool                     deb      2.4.7-7~deb12u1                                   
+  -  libtool                     apk                                      2.4.7-r3          
+  +  libtsan2                    deb      12.2.0-14                                         
+  +  libubsan1                   deb      12.2.0-14                                         
+  +  libudev1                    deb      252.33-1~deb12u1                                  
+  +  libunistring                deb      1.0-2                                             
+  -  libunistring                apk                                      1.2-r0            
+  +  libunistring2               deb      1.0-2                                             
+  +  libuuid1                    deb      2.38.1-5+deb12u3                                  
+  -  libwebp                     apk                                      1.4.0-r0          
+  +  libwebp                     deb      1.2.4-0.2+deb12u1                                 
+  +  libwebp7                    deb      1.2.4-0.2+deb12u1                                 
+  -  libwebpdemux                apk                                      1.4.0-r0          
+  +  libwebpdemux2               deb      1.2.4-0.2+deb12u1                                 
+  -  libwebpmux                  apk                                      1.4.0-r0          
+  +  libwebpmux3                 deb      1.2.4-0.2+deb12u1                                 
+  +  libx11                      deb      2:1.8.4-2+deb12u2                                 
+  -  libx11                      apk                                      1.8.10-r0         
+  +  libx11-6                    deb      2:1.8.4-2+deb12u2                                 
+  +  libx11-data                 deb      2:1.8.4-2+deb12u2                                 
+  +  libx265-199                 deb      3.5-2+b1                                          
+  -  libxau                      apk                                      1.0.11-r4         
+  +  libxau                      deb      1:1.0.9-1                                         
+  +  libxau6                     deb      1:1.0.9-1                                         
+  -  libxcb                      apk                                      1.16.1-r0         
+  +  libxcb                      deb      1.15-1                                            
+  +  libxcb1                     deb      1.15-1                                            
+  +  libxcrypt                   deb      1:4.4.33-2                                        
+  -  libxdmcp                    apk                                      1.1.5-r1          
+  +  libxdmcp                    deb      1:1.1.2-3                                         
+  +  libxdmcp6                   deb      1:1.1.2-3                                         
+  -  libxext                     apk                                      1.3.6-r2          
+  +  libxext                     deb      2:1.3.4-1                                         
+  +  libxext6                    deb      2:1.3.4-1+b1                                      
+  -  libxml2                     apk                                      2.13.4-r3         
+  +  libxml2                     deb      2.9.14+dfsg-1.3~deb12u1                           
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     ├─  +  HIGH         CVE-2022-49043  [https://scout.docker.com/v/CVE-2022-49043?s=debian&n=libxml2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.9.14%2Bdfsg-1.3%7Edeb12u1]             
+     │                   8.1    
+     │                   ✗ not fixed                    
+     ├─  +  HIGH         CVE-2025-24928  [https://scout.docker.com/v/CVE-2025-24928?s=debian&n=libxml2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.9.14%2Bdfsg-1.3%7Edeb12u1]             
+     │                   7.8    
+     │                   ✗ not fixed                    
+     ├─  +  HIGH         CVE-2024-56171  [https://scout.docker.com/v/CVE-2024-56171?s=debian&n=libxml2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.9.14%2Bdfsg-1.3%7Edeb12u1]             
+     │                   7.8    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2025-27113  [https://scout.docker.com/v/CVE-2025-27113?s=debian&n=libxml2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.9.14%2Bdfsg-1.3%7Edeb12u1]             
+     │                   2.9    
+     │                   ✗ not fixed                    
+     └─  +  LOW          CVE-2024-34459  [https://scout.docker.com/v/CVE-2024-34459?s=debian&n=libxml2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.9.14%2Bdfsg-1.3%7Edeb12u1]             
+                         0.0    
+                         ✗ not fixed                    
+  
+  +  libxt                       deb      1:1.2.1-1.1                                       
+  +  libxt6                      deb      1:1.2.1-1.1                                       
+  +  libxxhash0                  deb      0.8.1-1                                           
+  +  libyuv                      deb      0.0~git20230123.b2528b0-1                         
+  +  libyuv0                     deb      0.0~git20230123.b2528b0-1                         
+  +  libzip                      deb      1.7.3-1                                           
+  -  libzip                      apk                                      1.11.2-r0         
+  +  libzip4                     deb      1.7.3-1+b1                                        
+  +  libzstd                     deb      1.5.4+dfsg2-5                                     
+  +  libzstd1                    deb      1.5.4+dfsg2-5                                     
+  +  linux                       deb      6.1.124-1                                         
+  +  linux-libc-dev              deb      6.1.124-1                                         
+  +  login                       deb      1:4.13+dfsg1-1+b1                                 
+  +  logsave                     deb      1.47.0-2                                          
+  +  lua5.3                      deb      5.3.6-2                                           
+  +  lz4                         deb      1.9.4-1                                           
+  +  m4                          deb      1.4.19-3                                          
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     ├─  +  LOW          CVE-2008-1688   [https://scout.docker.com/v/CVE-2008-1688?s=debian&n=m4&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1.4.19-3]                                      
+     │                   0.0    
+     │                   ✗ not fixed                    
+     └─  +  LOW          CVE-2008-1687   [https://scout.docker.com/v/CVE-2008-1687?s=debian&n=m4&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1.4.19-3]                                      
+                         0.0    
+                         ✗ not fixed                    
+  
+  +  make                        deb      4.3-4.1                                           
+  +  make-dfsg                   deb      4.3-4.1                                           
+  +  mawk                        deb      1.3.4.20200120-3.1                                
+  +  media-types                 deb      10.0.0                                            
+  +  mount                       deb      2.38.1-5+deb12u3                                  
+  +  mpclib3                     deb      1.3.1-1                                           
+  +  mpfr4                       deb      4.2.0-1                                           
+  -  musl                        apk                                      1.2.5-r8          
+     │   -  https://github.com/docker-library/wordpress/blob/3b86de3fe7c99001e32ac2e7048a8adf4f85db5a/beta/php8.1/fpm-alpine/Dockerfile#L0-L0                               
+     │   
+     └─  -  HIGH         CVE-2025-26519  [https://scout.docker.com/v/CVE-2025-26519?s=alpine&n=musl&ns=alpine&t=apk&osn=alpine&osv=3.21&vr=%3C1.2.5-r9]                                    
+                         8.1    
+  
+  -  musl-utils                  apk                                      1.2.5-r8          
+  -  ncurses                     apk                                      6.5_p20241006-r3  
+  +  ncurses                     deb      6.4-4                                             
+  +  ncurses-base                deb      6.4-4                                             
+  +  ncurses-bin                 deb      6.4-4                                             
+  -  ncurses-terminfo-base       apk                                      6.5_p20241006-r3  
+  +  nettle                      deb      3.8.1-2                                           
+  -  nettle                      apk                                      3.10-r1           
+  -  nghttp2                     apk                                      1.64.0-r0         
+  +  nghttp2                     deb      1.52.0-1+deb12u2                                  
+  -  nghttp2-libs                apk                                      1.64.0-r0         
+  +  numactl                     deb      2.0.16-1                                          
+  -  oniguruma                   apk                                      6.9.9-r0          
+  -  openjpeg                    apk                                      2.5.2-r0          
+  +  openjpeg2                   deb      2.5.0-2+deb12u1                                   
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L10-L16                               
+     │   +  RUN set -eux; \                                                                                                                                                 
+     │   +  	apt-get update; \                                                                                                                                               
+     │   +  	apt-get install -y --no-install-recommends \                                                                                                                    
+     │   +  # Ghostscript is required for rendering PDF previews                                                                                                            
+     │   +  		ghostscript \                                                                                                                                                   
+     │   +  	; \                                                                                                                                                             
+     │   +  	rm -rf /var/lib/apt/lists/*                                                                                                                                     
+     │   
+     ├─  +  LOW          CVE-2018-20846  [https://scout.docker.com/v/CVE-2018-20846?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                               
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2018-16376  [https://scout.docker.com/v/CVE-2018-16376?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                               
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2018-16375  [https://scout.docker.com/v/CVE-2018-16375?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                               
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2017-17479  [https://scout.docker.com/v/CVE-2017-17479?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                               
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2016-9581   [https://scout.docker.com/v/CVE-2016-9581?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                                
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2016-9580   [https://scout.docker.com/v/CVE-2016-9580?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                                
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2016-9117   [https://scout.docker.com/v/CVE-2016-9117?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                                
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2016-9116   [https://scout.docker.com/v/CVE-2016-9116?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                                
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2016-9115   [https://scout.docker.com/v/CVE-2016-9115?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                                
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2016-9114   [https://scout.docker.com/v/CVE-2016-9114?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                                
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2016-9113   [https://scout.docker.com/v/CVE-2016-9113?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                                
+     │                   0.0    
+     │                   ✗ not fixed                    
+     └─  +  LOW          CVE-2016-10505  [https://scout.docker.com/v/CVE-2016-10505?s=debian&n=openjpeg2&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.0-2]                               
+                         0.0    
+                         ✗ not fixed                    
+  
+  +  openldap                    deb      2.5.13+dfsg-5                                     
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     ├─  +  LOW          CVE-2020-15719  [https://scout.docker.com/v/CVE-2020-15719?s=debian&n=openldap&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.13%2Bdfsg-5]                        
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2017-17740  [https://scout.docker.com/v/CVE-2017-17740?s=debian&n=openldap&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.13%2Bdfsg-5]                        
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2017-14159  [https://scout.docker.com/v/CVE-2017-14159?s=debian&n=openldap&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.13%2Bdfsg-5]                        
+     │                   0.0    
+     │                   ✗ not fixed                    
+     └─  +  LOW          CVE-2015-3276   [https://scout.docker.com/v/CVE-2015-3276?s=debian&n=openldap&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.5.13%2Bdfsg-5]                         
+                         0.0    
+                         ✗ not fixed                    
+  
+  -  openssl                     apk                                      3.3.2-r4          
+     │   -  https://github.com/docker-library/wordpress/blob/3b86de3fe7c99001e32ac2e7048a8adf4f85db5a/beta/php8.1/fpm-alpine/Dockerfile#L0-L0                               
+     │   
+     ├─  -  MEDIUM       CVE-2024-12797  [https://scout.docker.com/v/CVE-2024-12797?s=alpine&n=openssl&ns=alpine&t=apk&osn=alpine&osv=3.21&vr=%3C3.3.3-r0]                                 
+     │                   6.3    
+     └─  -  MEDIUM       CVE-2024-13176  [https://scout.docker.com/v/CVE-2024-13176?s=alpine&n=openssl&ns=alpine&t=apk&osn=alpine&osv=3.21&vr=%3C3.3.2-r5]                                 
+                         4.1    
+  
+  +  openssl                     deb      3.0.15-1~deb12u1                                  
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     └─  +  LOW          CVE-2010-0928   [https://scout.docker.com/v/CVE-2010-0928?s=debian&n=openssl&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D3.0.11-1%7Edeb12u2]                       
+                         0.0    
+                         ✗ not fixed                    
+  
+  +  p11-kit                     deb      0.24.1-2                                          
+  -  p11-kit                     apk                                      0.25.5-r2         
+  +  pam                         deb      1.5.2-6+deb12u1                                   
+  +  passwd                      deb      1:4.13+dfsg1-1+b1                                 
+  +  patch                       deb      2.7.6-7                                           
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     ├─  +  LOW          CVE-2021-45261  [https://scout.docker.com/v/CVE-2021-45261?s=debian&n=patch&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.7.6-7]                                   
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2018-6952   [https://scout.docker.com/v/CVE-2018-6952?s=debian&n=patch&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.7.6-7]                                    
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2018-6951   [https://scout.docker.com/v/CVE-2018-6951?s=debian&n=patch&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.7.6-7]                                    
+     │                   0.0    
+     │                   ✗ not fixed                    
+     └─  +  LOW          CVE-2010-4651   [https://scout.docker.com/v/CVE-2010-4651?s=debian&n=patch&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.7.6-7]                                    
+                         0.0    
+                         ✗ not fixed                    
+  
+  -  pax-utils                   apk                                      1.3.8-r1          
+  +  pcre2                       deb      10.42-1                                           
+  +  perl                        deb      5.36.0-7+deb12u1                                  
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     ├─  +  LOW          CVE-2023-31486  [https://scout.docker.com/v/CVE-2023-31486?s=debian&n=perl&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D5.36.0-7%2Bdeb12u1]                         
+     │                   0.0    
+     │                   ✗ not fixed                    
+     └─  +  LOW          CVE-2011-4116   [https://scout.docker.com/v/CVE-2011-4116?s=debian&n=perl&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D5.36.0-7%2Bdeb12u1]                          
+                         0.0    
+                         ✗ not fixed                    
+  
+  +  perl-base                   deb      5.36.0-7+deb12u1                                  
+  +  perl-modules-5.36           deb      5.36.0-7+deb12u1                                  
+  +  php                         generic  8.2.27                                            
+  ↑  php-cli                     generic  8.2.27                          8.1.31            
+  -  php-fpm                     generic                                  8.1.31            
+  +  pkg-config                  deb      1.8.1-1                                           
+  +  pkgconf                     deb      1.8.1-1                                           
+  +  pkgconf-bin                 deb      1.8.1-1                                           
+  +  poppler-data                deb      0.4.12-1                                          
+  +  procps                      deb      2:4.0.2-3                                         
+  +  re2c                        deb      3.0-2                                             
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     └─  +  LOW          CVE-2018-21232  [https://scout.docker.com/v/CVE-2018-21232?s=debian&n=re2c&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D3.0-2]                                      
+                         0.0    
+                         ✗ not fixed                    
+  
+  -  readline                    apk                                      8.2.13-r0         
+  +  readline                    deb      8.2-1.3                                           
+  +  readline-common             deb      8.2-1.3                                           
+  +  rpcsvc-proto                deb      1.4.3-1                                           
+  +  rtmpdump                    deb      2.4+20151223.gitfa8646d.1-2                       
+  +  rust-rav1e                  deb      0.5.1-6                                           
+  -  scanelf                     apk                                      1.3.8-r1          
+  +  sed                         deb      4.9-1                                             
+  +  sensible-utils              deb      0.0.17+nmu1                                       
+  +  shadow                      deb      1:4.13+dfsg1-1                                    
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     └─  +  LOW          CVE-2007-5686   [https://scout.docker.com/v/CVE-2007-5686?s=debian&n=shadow&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1%3A4.13%2Bdfsg1-1]                        
+                         0.0    
+                         ✗ not fixed                    
+  
+  -  sqlite                      apk                                      3.47.1-r0         
+  -  sqlite-libs                 apk                                      3.47.1-r0         
+  +  sqlite3                     deb      3.40.1-2+deb12u1                                  
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     ├─  +  LOW          CVE-2023-36191  [https://scout.docker.com/v/CVE-2023-36191?s=debian&n=sqlite3&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D3.40.1-2]                                
+     │                   0.0    
+     │                   ✗ not fixed                    
+     └─  +  LOW          CVE-2021-45346  [https://scout.docker.com/v/CVE-2021-45346?s=debian&n=sqlite3&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D3.40.1-2%2Bdeb12u1]                      
+                         0.0    
+                         ✗ not fixed                    
+  
+  -  ssl_client                  apk                                      1.37.0-r9         
+  +  svt-av1                     deb      1.4.1+dfsg-1                                      
+  +  systemd                     deb      252.33-1~deb12u1                                  
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     ├─  +  LOW          CVE-2023-31439  [https://scout.docker.com/v/CVE-2023-31439?s=debian&n=systemd&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D252.33-1%7Edeb12u1]                      
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2023-31438  [https://scout.docker.com/v/CVE-2023-31438?s=debian&n=systemd&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D252.33-1%7Edeb12u1]                      
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2023-31437  [https://scout.docker.com/v/CVE-2023-31437?s=debian&n=systemd&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D252.33-1%7Edeb12u1]                      
+     │                   0.0    
+     │                   ✗ not fixed                    
+     └─  +  LOW          CVE-2013-4392   [https://scout.docker.com/v/CVE-2013-4392?s=debian&n=systemd&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D252.33-1%7Edeb12u1]                       
+                         0.0    
+                         ✗ not fixed                    
+  
+  +  sysvinit                    deb      3.06-4                                            
+  +  sysvinit-utils              deb      3.06-4                                            
+  -  tar                         apk                                      1.35-r2           
+  +  tar                         deb      1.34+dfsg-1.2+deb12u1                             
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     └─  +  LOW          CVE-2005-2541   [https://scout.docker.com/v/CVE-2005-2541?s=debian&n=tar&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D1.34%2Bdfsg-1.2%2Bdeb12u1]                    
+                         0.0    
+                         ✗ not fixed                    
+  
+  -  tiff                        apk                                      4.7.0-r0          
+  +  tiff                        deb      4.5.0-6+deb12u2                                   
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L10-L16                               
+     │   +  RUN set -eux; \                                                                                                                                                 
+     │   +  	apt-get update; \                                                                                                                                               
+     │   +  	apt-get install -y --no-install-recommends \                                                                                                                    
+     │   +  # Ghostscript is required for rendering PDF previews                                                                                                            
+     │   +  		ghostscript \                                                                                                                                                   
+     │   +  	; \                                                                                                                                                             
+     │   +  	rm -rf /var/lib/apt/lists/*                                                                                                                                     
+     │   
+     ├─  +  LOW          CVE-2024-6716   [https://scout.docker.com/v/CVE-2024-6716?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6%2Bdeb12u1]                           
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2023-6228   [https://scout.docker.com/v/CVE-2023-6228?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6%2Bdeb12u2]                           
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2023-3164   [https://scout.docker.com/v/CVE-2023-3164?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6%2Bdeb12u2]                           
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2023-1916   [https://scout.docker.com/v/CVE-2023-1916?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6%2Bdeb12u2]                           
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2022-1210   [https://scout.docker.com/v/CVE-2022-1210?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6%2Bdeb12u2]                           
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2018-10126  [https://scout.docker.com/v/CVE-2018-10126?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6%2Bdeb12u2]                          
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2017-9117   [https://scout.docker.com/v/CVE-2017-9117?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6%2Bdeb12u2]                           
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2017-5563   [https://scout.docker.com/v/CVE-2017-5563?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6%2Bdeb12u2]                           
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2017-17973  [https://scout.docker.com/v/CVE-2017-17973?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6%2Bdeb12u2]                          
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  LOW          CVE-2017-16232  [https://scout.docker.com/v/CVE-2017-16232?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6%2Bdeb12u2]                          
+     │                   0.0    
+     │                   ✗ not fixed                    
+     ├─  +  UNSPECIFIED  CVE-2023-38289  [https://scout.docker.com/v/CVE-2023-38289?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6]                                    
+     │                   0.0    
+     │                   ✗ not fixed                    
+     └─  +  UNSPECIFIED  CVE-2023-38288  [https://scout.docker.com/v/CVE-2023-38288?s=debian&n=tiff&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D4.5.0-6]                                    
+                         0.0    
+                         ✗ not fixed                    
+  
+  +  tzdata                      deb      2024b-0+deb12u1                                   
+  +  ucf                         deb      3.0043+nmu1+deb12u1                               
+  +  usr-is-merged               deb      37~deb12u1                                        
+  +  usrmerge                    deb      37~deb12u1                                        
+  +  util-linux                  deb      2.38.1-5+deb12u3                                  
+     │   +  https://github.com/docker-library/wordpress/blob/470084224c4a2b4f0c2e19da2af9ab96298739e4/latest/php8.2/apache/Dockerfile#L0-L0                                 
+     │   
+     └─  +  LOW          CVE-2022-0563   [https://scout.docker.com/v/CVE-2022-0563?s=debian&n=util-linux&ns=debian&t=deb&osn=debian&osv=12&vr=%3E%3D2.38.1-5%2Bdeb12u3]                    
+                         0.0    
+                         ✗ not fixed                    
+  
+  +  util-linux-extra            deb      2.38.1-5+deb12u3                                  
+  +  wordpress                   generic  6.7.2                                             
+  +  x11-common                  deb      1:7.7+23                                          
+  +  x265                        deb      3.5-2                                             
+  +  xfonts-encodings            deb      1:1.0.4-2.2                                       
+  +  xfonts-utils                deb      1:7.7+6                                           
+  +  xorg                        deb      1:7.7+23                                          
+  +  xxhash                      deb      0.8.1-1                                           
+  -  xz                          apk                                      5.6.3-r0          
+  -  xz-libs                     apk                                      5.6.3-r0          
+  +  xz-utils                    deb      5.4.1-0.2                                         
+  -  zlib                        apk                                      1.3.1-r2          
+  +  zlib                        deb      1:1.2.13.dfsg-1                                   
+  +  zlib1g                      deb      1:1.2.13.dfsg-1                                   
+  -  zstd                        apk                                      1.5.6-r2          
+  -  zstd-libs                   apk                                      1.5.6-r2          
+  
+  

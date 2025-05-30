@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Rook.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">proyecto</a> &gt; <a href="index.source.html" class="el_package">chess.pieces</a> &gt; <span class="el_source">Rook.java</span></div><h1>Rook.java</h1><pre class="source lang-java linenums">package chess.pieces;
+
+import boardgame.Board;
+import boardgame.Position;
+import chess.ChessPiece;
+import chess.Color;
+
+public class Rook extends ChessPiece {
+	
+	public Rook(Board board, Color color) {
+<span class="nc" id="L11">		super(board, color);</span>
+<span class="nc" id="L12">	}</span>
+	
+	@Override 
+	public String toString() {
+<span class="nc" id="L16">		return &quot;R&quot;; </span>
+	}
+
+	@Override
+	public boolean[][] possibleMoves() {
+<span class="nc" id="L21">		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];</span>
+		
+<span class="nc" id="L23">		Position p = new Position(0, 0);</span>
+		
+		// above
+<span class="nc" id="L26">		p.setValues(position.getRow() - 1, position.getColumn());</span>
+<span class="nc bnc" id="L27" title="All 4 branches missed.">		while (getBoard().positionExists(p) &amp;&amp; !getBoard().thereIsAPiece(p)) {</span>
+<span class="nc" id="L28">			mat[p.getRow()][p.getColumn()] = true;</span>
+<span class="nc" id="L29">			p.setRow(p.getRow() -1);</span>
+		}
+		
+<span class="nc bnc" id="L32" title="All 4 branches missed.">		if(getBoard().positionExists(p) &amp;&amp; isThereOpponentPiece(p)) {	</span>
+<span class="nc" id="L33">			mat[p.getRow()][p.getColumn()] = true;</span>
+		}
+		
+		// left
+<span class="nc" id="L37">		p.setValues(position.getRow(), position.getColumn() - 1);</span>
+<span class="nc bnc" id="L38" title="All 4 branches missed.">		while (getBoard().positionExists(p) &amp;&amp; !getBoard().thereIsAPiece(p)) {</span>
+<span class="nc" id="L39">			mat[p.getRow()][p.getColumn()] = true;</span>
+<span class="nc" id="L40">			p.setColumn(p.getColumn() - 1);</span>
+		}
+<span class="nc bnc" id="L42" title="All 4 branches missed.">		if (getBoard().positionExists(p) &amp;&amp; isThereOpponentPiece(p)) {</span>
+<span class="nc" id="L43">			mat[p.getRow()][p.getColumn()] = true;</span>
+		}
+
+		// right
+<span class="nc" id="L47">		p.setValues(position.getRow(), position.getColumn() + 1);</span>
+<span class="nc bnc" id="L48" title="All 4 branches missed.">		while (getBoard().positionExists(p) &amp;&amp; !getBoard().thereIsAPiece(p)) {</span>
+<span class="nc" id="L49">			mat[p.getRow()][p.getColumn()] = true;</span>
+<span class="nc" id="L50">			p.setColumn(p.getColumn() + 1);</span>
+		}
+<span class="nc bnc" id="L52" title="All 4 branches missed.">		if (getBoard().positionExists(p) &amp;&amp; isThereOpponentPiece(p)) {</span>
+<span class="nc" id="L53">			mat[p.getRow()][p.getColumn()] = true;</span>
+		}
+
+		// below
+<span class="nc" id="L57">		p.setValues(position.getRow() + 1, position.getColumn());</span>
+<span class="nc bnc" id="L58" title="All 4 branches missed.">		while (getBoard().positionExists(p) &amp;&amp; !getBoard().thereIsAPiece(p)) {</span>
+<span class="nc" id="L59">			mat[p.getRow()][p.getColumn()] = true;</span>
+<span class="nc" id="L60">			p.setRow(p.getRow() + 1);</span>
+		}
+<span class="nc bnc" id="L62" title="All 4 branches missed.">		if (getBoard().positionExists(p) &amp;&amp; isThereOpponentPiece(p)) {</span>
+<span class="nc" id="L63">			mat[p.getRow()][p.getColumn()] = true;</span>
+		}
+		
+<span class="nc" id="L66">		return mat;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

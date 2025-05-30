@@ -1,0 +1,6 @@
+FROM nginx:alpine
+
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup 
+
+USER appuser
+COPY . /usr/share/nginx/html

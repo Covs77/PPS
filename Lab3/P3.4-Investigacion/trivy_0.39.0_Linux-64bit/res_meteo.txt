@@ -1,0 +1,28 @@
+
+meteogroup/alpine:latest (alpine 3.20.2)
+========================================
+Total: 6 (UNKNOWN: 0, LOW: 2, MEDIUM: 4, HIGH: 0, CRITICAL: 0)
+
+┌────────────┬────────────────┬──────────┬───────────────────┬───────────────┬─────────────────────────────────────────────────────────────┐
+│  Library   │ Vulnerability  │ Severity │ Installed Version │ Fixed Version │                            Title                            │
+├────────────┼────────────────┼──────────┼───────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+│ libcrypto3 │ CVE-2024-13176 │ MEDIUM   │ 3.3.1-r3          │ 3.3.2-r2      │ openssl: Timing side-channel in ECDSA signature computation │
+│            │                │          │                   │               │ https://avd.aquasec.com/nvd/cve-2024-13176                  │
+│            ├────────────────┤          │                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+│            │ CVE-2024-6119  │          │                   │ 3.3.2-r0      │ openssl: Possible denial of service in X.509 name checks    │
+│            │                │          │                   │               │ https://avd.aquasec.com/nvd/cve-2024-6119                   │
+│            ├────────────────┼──────────┤                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+│            │ CVE-2024-9143  │ LOW      │                   │ 3.3.2-r3      │ openssl: Low-level invalid GF(2^m) parameters lead to OOB   │
+│            │                │          │                   │               │ memory access                                               │
+│            │                │          │                   │               │ https://avd.aquasec.com/nvd/cve-2024-9143                   │
+├────────────┼────────────────┼──────────┤                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+│ libssl3    │ CVE-2024-13176 │ MEDIUM   │                   │ 3.3.2-r2      │ openssl: Timing side-channel in ECDSA signature computation │
+│            │                │          │                   │               │ https://avd.aquasec.com/nvd/cve-2024-13176                  │
+│            ├────────────────┤          │                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+│            │ CVE-2024-6119  │          │                   │ 3.3.2-r0      │ openssl: Possible denial of service in X.509 name checks    │
+│            │                │          │                   │               │ https://avd.aquasec.com/nvd/cve-2024-6119                   │
+│            ├────────────────┼──────────┤                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+│            │ CVE-2024-9143  │ LOW      │                   │ 3.3.2-r3      │ openssl: Low-level invalid GF(2^m) parameters lead to OOB   │
+│            │                │          │                   │               │ memory access                                               │
+│            │                │          │                   │               │ https://avd.aquasec.com/nvd/cve-2024-9143                   │
+└────────────┴────────────────┴──────────┴───────────────────┴───────────────┴─────────────────────────────────────────────────────────────┘

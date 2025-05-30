@@ -1,0 +1,125 @@
+
+
+  Target   │  jetbrains/youtrack:2024.3.57595   
+    digest │  ed97c693ae7b                      
+
+## Recommended fixes
+
+  Base image is  debian:11-slim 
+
+  Name            │  11-slim                                                                   
+  Digest          │  sha256:7c207de2b70f674653a9195b171da17910c642c7ca8ebc40d94fc56906381d80   
+  Vulnerabilities │    2C    11H     6M    23L     4?                                          
+  Pushed          │ 10 months ago                                                              
+  Size            │ 31 MB                                                                      
+  Packages        │ 139                                                                        
+  Flavor          │ debian                                                                     
+  OS              │ 11                                                                         
+  Slim            │ ✓                                                                          
+
+                                                    
+  │ The base image is also available under the      
+  │ supported tag(s) `bullseye-slim`. If you want to 
+  │ display recommendations specifically for a      
+  │ different tag, please re-run the command using  
+  the                                               
+  │ `--tag` flag.                                    
+
+
+
+Refresh base image
+  Rebuild the image using a newer base image version. Updating this may result in breaking changes.
+
+
+            Tag            │                  Details                  │  Pushed   │          Vulnerabilities            
+───────────────────────────┼───────────────────────────────────────────┼───────────┼─────────────────────────────────────
+   11-slim                 │ Benefits:                                 │ 1 day ago │    0C     0H     0M    35L     1?   
+  Newer image for same tag │ • Same OS detected                        │           │    -2    -11     -6    +12     -3   
+  Also known as:           │ • Newer image for same tag                │           │                                     
+  • 11.11-slim             │ • Image is smaller by 1.1 MB              │           │                                     
+  • bullseye-slim          │ • Tag was pushed more recently            │           │                                     
+  • bullseye-20250203-slim │ • Image contains equal number of packages │           │                                     
+                           │ • Tag is using slim variant               │           │                                     
+                           │ • 11-slim was pulled 34K times last month │           │                                     
+                           │                                           │           │                                     
+                           │ Image details:                            │           │                                     
+                           │ • Size: 30 MB                             │           │                                     
+                           │ • Flavor: debian                          │           │                                     
+                           │ • OS: 11                                  │           │                                     
+                           │ • Slim: ✓                                 │           │                                     
+                           │                                           │           │                                     
+                           │                                           │           │                                     
+                           │                                           │           │                                     
+
+
+Change base image
+  The list displays new recommended tags in descending order, where the top results are rated as most suitable.
+
+
+                    Tag                   │                                Details                                │  Pushed   │          Vulnerabilities            
+──────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────┼───────────┼─────────────────────────────────────
+   stable-slim                            │ Benefits:                                                             │ 1 day ago │    0C     0H     0M    23L          
+  Tag is preferred tag                    │ • Same OS detected                                                    │           │    -2    -11     -6            -4   
+  Also known as:                          │ • Image is smaller by 3.1 MB                                          │           │                                     
+  • stable-20250203-slim                  │ • Image contains 14 fewer packages                                    │           │                                     
+                                          │ • Tag is preferred tag                                                │           │                                     
+                                          │ • Tag was pushed more recently                                        │           │                                     
+                                          │ • Image introduces no new vulnerability but removes 19                │           │                                     
+                                          │ • Major OS version update                                             │           │                                     
+                                          │ • Tag is using slim variant                                           │           │                                     
+                                          │ • stable-slim is the fourth most popular tag with 46K pulls per month │           │                                     
+                                          │                                                                       │           │                                     
+                                          │ Image details:                                                        │           │                                     
+                                          │ • Size: 28 MB                                                         │           │                                     
+                                          │ • Flavor: debian                                                      │           │                                     
+                                          │ • OS: 12                                                              │           │                                     
+                                          │ • Slim: ✓                                                             │           │                                     
+                                          │                                                                       │           │                                     
+                                          │                                                                       │           │                                     
+                                          │                                                                       │           │                                     
+   12-slim                                │ Benefits:                                                             │ 1 day ago │    0C     0H     0M    23L          
+  Major OS version update                 │ • Same OS detected                                                    │           │    -2    -11     -6            -4   
+  Also known as:                          │ • Image is smaller by 3.1 MB                                          │           │                                     
+  • 12.9-slim                             │ • Image contains 14 fewer packages                                    │           │                                     
+  • bookworm-slim                         │ • Tag was pushed more recently                                        │           │                                     
+  • bookworm-20250203-slim                │ • Image introduces no new vulnerability but removes 19                │           │                                     
+                                          │ • Major OS version update                                             │           │                                     
+                                          │ • Tag is using slim variant                                           │           │                                     
+                                          │                                                                       │           │                                     
+                                          │ Image details:                                                        │           │                                     
+                                          │ • Size: 28 MB                                                         │           │                                     
+                                          │ • Flavor: debian                                                      │           │                                     
+                                          │ • OS: 12                                                              │           │                                     
+                                          │ • Slim: ✓                                                             │           │                                     
+                                          │                                                                       │           │                                     
+                                          │                                                                       │           │                                     
+                                          │                                                                       │           │                                     
+   12                                     │ Benefits:                                                             │ 1 day ago │    0C     0H     0M    23L          
+  Tag is latest                           │ • Same OS detected                                                    │           │    -2    -11     -6            -4   
+  Also known as:                          │ • Image contains 14 fewer packages                                    │           │                                     
+  • 12.9                                  │ • Tag was pushed more recently                                        │           │                                     
+  • bookworm                              │ • Tag is latest                                                       │           │                                     
+  • bookworm-20250203                     │ • Image introduces no new vulnerability but removes 19                │           │                                     
+  • latest                                │ • Major OS version update                                             │           │                                     
+                                          │                                                                       │           │                                     
+                                          │ Image details:                                                        │           │                                     
+                                          │ • Size: 48 MB                                                         │           │                                     
+                                          │ • Flavor: debian                                                      │           │                                     
+                                          │ • OS: 12                                                              │           │                                     
+                                          │                                                                       │           │                                     
+                                          │                                                                       │           │                                     
+                                          │                                                                       │           │                                     
+   11                                     │ Benefits:                                                             │ 1 day ago │    0C     0H     0M    35L     1?   
+  Image introduces 12 low vulnerabilities │ • Same OS detected                                                    │           │    -2    -11     -6    +12     -3   
+  Also known as:                          │ • Tag was pushed more recently                                        │           │                                     
+  • 11.11                                 │ • Image contains equal number of packages                             │           │                                     
+  • bullseye                              │ • 11 is the third most popular tag with 72K pulls per month           │           │                                     
+  • bullseye-20250203                     │                                                                       │           │                                     
+                                          │ Image details:                                                        │           │                                     
+                                          │ • Size: 54 MB                                                         │           │                                     
+                                          │ • Flavor: debian                                                      │           │                                     
+                                          │ • OS: 11                                                              │           │                                     
+                                          │                                                                       │           │                                     
+                                          │                                                                       │           │                                     
+                                          │                                                                       │           │                                     
+

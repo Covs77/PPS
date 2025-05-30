@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Pawn.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">proyecto</a> &gt; <a href="index.source.html" class="el_package">chess.pieces</a> &gt; <span class="el_source">Pawn.java</span></div><h1>Pawn.java</h1><pre class="source lang-java linenums">package chess.pieces;
+
+import boardgame.Board;
+import boardgame.Position;
+import chess.ChessMatch;
+import chess.ChessPiece;
+import chess.Color;
+
+public class Pawn extends ChessPiece {
+
+	private ChessMatch chessMatch;
+
+	public Pawn(Board board, Color color, ChessMatch chessMatch) {
+<span class="nc" id="L14">		super(board, color);</span>
+<span class="nc" id="L15">		this.chessMatch = chessMatch;</span>
+<span class="nc" id="L16">	}</span>
+
+	@Override
+	public boolean[][] possibleMoves() {
+<span class="nc" id="L20">		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];</span>
+
+<span class="nc" id="L22">		Position p = new Position(0, 0);</span>
+
+<span class="nc bnc" id="L24" title="All 2 branches missed.">		if (getColor() == Color.WHITE) {</span>
+<span class="nc" id="L25">			p.setValues(position.getRow() - 1, position.getColumn());</span>
+<span class="nc bnc" id="L26" title="All 4 branches missed.">			if (getBoard().positionExists(p) &amp;&amp; !getBoard().thereIsAPiece(p)) {</span>
+<span class="nc" id="L27">				mat[p.getRow()][p.getColumn()] = true;</span>
+			}
+<span class="nc" id="L29">			p.setValues(position.getRow() - 2, position.getColumn());</span>
+<span class="nc" id="L30">			Position p2 = new Position(position.getRow() - 1, position.getColumn());</span>
+<span class="nc bnc" id="L31" title="All 10 branches missed.">			if (getBoard().positionExists(p) &amp;&amp; !getBoard().thereIsAPiece(p) &amp;&amp; getBoard().positionExists(p2) &amp;&amp; !getBoard().thereIsAPiece(p2) &amp;&amp; getMoveCount() == 0) {</span>
+<span class="nc" id="L32">				mat[p.getRow()][p.getColumn()] = true;</span>
+			}
+<span class="nc" id="L34">			p.setValues(position.getRow() - 1, position.getColumn() - 1);</span>
+<span class="nc bnc" id="L35" title="All 4 branches missed.">			if (getBoard().positionExists(p) &amp;&amp; isThereOpponentPiece(p)) {</span>
+<span class="nc" id="L36">				mat[p.getRow()][p.getColumn()] = true;</span>
+			}			
+<span class="nc" id="L38">			p.setValues(position.getRow() - 1, position.getColumn() + 1);</span>
+<span class="nc bnc" id="L39" title="All 4 branches missed.">			if (getBoard().positionExists(p) &amp;&amp; isThereOpponentPiece(p)) {</span>
+<span class="nc" id="L40">				mat[p.getRow()][p.getColumn()] = true;</span>
+			}
+			
+			//SPECIALMOVE en passant white
+<span class="nc bnc" id="L44" title="All 2 branches missed.">			if (position.getRow() == 3) {</span>
+<span class="nc" id="L45">				Position left = new Position(position.getRow(), position.getColumn() - 1);</span>
+<span class="nc bnc" id="L46" title="All 6 branches missed.">				if (getBoard().positionExists(left) &amp;&amp; isThereOpponentPiece(left) &amp;&amp; getBoard().piece(left) == chessMatch.getEnPassantVulnerable()) {</span>
+<span class="nc" id="L47">					mat[left.getRow() - 1][left.getColumn()] = true;</span>
+				}
+<span class="nc" id="L49">				Position right = new Position(position.getRow(), position.getColumn() + 1);</span>
+<span class="nc bnc" id="L50" title="All 6 branches missed.">				if (getBoard().positionExists(right) &amp;&amp; isThereOpponentPiece(right) &amp;&amp; getBoard().piece(right) == chessMatch.getEnPassantVulnerable()) {</span>
+<span class="nc" id="L51">					mat[right.getRow() - 1][right.getColumn()] = true;</span>
+				}
+			}
+<span class="nc" id="L54">		}</span>
+		else {
+<span class="nc" id="L56">			p.setValues(position.getRow() + 1, position.getColumn());</span>
+<span class="nc bnc" id="L57" title="All 4 branches missed.">			if (getBoard().positionExists(p) &amp;&amp; !getBoard().thereIsAPiece(p)) {</span>
+<span class="nc" id="L58">				mat[p.getRow()][p.getColumn()] = true;</span>
+			}
+<span class="nc" id="L60">			p.setValues(position.getRow() + 2, position.getColumn());</span>
+<span class="nc" id="L61">			Position p2 = new Position(position.getRow() + 1, position.getColumn());</span>
+<span class="nc bnc" id="L62" title="All 10 branches missed.">			if (getBoard().positionExists(p) &amp;&amp; !getBoard().thereIsAPiece(p) &amp;&amp; getBoard().positionExists(p2) &amp;&amp; !getBoard().thereIsAPiece(p2) &amp;&amp; getMoveCount() == 0) {</span>
+<span class="nc" id="L63">				mat[p.getRow()][p.getColumn()] = true;</span>
+			}
+<span class="nc" id="L65">			p.setValues(position.getRow() + 1, position.getColumn() - 1);</span>
+<span class="nc bnc" id="L66" title="All 4 branches missed.">			if (getBoard().positionExists(p) &amp;&amp; isThereOpponentPiece(p)) {</span>
+<span class="nc" id="L67">				mat[p.getRow()][p.getColumn()] = true;</span>
+			}			
+<span class="nc" id="L69">			p.setValues(position.getRow() + 1, position.getColumn() + 1);</span>
+<span class="nc bnc" id="L70" title="All 4 branches missed.">			if (getBoard().positionExists(p) &amp;&amp; isThereOpponentPiece(p)) {</span>
+<span class="nc" id="L71">				mat[p.getRow()][p.getColumn()] = true;</span>
+			}	
+			
+			//SPECIALMOVE en passant black
+<span class="nc bnc" id="L75" title="All 2 branches missed.">			if (position.getRow() == 4) {</span>
+<span class="nc" id="L76">				Position left = new Position(position.getRow(), position.getColumn() - 1);</span>
+<span class="nc bnc" id="L77" title="All 6 branches missed.">				if (getBoard().positionExists(left) &amp;&amp; isThereOpponentPiece(left) &amp;&amp; getBoard().piece(left) == chessMatch.getEnPassantVulnerable()) {</span>
+<span class="nc" id="L78">					mat[left.getRow() + 1][left.getColumn()] = true;</span>
+				}
+<span class="nc" id="L80">				Position right = new Position(position.getRow(), position.getColumn() + 1);</span>
+<span class="nc bnc" id="L81" title="All 6 branches missed.">				if (getBoard().positionExists(right) &amp;&amp; isThereOpponentPiece(right) &amp;&amp; getBoard().piece(right) == chessMatch.getEnPassantVulnerable()) {</span>
+<span class="nc" id="L82">					mat[right.getRow() + 1][right.getColumn()] = true;</span>
+				}
+			}		
+		}
+<span class="nc" id="L86">		return mat;</span>
+	}
+
+	@Override
+	public String toString() {
+<span class="nc" id="L91">		return &quot;P&quot;;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
